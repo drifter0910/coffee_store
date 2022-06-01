@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f3a14dc.css",
-    "main.js": "/static/js/main.fbd83961.js",
-    "static/media/homebackground.jpg": "/static/media/homebackground.a9dcee464cd46e6db5d2.jpg",
-    "static/media/slider1.jpg": "/static/media/slider1.46b6f4859bcee956b9cf.jpg",
-    "static/media/slider4.jpg": "/static/media/slider4.6b850b34d73ea0c2a00e.jpg",
-    "static/media/slider3.jpg": "/static/media/slider3.dc4b4368791c96e3ff5b.jpg",
-    "static/media/slider2.jpg": "/static/media/slider2.c783c4c07207ee4b7cf4.jpg",
-    "static/media/gallery4.jpg": "/static/media/gallery4.bb62cbafb5719118af5f.jpg",
-    "static/media/gallery1.jpg": "/static/media/gallery1.dfde98531798016bd10c.jpg",
-    "static/media/gallery2.jpg": "/static/media/gallery2.26c21a54dd17eb4a109e.jpg",
-    "static/media/gallery3.jpg": "/static/media/gallery3.612b89fda34e1b5e94fa.jpg",
-    "static/media/coffee.jpg": "/static/media/coffee.0e2ff0d1a95c18cc753f.jpg",
-    "index.html": "/index.html",
-    "main.0f3a14dc.css.map": "/static/css/main.0f3a14dc.css.map",
-    "main.fbd83961.js.map": "/static/js/main.fbd83961.js.map"
+    "main.css": "./static/css/main.692756a3.css",
+    "main.js": "./static/js/main.386a2c89.js",
+    "static/media/homebackground.jpg": "./static/media/homebackground.a9dcee464cd46e6db5d2.jpg",
+    "static/media/slider1.jpg": "./static/media/slider1.46b6f4859bcee956b9cf.jpg",
+    "static/media/slider4.jpg": "./static/media/slider4.6b850b34d73ea0c2a00e.jpg",
+    "static/media/slider3.jpg": "./static/media/slider3.dc4b4368791c96e3ff5b.jpg",
+    "static/media/slider2.jpg": "./static/media/slider2.c783c4c07207ee4b7cf4.jpg",
+    "static/media/gallery4.jpg": "./static/media/gallery4.bb62cbafb5719118af5f.jpg",
+    "static/media/gallery1.jpg": "./static/media/gallery1.dfde98531798016bd10c.jpg",
+    "static/media/gallery2.jpg": "./static/media/gallery2.26c21a54dd17eb4a109e.jpg",
+    "static/media/gallery3.jpg": "./static/media/gallery3.612b89fda34e1b5e94fa.jpg",
+    "static/media/coffee.jpg": "./static/media/coffee.0e2ff0d1a95c18cc753f.jpg",
+    "index.html": "./index.html",
+    "main.692756a3.css.map": "./static/css/main.692756a3.css.map",
+    "main.386a2c89.js.map": "./static/js/main.386a2c89.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f3a14dc.css",
-    "static/js/main.fbd83961.js"
+    "static/css/main.692756a3.css",
+    "static/js/main.386a2c89.js"
   ]
 }
