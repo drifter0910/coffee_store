@@ -1,0 +1,36 @@
+.wrapper-slider {
+  display: flex;
+  padding: 0 3rem;
+  position: relative;
+}
+.wrapper-slider img {
+  width: 100%;
+  justify-content: center;
+}
+.slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-wrapper > img {
+  align-items: center;
+}
+
+.wrapper-slider .swiper-pagination-bullet-active {
+  background: white;
+}
+
+.wrapper-slider .swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+}
+.wrapper-slider svg {
+  fill: white;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: -5px;
+  /* transform: rotate(180deg); */
+}
