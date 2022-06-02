@@ -8,6 +8,8 @@ import Menu from "./Components/Menu/Menu";
 import Guide from "./Components/Guide/Guide";
 import Maxim from "./Components/Maxim/Maxim";
 import Footer from "./Components/Footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DetailProduct from "./Components/DetailProduct/DetailProduct";
 
 function App() {
   return (

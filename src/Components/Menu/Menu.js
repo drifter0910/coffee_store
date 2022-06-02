@@ -2,7 +2,7 @@ import React from "react";
 import "./Menu.css";
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu" id="Menu">
       <div className="wrapper-menu-label">
         <label>What Happens Here</label>
         <h2>explore our menu.</h2>

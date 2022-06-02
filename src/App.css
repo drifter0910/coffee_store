@@ -63,7 +63,14 @@ ul {
   .wrap-r {
     width: 100% !important;
   }
-  .detail-body {
+  .wrap-c {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    align-items: flex-start;
+  }
+  .detail-body-c {
+    width: 100%;
   }
   .detail-body-name-r > p {
     white-space: nowrap;
@@ -156,5 +163,23 @@ ul {
   }
   .detail-wrap-label h2 {
     text-align: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar,
+  .detail,
+  .gallery,
+  .menu,
+  .guide,
+  .maxim,
+  .footer,
+  .wrapper-slider {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 1.4rem !important;
+  }
+  .wrapper-slider {
+    padding: 0 !important;
   }
 }

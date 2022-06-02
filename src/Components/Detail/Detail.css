@@ -55,6 +55,8 @@
 }
 .wrap-c {
   width: 30%;
+  display: flex;
+  align-items: center;
 }
 .detail-body-l {
   width: 80%;

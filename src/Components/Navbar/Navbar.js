@@ -16,7 +16,7 @@ const Home = () => {
           <Link spy={true} to="Navbar" activeClass="activeClass" smooth={true}>
             <li>Home</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link spy={true} to="Menu" smooth={true}>
             <li>Menu</li>
           </Link>
           <Link spy={true} to="" smooth={true}>
