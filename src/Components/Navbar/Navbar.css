@@ -22,6 +22,9 @@
   font-weight: bold;
   align-items: center;
 }
+.n-right > ul > li:hover {
+  color: var(--label);
+}
 
 .seperate::after {
   content: "";

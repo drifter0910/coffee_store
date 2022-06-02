@@ -1,0 +1,76 @@
+.menu {
+  display: flex;
+  padding: 3rem 3rem;
+  margin: 0 3rem;
+  background-color: white;
+  position: relative;
+  flex-direction: column;
+}
+.wrapper-menu-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  flex: 1;
+  height: 10vh;
+}
+
+.menu .seperate-detail {
+  content: "";
+  width: 120px;
+  height: 2px;
+  border-radius: 10%;
+  background-color: var(--label);
+  color: red;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.wrapper-menu-label > h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.wrapper-menu-label label {
+  color: var(--label);
+  font-size: 18px;
+  font-style: italic;
+  padding-bottom: 2rem;
+}
+.wrap-item {
+  padding: 0;
+  margin: 0;
+}
+.wrap-item-top {
+  display: flex;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  align-items: center;
+}
+.space {
+  height: 22px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: table-cell;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  bottom: 2px;
+}
+.menu-price {
+  display: table-cell;
+  padding-left: 6px;
+}
+.menu-name {
+  display: table-cell;
+  white-space: nowrap;
+  padding-right: 6px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
+.menu-desc {
+  color: var(--label);
+}

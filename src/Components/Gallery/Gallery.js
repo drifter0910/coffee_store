@@ -8,11 +8,11 @@ import gallery4 from "../../img/gallery4.jpg";
 const Gallery = () => {
   return (
     <div className="gallery">
-      <div class="row">
-        <div class="col-lg-6">
+      <div className="row">
+        <div className="col-lg-6">
           <img src={gallery1} alt="" />
         </div>
-        <div class="col-lg-3">
+        <div className="col-lg-3">
           <img src={gallery2} alt="" />
         </div>
         <div className="col-lg-3 keke">

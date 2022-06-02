@@ -4,6 +4,7 @@
   margin: 0 3rem;
   background-color: white;
   position: relative;
+  justify-content: center;
 }
 
 .gallery img {

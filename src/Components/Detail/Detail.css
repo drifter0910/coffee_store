@@ -37,6 +37,7 @@
   border-radius: 10%;
   background-color: var(--label);
   margin-top: 2rem;
+  margin-bottom: 2rem;
   cursor: default;
 }
 .detail-body {
@@ -44,14 +45,16 @@
   display: flex;
   padding: 0 5% 0 5%;
   text-align: center;
+  position: relative;
 }
 
 .wrap-l,
 .wrap-r {
-  width: 30%;
+  width: 35%;
+  height: 100%;
 }
 .wrap-c {
-  width: 40%;
+  width: 30%;
 }
 .detail-body-l {
   width: 80%;
@@ -80,6 +83,7 @@
 .ok {
   display: flex;
   margin-bottom: 3rem;
+  height: 33.333%;
 }
 
 .detail-body-name-r > p {
@@ -95,4 +99,7 @@
 }
 .detail-body-r .hihi {
   text-align: left;
+}
+.detail-body-c img {
+  width: 100%;
 }
