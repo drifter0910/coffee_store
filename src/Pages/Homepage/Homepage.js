@@ -1,4 +1,6 @@
 import React from "react";
+import "../../App";
+
 import Detail from "../../HomeComponents/Detail/Detail";
 import Gallery from "../../HomeComponents/Gallery/Gallery";
 import Guide from "../../HomeComponents/Guide/Guide";
@@ -16,6 +18,7 @@ const Homepage = () => {
       <Menu />
       <Guide />
       <Maxim />
+
       {/* </div> */}
     </div>
   );

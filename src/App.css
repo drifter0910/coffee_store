@@ -27,6 +27,11 @@
   background-image: url("../src/img/homebackground.jpg");
 
   font-family: "Merriweather", serif;
+  /* font-family: "Oswald", sans-serif; */
+}
+a:hover {
+  list-style: none;
+  text-decoration: none;
 }
 .menu-nav {
   display: none;
@@ -51,6 +56,14 @@ ul {
 @media (max-width: 575px) {
   .App {
     padding: 0 12px;
+  }
+  .sm {
+    margin-bottom: 1rem !important;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .gallery {
+    padding: 1rem 1rem !important;
   }
 }
 @media (max-width: 767.98px) {
@@ -101,6 +114,12 @@ ul {
 @media (min-width: 768px) and (max-width: 991.98px) {
   .footer-content-item {
     white-space: 1px !important;
+  }
+  .col-lg-6 {
+    margin-bottom: 2rem !important;
+  }
+  .col-lg-3 {
+    margin-bottom: 2rem !important;
   }
 }
 

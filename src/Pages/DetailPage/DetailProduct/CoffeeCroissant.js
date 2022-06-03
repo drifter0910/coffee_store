@@ -155,8 +155,48 @@ const CoffeeCroissant = () => {
                 <p>23.02.2022</p>
               </div>
             </div>
-            <div className="r-category">CATEGORIES</div>
-            <div></div>
+            <div className="r-wrapper-category">
+              <div className="r-category">CATEGORIES</div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Competition(3)</p>
+                </a>
+              </div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Delicious(2)</p>
+                </a>
+              </div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Enjoyment(12)</p>
+                </a>
+              </div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Life(4)</p>
+                </a>
+              </div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Lifestyle(7)</p>
+                </a>
+              </div>
+              <div className="r-category-item">
+                <a href="">
+                  <p>Media(5)</p>
+                </a>
+              </div>
+            </div>
+            <div className="r-wrapper-followus">
+              <div className="r-category">FOLLOW US</div>
+              <div className="wrapper-r-social">
+                <FontAwesomeIcon className="r-social" icon={faYoutube} />{" "}
+                <FontAwesomeIcon className="r-social" icon={faFacebook} />{" "}
+                <FontAwesomeIcon className="r-social" icon={faTwitter} />{" "}
+                <FontAwesomeIcon className="r-social" icon={faInstagram} />{" "}
+              </div>
+            </div>
           </div>
         </div>
       </div>
