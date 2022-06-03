@@ -1,28 +1,32 @@
 import "./App.css";
-
-import Navbar from "./Components/Navbar/Navbar";
-import Slider from "./Components/Slider/Slider";
-import Detail from "./Components/Detail/Detail";
-import Gallery from "./Components/Gallery/Gallery";
-import Menu from "./Components/Menu/Menu";
-import Guide from "./Components/Guide/Guide";
-import Maxim from "./Components/Maxim/Maxim";
-import Footer from "./Components/Footer/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DetailProduct from "./Components/DetailProduct/DetailProduct";
+import Navbar from "./HomeComponents/Navbar/Navbar";
+import Footer from "./HomeComponents/Footer/Footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import Homepage from "./Pages/Homepage/Homepage";
+import Blog from "./Pages/Blog/Blog";
+import Error from "./Pages/Error";
+import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";
 
 function App() {
   return (
     <div className="App">
       <div className="grid wide">
         <Navbar />
-        <Slider />
-        <Detail />
-        <Gallery />
-        <Menu />
-        <Guide />
-        <Maxim />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="coffee_store/" element={<Homepage />} />
+
+          <Route path="coffee-croissant" element={<CoffeeCroissant />} />
+          <Route path="blog" element={<Blog />} />
+          {/* <Route path="*" element={<Error />} /> */}
+        </Routes>
         <Footer />
+        <Outlet />
       </div>
     </div>
   );

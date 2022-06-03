@@ -1,8 +1,11 @@
 .navbar {
-  padding: 0rem 3rem;
+  padding: 0rem 2rem;
   display: flex;
   justify-content: space-between;
   height: 8vh;
+}
+.navbar h1 {
+  cursor: pointer;
 }
 .n-left {
   align-items: center;

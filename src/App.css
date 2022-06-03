@@ -1,6 +1,11 @@
 :root {
   --label: #c7a17a;
-  --text: ##666666;
+  --text: #666666;
+  --seperate: #f4f4f4;
+}
+
+.no-gutters {
+  padding: 0;
 }
 .grid {
   width: 100%;
@@ -14,13 +19,13 @@
 }
 
 .App {
-  background-image: url("../src/img/homebackground.jpg");
   width: 100%;
   height: 100%;
-  position: fixed;
-  padding: 0 3rem;
   overflow: hidden;
+  padding: 0 2rem;
   overflow-y: auto;
+  background-image: url("../src/img/homebackground.jpg");
+
   font-family: "Merriweather", serif;
 }
 .menu-nav {
@@ -49,9 +54,6 @@ ul {
   }
 }
 @media (max-width: 767.98px) {
-  .App {
-    padding: 0;
-  }
   .wrap-l {
     width: 100% !important;
   }
@@ -97,18 +99,12 @@ ul {
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .App {
-    padding: 0;
-  }
   .footer-content-item {
     white-space: 1px !important;
   }
 }
 
 @media (max-width: 900px) {
-  .App {
-    padding: 0rem;
-  }
   .footer-content-item {
     white-space: 1px !important;
   }

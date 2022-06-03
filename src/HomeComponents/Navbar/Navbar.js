@@ -4,19 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Link from "react-scroll/modules/components/Link";
-
+import { Switch, Route, Link, useNavigate } from "react-router-dom";
 const Home = () => {
+  let navigate = useNavigate();
   const [showmenu, setShowmenu] = useState(false);
   if (showmenu) {
     var menumask;
     var menu = (
       <div className="menu-nav">
         <ul>
-          <Link spy={true} to="Navbar" activeClass="activeClass" smooth={true}>
+          <Link spy={true} to="/" activeClass="activeClass" smooth={true}>
             <li>Home</li>
           </Link>
-          <Link spy={true} to="Menu" smooth={true}>
+          <Link spy={true} to="" smooth={true}>
             <li>Menu</li>
           </Link>
           <Link spy={true} to="" smooth={true}>
@@ -43,7 +43,14 @@ const Home = () => {
       {menu}
       {menumask}
       <div className="n-left">
-        <h1 className="text-light">HANABI</h1>
+        <h1
+          onClick={() => {
+            navigate("/");
+          }}
+          className="text-light"
+        >
+          HANABI
+        </h1>
         <FontAwesomeIcon
           className="faBars"
           onClick={() => setShowmenu(!showmenu)}
