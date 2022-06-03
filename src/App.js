@@ -18,10 +18,14 @@ function App() {
       <div className="grid wide">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="coffee_store/" element={<Homepage />} />
-
+          {/* <Route path="/" element={<Homepage />} /> */}
+          <Route path="/coffee_store" element={<Homepage />} />
           <Route path="coffee-croissant" element={<CoffeeCroissant />} />
+          <Route
+            path="/coffee_store/coffee-croissant"
+            element={<CoffeeCroissant />}
+          />
+
           <Route path="blog" element={<Blog />} />
           {/* <Route path="*" element={<Error />} /> */}
         </Routes>

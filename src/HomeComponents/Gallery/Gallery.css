@@ -11,6 +11,9 @@
   height: 100%;
   cursor: pointer;
 }
+.gallery img:hover {
+  transform: translateY(-4px);
+}
 .gallery .container {
   padding: 0;
 }

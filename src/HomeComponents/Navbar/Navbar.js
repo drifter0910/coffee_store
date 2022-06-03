@@ -45,7 +45,7 @@ const Home = () => {
       <div className="n-left">
         <h1
           onClick={() => {
-            navigate("/");
+            navigate("/coffee_store");
           }}
           className="text-light"
         >
