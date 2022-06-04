@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.b26dc760.css",
-    "main.js": "./static/js/main.590a81a2.js",
+    "main.js": "./static/js/main.249a36aa.js",
     "static/media/homebackground.jpg": "./static/media/homebackground.a9dcee464cd46e6db5d2.jpg",
     "static/media/recent1.jpg": "./static/media/recent1.d4b8f8d79098bf372833.jpg",
     "static/media/slider1.jpg": "./static/media/slider1.46b6f4859bcee956b9cf.jpg",
@@ -24,18 +24,29 @@
     "static/media/gallery3.jpg": "./static/media/gallery3.612b89fda34e1b5e94fa.jpg",
     "static/media/guide5.jpg": "./static/media/guide5.5d9d9c052a2133eedbcd.jpg",
     "static/media/guide1.jpg": "./static/media/guide1.8ffe878b3cc255b87897.jpg",
+    "static/media/product12.jpg": "./static/media/product12.441871a8edd0dbd9b8fd.jpg",
+    "static/media/product2.jpg": "./static/media/product2.6e8b2604252c3d87ddbc.jpg",
     "static/media/product1.jpg": "./static/media/product1.3454c87e2278f5bf45d6.jpg",
+    "static/media/product8.jpg": "./static/media/product8.7756e6f179eaa9996c51.jpg",
+    "static/media/product10.jpg": "./static/media/product10.3faaa42880b325b8f109.jpg",
     "static/media/topproduct3.jpg": "./static/media/topproduct3.3faaa42880b325b8f109.jpg",
+    "static/media/product3.jpg": "./static/media/product3.08ff8b1adce562de037d.jpg",
+    "static/media/product4.jpg": "./static/media/product4.f73faae3763aa5c3b4fd.jpg",
     "static/media/topproduct2.jpg": "./static/media/topproduct2.f73faae3763aa5c3b4fd.jpg",
+    "static/media/product9.jpg": "./static/media/product9.f1f5f655bf41284439c5.jpg",
     "static/media/topproduct1.jpg": "./static/media/topproduct1.f1f5f655bf41284439c5.jpg",
+    "static/media/product5.jpg": "./static/media/product5.9236a1782ce185cc6e97.jpg",
+    "static/media/product6.jpg": "./static/media/product6.7d5a415937ec5091c793.jpg",
     "static/media/author1.png": "./static/media/author1.984aad374c87e8c9fb5b.png",
+    "static/media/product11.jpg": "./static/media/product11.45b395d4729bd5f6bdfa.jpg",
     "static/media/coffee.jpg": "./static/media/coffee.0e2ff0d1a95c18cc753f.jpg",
+    "static/media/product7.jpg": "./static/media/product7.edca31b5a6c4c58bb8ff.jpg",
     "index.html": "./index.html",
     "main.b26dc760.css.map": "./static/css/main.b26dc760.css.map",
-    "main.590a81a2.js.map": "./static/js/main.590a81a2.js.map"
+    "main.249a36aa.js.map": "./static/js/main.249a36aa.js.map"
   },
   "entrypoints": [
     "static/css/main.b26dc760.css",
-    "static/js/main.590a81a2.js"
+    "static/js/main.249a36aa.js"
   ]
 }
