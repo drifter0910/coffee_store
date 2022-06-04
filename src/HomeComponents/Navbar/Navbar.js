@@ -22,7 +22,12 @@ const Home = () => {
     var menu = (
       <div className="menu-nav">
         <ul>
-          <Link spy={true} to="/" activeClass="activeClass" smooth={true}>
+          <Link
+            to="coffee_store"
+            spy={true}
+            activeClass="activeClass"
+            smooth={true}
+          >
             <li>Home</li>
           </Link>
           <Link spy={true} to="" smooth={true}>
@@ -31,13 +36,10 @@ const Home = () => {
           <Link spy={true} to="" smooth={true}>
             <li>Reservation</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
-            <li>Pages</li>
-          </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link spy={true} to="/coffee_store/coffee-croissant" smooth={true}>
             <li>Blog</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link spy={true} to="/coffee_store/shop" smooth={true}>
             <li>Shop</li>
           </Link>
           <Link spy={true} to="" smooth={true}>
