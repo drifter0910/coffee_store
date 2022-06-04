@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.34da455f.css",
-    "main.js": "./static/js/main.9129a20f.js",
+    "main.css": "./static/css/main.49f8f99a.css",
+    "main.js": "./static/js/main.6d26adf1.js",
     "static/media/homebackground.jpg": "./static/media/homebackground.a9dcee464cd46e6db5d2.jpg",
     "static/media/recent1.jpg": "./static/media/recent1.d4b8f8d79098bf372833.jpg",
     "static/media/slider1.jpg": "./static/media/slider1.46b6f4859bcee956b9cf.jpg",
@@ -14,6 +14,7 @@
     "static/media/guide2.jpg": "./static/media/guide2.5b291024bca4dc42601a.jpg",
     "static/media/blog2.jpg": "./static/media/blog2.6aaf02e7cbf17c822adc.jpg",
     "static/media/gallery2.jpg": "./static/media/gallery2.26c21a54dd17eb4a109e.jpg",
+    "static/media/reservation.png": "./static/media/reservation.44db56b26fedd4b3bc89.png",
     "static/media/recent3.jpg": "./static/media/recent3.1dd33ab3caf72bf67623.jpg",
     "static/media/recent2.jpg": "./static/media/recent2.cdce989ef1c644218b02.jpg",
     "static/media/shop.jpg": "./static/media/shop.af169a4301a16a63b9bd.jpg",
@@ -40,11 +41,11 @@
     "static/media/coffee.jpg": "./static/media/coffee.0e2ff0d1a95c18cc753f.jpg",
     "static/media/product7.jpg": "./static/media/product7.edca31b5a6c4c58bb8ff.jpg",
     "index.html": "./index.html",
-    "main.34da455f.css.map": "./static/css/main.34da455f.css.map",
-    "main.9129a20f.js.map": "./static/js/main.9129a20f.js.map"
+    "main.49f8f99a.css.map": "./static/css/main.49f8f99a.css.map",
+    "main.6d26adf1.js.map": "./static/js/main.6d26adf1.js.map"
   },
   "entrypoints": [
-    "static/css/main.34da455f.css",
-    "static/js/main.9129a20f.js"
+    "static/css/main.49f8f99a.css",
+    "static/js/main.6d26adf1.js"
   ]
 }
