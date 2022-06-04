@@ -33,6 +33,10 @@
 a:hover {
   list-style: none;
   text-decoration: none;
+  color: var(--label);
+}
+a {
+  color: var(--text);
 }
 .menu-nav {
   display: none;

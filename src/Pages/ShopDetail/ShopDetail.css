@@ -1,0 +1,62 @@
+.shopdetail {
+  background-color: white;
+  width: 100%;
+  height: 150vh;
+  padding: 2rem;
+}
+
+.shopdetail-l-img img {
+  width: 100%;
+}
+
+.shopdetail-r-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.shopdetail-r-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--label);
+  text-transform: uppercase;
+}
+.shopdetail-r-desc {
+  font-size: 1rem;
+  line-height: 26px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.shop-detail-r-quan {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.shop-detail-r-input {
+  width: 3rem;
+  background-color: #eae7de;
+  border: none;
+  padding: 2px 1rem;
+}
+.shop-detail-r-addcart {
+  font-size: 1rem;
+  background-color: var(--label);
+  padding: 1rem 3rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.shop-detail-r-addcart:hover {
+  background-color: black;
+}
+
+.shop-detail-r-dec:hover {
+  color: var(--label);
+  cursor: pointer;
+}
+.shop-detail-r-in:hover {
+  color: var(--label);
+  cursor: pointer;
+}

@@ -22,27 +22,22 @@ const Home = () => {
     var menu = (
       <div className="menu-nav">
         <ul>
-          <Link
-            to="coffee_store"
-            spy={true}
-            activeClass="activeClass"
-            smooth={true}
-          >
+          <Link to="coffee_store" activeclass="activeclass">
             <li>Home</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link to="">
             <li>Menu</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link to="">
             <li>Reservation</li>
           </Link>
-          <Link spy={true} to="/coffee_store/coffee-croissant" smooth={true}>
+          <Link to="/coffee_store/coffee-croissant">
             <li>Blog</li>
           </Link>
-          <Link spy={true} to="/coffee_store/shop" smooth={true}>
+          <Link to="/coffee_store/shop">
             <li>Shop</li>
           </Link>
-          <Link spy={true} to="" smooth={true}>
+          <Link to="">
             <li>My cart</li>
           </Link>
         </ul>
@@ -57,9 +52,9 @@ const Home = () => {
       {menu}
       {menumask}
       <div className="n-left">
-        <NavLink to="/coffee_store/">
+        <Link to="/coffee_store/">
           <h1 className="text-light">HANABI</h1>
-        </NavLink>
+        </Link>
 
         <FontAwesomeIcon
           className="faBars"
@@ -74,10 +69,12 @@ const Home = () => {
           </li>
           <li>Menu</li>
           <li>Reservation</li>
-          <li>Blog</li>
+          <li onClick={() => navigate("/coffee_store/coffee-croissant")}>
+            Blog
+          </li>
           {/* <li to={"/coffee_store/shop/"}> */}
-          <li onClick={() => navigate("/coffee_store/shop")}>
-            <li className="link">Shop</li>
+          <li className="link" onClick={() => navigate("/coffee_store/shop")}>
+            Shop
           </li>
 
           <div className="wrapper-navbar-cart">

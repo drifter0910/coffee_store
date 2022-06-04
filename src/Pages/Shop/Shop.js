@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import "./Shop.css";
-import data from "././ProductData";
-import topdata from "./TopProduct";
-import image from "../../img/product1.jpg";
-import gallery1 from "../../img/gallery1.jpg";
+import data from "../../Data/ProductData";
+import topdata from "../../Data/TopProduct";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const Shop = () => {
-  useEffect(() => {
-    console.log(data);
-  });
+  let navigate = useNavigate();
 
   const totalResult = data.length;
   return (
@@ -34,16 +31,25 @@ const Shop = () => {
               </div>
               <div className="shop-list">
                 {data.map((item) => (
-                  <div className="shop-item" key={item.id}>
-                    <img src={item.image} alt="" />
-
-                    <div className="shop-item-name">{item.name}</div>
-                    <div className="wrap-shop-item">
-                      <div className="shop-item-sale">{item.sale}</div>
-                      <div className="shop-item-price">
-                        <div className="shop-item-price">${item.price}.00</div>
+                  <div
+                    // onClick={() => navigate("shop-detail")}
+                    className="shop-item"
+                    key={item.id}
+                  >
+                    <NavLink to={"shop-detail/" + item.id}>
+                      <img src={item.image} alt="" />
+                      <div className="shop-item-name">{item.name}</div>
+                      <div className="wrap-shop-item">
+                        <div className="shop-item-sale">{item.sale}</div>
+                        <div className="shop-item-price">
+                          <div className="shop-item-price">
+                            ${item.price}.00
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </NavLink>
+                    {/*  */}
+                    {/*  */}
                   </div>
                 ))}
               </div>
@@ -56,7 +62,7 @@ const Shop = () => {
               <div className="shop-r-wrap">
                 <div className="shop-r-item">
                   {topdata.map((item) => (
-                    <div className="wrap-r-item">
+                    <div key={item.id} className="wrap-r-item">
                       <img src={item.imageUrl} className="shop-r-item-img" />
                       <div className="shop-r-item-des">
                         <label htmlFor="" className="shop-r-item-name">
