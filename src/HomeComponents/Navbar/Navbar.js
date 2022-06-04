@@ -68,9 +68,11 @@ const Home = () => {
           <li>Home</li>
           <li>Menu</li>
           <li>Reservation</li>
-          <li>Pages</li>
           <li>Blog</li>
-          <li className="seperate">Shop</li>
+          <Link to={"shop"}>
+            <li className="link">Shop</li>
+          </Link>
+
           <div className="wrapper-navbar-cart">
             <FontAwesomeIcon className="cart" icon={faCartShopping} />
             <div className="navbar-cart">

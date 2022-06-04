@@ -17,6 +17,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link, NavLink } from "react-router-dom";
 
 const CoffeeCroissant = () => {
   return (
@@ -128,33 +129,39 @@ const CoffeeCroissant = () => {
               </p>
             </div>
             <div className="r-recent">RECENT POSTS</div>
-            <div className="r-recent-item1">
-              <div className="r-recent-item1-l">
-                <img src={recent1} alt="" />
+            <Link to={"#"}>
+              <div className="r-recent-item1">
+                <div className="r-recent-item1-l">
+                  <img src={recent1} alt="" />
+                </div>
+                <div className="r-recent-item1-r">
+                  <label>Make it simple</label>
+                  <p>23.02.2022</p>
+                </div>
               </div>
-              <div className="r-recent-item1-r">
-                <label>Make it simple</label>
-                <p>23.02.2022</p>
+            </Link>
+            <Link to={"#"}>
+              <div className="r-recent-item1">
+                <div className="r-recent-item1-l">
+                  <img src={recent2} alt="" />
+                </div>
+                <div className="r-recent-item1-r">
+                  <label>Coffee shop</label>
+                  <p>23.02.2022</p>
+                </div>
               </div>
-            </div>
-            <div className="r-recent-item1">
-              <div className="r-recent-item1-l">
-                <img src={recent2} alt="" />
+            </Link>
+            <Link to={"#"}>
+              <div className="r-recent-item1">
+                <div className="r-recent-item1-l">
+                  <img src={recent3} alt="" />
+                </div>
+                <div className="r-recent-item1-r">
+                  <label>coffee bar</label>
+                  <p>23.02.2022</p>
+                </div>
               </div>
-              <div className="r-recent-item1-r">
-                <label>Coffee shop</label>
-                <p>23.02.2022</p>
-              </div>
-            </div>
-            <div className="r-recent-item1">
-              <div className="r-recent-item1-l">
-                <img src={recent3} alt="" />
-              </div>
-              <div className="r-recent-item1-r">
-                <label>coffee bar</label>
-                <p>23.02.2022</p>
-              </div>
-            </div>
+            </Link>
             <div className="r-wrapper-category">
               <div className="r-category">CATEGORIES</div>
               <div className="r-category-item">

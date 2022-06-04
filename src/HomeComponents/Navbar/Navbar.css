@@ -34,6 +34,12 @@
 .n-right > ul > li:hover {
   color: var(--label);
 }
+.link {
+  color: white;
+}
+.link:hover {
+  color: var(--label);
+}
 
 .seperate::after {
   content: "";
