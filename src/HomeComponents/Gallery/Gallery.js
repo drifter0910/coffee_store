@@ -4,7 +4,7 @@ import gallery1 from "../../img/gallery1.jpg";
 import gallery2 from "../../img/gallery2.jpg";
 import gallery3 from "../../img/gallery3.jpg";
 import gallery4 from "../../img/gallery4.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Gallery = () => {
   let navigate = useNavigate();

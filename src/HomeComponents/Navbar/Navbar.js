@@ -14,6 +14,8 @@ import {
 } from "react-router-dom";
 import product1 from "../../img/product1.jpg";
 const Home = () => {
+  let navigate = useNavigate();
+
   const [showmenu, setShowmenu] = useState(false);
   if (showmenu) {
     var menumask;
@@ -65,13 +67,16 @@ const Home = () => {
       </div>
       <div className="n-right">
         <ul>
-          <li>Home</li>
+          <li>
+            <NavLink to="/coffee_store/">Home</NavLink>
+          </li>
           <li>Menu</li>
           <li>Reservation</li>
           <li>Blog</li>
-          <Link to={"shop"}>
+          {/* <li to={"/coffee_store/shop/"}> */}
+          <li onClick={() => navigate("/coffee_store/shop")}>
             <li className="link">Shop</li>
-          </Link>
+          </li>
 
           <div className="wrapper-navbar-cart">
             <FontAwesomeIcon className="cart" icon={faCartShopping} />

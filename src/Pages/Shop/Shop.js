@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Shop.css";
-import data from "../../Data/ProductData";
-import topdata from "../../Data/TopProduct";
+import data from "././ProductData";
+import topdata from "./TopProduct";
+import image from "../../img/product1.jpg";
+import gallery1 from "../../img/gallery1.jpg";
 
 const Shop = () => {
+  useEffect(() => {
+    console.log(data);
+  });
+
   const totalResult = data.length;
   return (
     <div className="shop">
+      {/* <div className="testimg">
+        <img className="pb-3" src={gallery1} alt="" />
+      </div> */}
+
       <div className="shop-top">
         <label className="shop-label">
           <p>SHOP</p>
@@ -25,7 +35,8 @@ const Shop = () => {
               <div className="shop-list">
                 {data.map((item) => (
                   <div className="shop-item" key={item.id}>
-                    <img src={item.imageUrl} alt="" />
+                    <img src={item.image} alt="" />
+
                     <div className="shop-item-name">{item.name}</div>
                     <div className="wrap-shop-item">
                       <div className="shop-item-sale">{item.sale}</div>

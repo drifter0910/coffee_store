@@ -43,7 +43,9 @@ a:hover {
 .faBars {
   display: none;
 }
-
+.Navlink {
+  color: white;
+}
 ul {
   padding: 0;
   margin: 0;
