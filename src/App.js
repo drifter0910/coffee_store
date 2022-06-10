@@ -14,6 +14,10 @@ import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";
 import Shop from "./Pages/Shop/Shop";
 import ShopDetail from "./Pages/ShopDetail/ShopDetail";
 import ScrollToTop from "./ScrollToTop";
+import NavMenu from "./Pages/Menu/NavMenu";
+import Reservation from "./Pages/Reservation/Reservation";
+import Cart from "./Pages/Cart/Cart";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -29,21 +33,35 @@ function App() {
                 </>
               }
             >
-              <Route path="/coffee_store">
+              {/* <Route path="/coffee_store">
                 <Route path="" element={<Homepage />} />
+                <Route path="navmenu" element={<NavMenu />} />
+                <Route path="reservation" element={<Reservation />} />
+
                 <Route path="coffee-croissant" element={<CoffeeCroissant />} />
-                {/* <Route path="coffee-croissant/" element={<CoffeeCroissant />} /> */}
                 <Route path="shop" element={<Shop />} />
                 <Route
                   path="shop/shop-detail/:productId"
                   element={<ShopDetail />}
                 />
-              </Route>
+                <Route path="cart" element={<Cart />} />
+                <Route path="checkout" element={<Checkout />} />
+              </Route> */}
               <Route path="/" element={<Homepage />} />
               <Route path="coffee-croissant" element={<CoffeeCroissant />} />
               <Route path="blog" element={<Blog />} />
               <Route path="shop" element={<Shop />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+
+              <Route path="reservation" element={<Reservation />} />
+
               <Route path="shop-detail" element={<ShopDetail />} />
+              <Route
+                path="shop/shop-detail/:productId"
+                element={<ShopDetail />}
+              />
+              <Route path="navmenu" element={<NavMenu />} />
             </Route>
 
             {/* No navbar section */}

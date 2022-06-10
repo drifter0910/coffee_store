@@ -53,3 +53,10 @@
 .maxim .swiper {
   height: 10rem;
 }
+
+.swiper-pagination-bullet {
+}
+
+.swiper-pagination {
+  bottom: 0px !important;
+}

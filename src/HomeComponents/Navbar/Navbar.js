@@ -15,29 +15,28 @@ import {
 import product1 from "../../img/product1.jpg";
 const Home = () => {
   let navigate = useNavigate();
-
   const [showmenu, setShowmenu] = useState(false);
   if (showmenu) {
     var menumask;
     var menu = (
       <div className="menu-nav">
         <ul>
-          <Link to="coffee_store" activeclass="activeclass">
+          <NavLink to="/" activeclass="activeclass">
             <li>Home</li>
-          </Link>
-          <Link to="">
+          </NavLink>
+          <Link to="navmenu">
             <li>Menu</li>
           </Link>
-          <Link to="">
+          <Link to="reservation">
             <li>Reservation</li>
           </Link>
-          <Link to="/coffee_store/coffee-croissant">
+          <Link to="coffee-croissant">
             <li>Blog</li>
           </Link>
-          <Link to="/coffee_store/shop">
+          <Link to="shop">
             <li>Shop</li>
           </Link>
-          <Link to="">
+          <Link to="cart">
             <li>My cart</li>
           </Link>
         </ul>
@@ -52,7 +51,7 @@ const Home = () => {
       {menu}
       {menumask}
       <div className="n-left">
-        <Link to="/coffee_store/">
+        <Link to="/">
           <h1 className="text-light">HANABI</h1>
         </Link>
 
@@ -65,15 +64,13 @@ const Home = () => {
       <div className="n-right">
         <ul>
           <li>
-            <NavLink to="/coffee_store/">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
-          <li>Menu</li>
-          <li>Reservation</li>
-          <li onClick={() => navigate("/coffee_store/coffee-croissant")}>
-            Blog
-          </li>
+          <li onClick={() => navigate("navmenu")}>Menu</li>
+          <li onClick={() => navigate("reservation")}>Reservation</li>
+          <li onClick={() => navigate("coffee-croissant")}>Blog</li>
           {/* <li to={"/coffee_store/shop/"}> */}
-          <li className="link" onClick={() => navigate("/coffee_store/shop")}>
+          <li className="link" onClick={() => navigate("shop")}>
             Shop
           </li>
 
@@ -89,15 +86,19 @@ const Home = () => {
                   <p>Quantity: 1</p>
                   <p>$46</p>
                 </div>
-                <FontAwesomeIcon className="" icon={faClose} />
+                <FontAwesomeIcon className="delete-cart" icon={faClose} />
               </div>
               <div className="navbar-cart-total">
                 <p>Total</p>
                 <p>$46.00</p>
               </div>
               <div className="navbar-cart-btn">
-                <div className="viewcart">View Cart</div>
-                <div className="checkout">Checkout</div>
+                <div onClick={() => navigate("cart")} className="viewcart">
+                  View Cart
+                </div>
+                <div onClick={() => navigate("checkout")} className="checkout">
+                  Checkout
+                </div>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const Shop = () => {
   let navigate = useNavigate();
+  console.log(data);
 
   const totalResult = data.length;
   return (
@@ -32,24 +33,18 @@ const Shop = () => {
               <div className="shop-list">
                 {data.map((item) => (
                   <div
-                    // onClick={() => navigate("shop-detail")}
+                    onClick={() => navigate("shop-detail/" + item.id)}
                     className="shop-item"
                     key={item.id}
                   >
-                    <NavLink to={"shop-detail/" + item.id}>
-                      <img src={item.image} alt="" />
-                      <div className="shop-item-name">{item.name}</div>
-                      <div className="wrap-shop-item">
-                        <div className="shop-item-sale">{item.sale}</div>
-                        <div className="shop-item-price">
-                          <div className="shop-item-price">
-                            ${item.price}.00
-                          </div>
-                        </div>
+                    <img src={item.image} alt="" />
+                    <div className="shop-item-name">{item.name}</div>
+                    <div className="wrap-shop-item">
+                      <div className="shop-item-sale">{item.sale}</div>
+                      <div className="shop-item-price">
+                        <div className="shop-item-price">${item.price}.00</div>
                       </div>
-                    </NavLink>
-                    {/*  */}
-                    {/*  */}
+                    </div>
                   </div>
                 ))}
               </div>

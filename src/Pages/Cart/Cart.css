@@ -1,0 +1,130 @@
+.cart-page {
+  background-color: white;
+}
+
+.cart-page-top {
+  background-color: #f5f5f5;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: center;
+}
+.cart-page-toplabel {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.cart-page-nav {
+  color: var(--label);
+}
+.cart-wrapper {
+  padding: 2rem 3rem;
+  overflow-x: auto;
+}
+.cart-wrapper table {
+  width: 100%;
+}
+.cart-wrapper img {
+  width: 100px;
+  margin-right: 1rem;
+}
+.table-img-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.table-img-wrapper:nth-child(2) {
+  color: var(--label);
+  cursor: pointer;
+}
+.table-delete {
+  text-align: center;
+  cursor: pointer;
+}
+
+.cart-wrapper th:nth-child(1) {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+table td {
+  border: 0.5px solid var(--seperate-darker);
+}
+.bor {
+  border: 0.5px solid var(--seperate-darker);
+}
+
+.cart-page-input {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.cart-page-input p {
+  align-items: center;
+  display: flex;
+  margin: 0;
+  cursor: pointer;
+}
+.cart-coupon {
+  display: flex;
+  margin: 2rem 0;
+}
+.cart-coupon button {
+  background-color: #c7a17a;
+  color: white;
+  padding: 10px 2rem;
+  border: none;
+  font-weight: bold;
+}
+.cart-coupon button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.cart-coupon input {
+  border: 0.5px solid var(--seperate-darker);
+  padding: 0 1rem;
+  margin-right: 1rem;
+}
+.update-cart {
+  margin-left: auto;
+}
+
+.wrap-cart-total {
+  margin-top: 2rem;
+  border: 1px solid red;
+}
+
+.cart-total p {
+  margin: 0;
+}
+.cart-total label {
+  font-size: 24px;
+  font-weight: bold;
+}
+.cart-shipping-cal {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-total-table {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border: 0.5px solid var(--seperate-darker);
+  margin: 0 !important;
+}
+.cart-shipping-cal {
+  display: flex;
+  align-items: center;
+}
+.cart-shipping-cal .cart-coupon {
+  margin: 0;
+}
+.cart-shipping-cal-label {
+  font-weight: bold;
+  font-size: 24px;
+}

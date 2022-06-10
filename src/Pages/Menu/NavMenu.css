@@ -1,0 +1,60 @@
+.nav-menu {
+  background: #f1f0eb;
+  width: 100%;
+  height: 100%;
+}
+.navmenu-label {
+  padding: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+}
+.navmenu-label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--seperate-darker);
+  top: 90%;
+  left: 0;
+  cursor: default;
+}
+.navmenu-item {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+}
+
+.navmenu-top {
+  position: relative;
+  height: 30vh;
+  background-image: url("../../img/menutop.jpg");
+  background-size: cover;
+  z-index: 1;
+}
+.navmenu-img {
+  width: 20%;
+}
+.navmenu-img img {
+  width: 100%;
+}
+
+.nav-menu-wrapper {
+  width: 100%;
+}
+.navmenu-r {
+  width: 80%;
+  padding: 4px 2rem;
+}
+.navmenu-name,
+.navmenu-price {
+  text-transform: uppercase;
+  font-size: 24px;
+
+  font-weight: bold;
+}
+.navmenu-desc {
+  color: var(--label);
+  font-weight: 300;
+}

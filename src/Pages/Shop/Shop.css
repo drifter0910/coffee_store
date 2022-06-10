@@ -43,6 +43,7 @@
 .shop-item {
   width: 30%;
   margin: 0 20px 20px 0;
+  cursor: pointer;
 }
 .shop-item img {
   width: 100%;

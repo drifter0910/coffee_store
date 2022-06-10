@@ -38,6 +38,12 @@ a:hover {
 a {
   color: var(--text);
 }
+input:focus {
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+}
 .menu-nav {
   display: none;
 }
@@ -119,6 +125,19 @@ ul {
   }
   .shop-item {
     width: 45% !important;
+  }
+  .shop-detail-r-quan {
+    width: 100% !important;
+  }
+  .shop-detail-r-quan::after {
+    display: none;
+  }
+  .cart-wrapper {
+    padding: 1rem !important;
+  }
+  .apply-coupon,
+  .update-cart {
+    padding: 10px 4px !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -202,7 +221,6 @@ ul {
   .wrapper-slider {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    margin: 0 1.4rem !important;
   }
   .wrapper-slider {
     padding: 0 !important;
@@ -213,6 +231,10 @@ ul {
   .shop-r-wrap {
     width: 50%;
     display: flex;
+  }
+  .navmenu-r {
+    padding-right: 0 !important;
+    padding-left: 1rem !important;
   }
 }
 
