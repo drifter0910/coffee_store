@@ -53,9 +53,7 @@ function App() {
               <Route path="shop" element={<Shop />} />
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
-
               <Route path="reservation" element={<Reservation />} />
-
               <Route path="shop-detail" element={<ShopDetail />} />
               <Route
                 path="shop/shop-detail/:productId"

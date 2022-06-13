@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import user from "../../img/user.png";
 import data from "../../Data/ProductData";
-import testimage from "../../img/about1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -13,6 +12,7 @@ import {
 import relateddata from "../../Data/TopProduct";
 import "./ShopDetail.css";
 import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
+import { Button, ButtonLabel } from "../../Components/Button.style";
 const ShopDetail = () => {
   const [quan, setQuan] = useState(1);
   const { productId } = useParams();
@@ -65,7 +65,10 @@ const ShopDetail = () => {
                     >
                       +
                     </div>
-                    <div className="shop-detail-r-addcart">ADD TO CART</div>
+                    {/* <div className="shop-detail-r-addcart">ADD TO CART</div> */}
+                    <Button>
+                      <ButtonLabel>ADD TO CART</ButtonLabel>
+                    </Button>
                   </div>
                 </div>
                 <div className="shop-detail-r-category">
