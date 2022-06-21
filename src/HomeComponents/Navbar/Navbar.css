@@ -64,7 +64,13 @@
 .wrapper-navbar-cart:hover .navbar-cart {
   display: block;
 }
-
+.cart-counter {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  top: -100%;
+  right: -100%;
+}
 .navbar-cart {
   position: absolute;
   width: 400px;

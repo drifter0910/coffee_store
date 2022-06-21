@@ -10,6 +10,9 @@
 .shop-list-wrapper {
   padding: 2rem 0 2rem 2rem;
 }
+.shop-list-link{
+  width: 100%;
+}
 .shop-top {
   position: relative;
   height: 30vh;
@@ -74,15 +77,16 @@
 }
 .shop-sort {
   position: relative;
-}
-.shop-sort::after {
-  content: "";
-  position: absolute;
-  border: 4px solid;
-  border-color: var(--label) transparent transparent transparent;
-  top: 50%;
-  transform: translateY(calc(-25% - 1px));
-  right: -2rem;
+
+  &:after{
+    content: "";
+    position: absolute;
+    border: 4px solid;
+    border-color: var(--label) transparent transparent transparent;
+    top: 50%;
+    transform: translateY(calc(-25% - 1px));
+    right: -2rem;
+  }
 }
 
 .shop-r {
@@ -94,17 +98,18 @@
   width: 100%;
   font-weight: bold;
   margin-top: 1rem;
-}
-.shop-r-label::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  left: 0%;
-  top: 100%;
-  height: 2px;
-  border-radius: 10%;
-  background-color: var(--seperate-darker);
-  cursor: default;
+
+  &:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0%;
+    top: 100%;
+    height: 2px;
+    border-radius: 10%;
+    background-color: var(--seperate-darker);
+    cursor: default;
+  }
 }
 
 .wrap-r-item {
@@ -136,8 +141,8 @@
 }
 .shop-r-tags p {
   width: 100%;
-}
-.shop-r-tags p:hover {
-  color: #c7a17a;
-  cursor: pointer;
+  &:hover{
+    color: #c7a17a;
+    cursor: pointer;
+  }
 }

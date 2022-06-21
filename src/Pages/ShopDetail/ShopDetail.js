@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import user from "../../img/user.png";
-import data from "../../Data/ProductData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { connect } from "react-redux";
 import {
   faFacebook,
   faInstagram,
@@ -13,13 +13,14 @@ import relateddata from "../../Data/TopProduct";
 import "./ShopDetail.css";
 import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
-const ShopDetail = () => {
+import { addToCart } from "../../redux/Shopping/shopping-action";
+const ShopDetail = ({ products, addToCart }) => {
   const [quan, setQuan] = useState(1);
+  console.log(products);
   const { productId } = useParams();
-  var item = data.find((item) => {
+  var item = products.find((item) => {
     return item.id == productId;
   });
-
   return (
     <div className="wrapper-shopdetail">
       <div className="shop-top">
@@ -31,12 +32,12 @@ const ShopDetail = () => {
         <div className="wrapper-shopdetail">
           <div className="row">
             <div className="wrap-col">
-              <div className="col-xl-5">
+              <div className="col-xl-5 col-lg-6">
                 <div className="shopdetail-l-img">
                   <img src={item.image} alt="" />
                 </div>
               </div>
-              <div className="col-xl-7">
+              <div className="col-xl-7 col-lg-6">
                 <div className="shopdetail-r-wrapper">
                   <div className="shopdetail-r-name">{item.name}</div>
                   <div className="shopdetail-r-price">${item.price}</div>
@@ -66,7 +67,7 @@ const ShopDetail = () => {
                       +
                     </div>
                     {/* <div className="shop-detail-r-addcart">ADD TO CART</div> */}
-                    <Button>
+                    <Button onClick={() => addToCart(item.id)}>
                       <ButtonLabel>ADD TO CART</ButtonLabel>
                     </Button>
                   </div>
@@ -114,7 +115,7 @@ const ShopDetail = () => {
         <div className="shopdetail-related">
           <div className="row">
             {relateddata.map((item) => (
-              <div className="col-xl-3 col-md-3 col-sm-6">
+              <div className="col-xl-3 col-md-3 col-sm-6 ">
                 <div className="wrap-related-item">
                   <img src={item.imageUrl} alt="" />
                   <label htmlFor="">{item.name}</label>
@@ -128,5 +129,15 @@ const ShopDetail = () => {
     </div>
   );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
+const mapStateToProps = (state) => {
+  return {
+    products: state.shop.products,
+  };
+};
 
-export default ShopDetail;
+export default connect(mapStateToProps, mapDispatchToProps)(ShopDetail);

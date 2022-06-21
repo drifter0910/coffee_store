@@ -19,21 +19,25 @@ import Reservation from "./Pages/Reservation/Reservation";
 import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Checkout/Checkout";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 function App() {
   return (
-    <div className="App">
-      <div className="grid wide">
-        <ScrollToTop>
-          <Routes>
-            <Route
-              element={
-                <>
-                  <Navbar />
-                  <Outlet />
-                </>
-              }
-            >
-              {/* <Route path="/coffee_store">
+    <Provider store={store}>
+      <div className="App">
+        <div className="grid wide">
+          <ScrollToTop>
+            <Routes>
+              <Route
+                element={
+                  <>
+                    <Navbar />
+                    <Outlet />
+                  </>
+                }
+              >
+                {/* <Route path="/coffee_store">
                 <Route path="" element={<Homepage />} />
                 <Route path="navmenu" element={<NavMenu />} />
                 <Route path="reservation" element={<Reservation />} />
@@ -47,27 +51,28 @@ function App() {
                 <Route path="cart" element={<Cart />} />
                 <Route path="checkout" element={<Checkout />} />
               </Route> */}
-              <Route path="/" element={<Homepage />} />
-              <Route path="coffee-croissant" element={<CoffeeCroissant />} />
-              <Route path="blog" element={<Blog />} />
-              <Route path="shop" element={<Shop />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="checkout" element={<Checkout />} />
-              <Route path="reservation" element={<Reservation />} />
-              <Route path="shop-detail" element={<ShopDetail />} />
-              <Route
-                path="shop/shop-detail/:productId"
-                element={<ShopDetail />}
-              />
-              <Route path="navmenu" element={<NavMenu />} />
-            </Route>
+                <Route path="/" element={<Homepage />} />
+                <Route path="coffee-croissant" element={<CoffeeCroissant />} />
+                <Route path="blog" element={<Blog />} />
+                <Route path="shop" element={<Shop />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="checkout" element={<Checkout />} />
+                <Route path="reservation" element={<Reservation />} />
+                <Route path="shop-detail" element={<ShopDetail />} />
+                <Route
+                  path="shop/shop-detail/:productId"
+                  element={<ShopDetail />}
+                />
+                <Route path="navmenu" element={<NavMenu />} />
+              </Route>
 
-            {/* No navbar section */}
-          </Routes>
-          <Footer />
-        </ScrollToTop>
+              {/* No navbar section */}
+            </Routes>
+            <Footer />
+          </ScrollToTop>
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 

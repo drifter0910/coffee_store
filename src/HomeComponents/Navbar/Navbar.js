@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -13,9 +14,29 @@ import {
   NavLink,
 } from "react-router-dom";
 import product1 from "../../img/product1.jpg";
-const Home = () => {
+import { removeFromCart } from "../../redux/Shopping/shopping-action";
+const Home = ({ cart, removeFromCart }) => {
   let navigate = useNavigate();
+  const [cartCount, setCartCount] = useState(0);
   const [showmenu, setShowmenu] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+  useEffect(() => {
+    let items = 0;
+    let price = 0;
+    cart.forEach((item) => {
+      price += item.qty * item.price;
+    });
+    setTotalPrice(price);
+  }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+    setCartCount(count);
+  }, [cart, cartCount]);
   if (showmenu) {
     var menumask;
     var menu = (
@@ -75,22 +96,35 @@ const Home = () => {
           </li>
 
           <div className="wrapper-navbar-cart">
-            <FontAwesomeIcon className="cart" icon={faCartShopping} />
+            <FontAwesomeIcon
+              onClick={() => navigate("cart")}
+              className="cart"
+              icon={faCartShopping}
+            />
+            <div className="cart-counter"> {cartCount} </div>
             <div className="navbar-cart">
-              <div className="navbar-cart-list">
-                <div className="cart-item-l">
-                  <img src={product1} alt="" />
-                </div>
-                <div className="cart-item-r">
-                  <p>Paper Pounch</p>
-                  <p>Quantity: 1</p>
-                  <p>$46</p>
-                </div>
-                <FontAwesomeIcon className="delete-cart" icon={faClose} />
+              <div>
+                {cart.map((item) => (
+                  <div className="navbar-cart-list">
+                    <div className="cart-item-l">
+                      <img src={item.image} alt="" />
+                    </div>
+                    <div className="cart-item-r">
+                      <p>{item.name}</p>
+                      <p>Quantity: {item.qty}</p>
+                      <p>$ {item.price} </p>
+                    </div>
+                    <FontAwesomeIcon
+                      onClick={() => removeFromCart(item.id)}
+                      className="delete-cart"
+                      icon={faClose}
+                    />
+                  </div>
+                ))}
               </div>
               <div className="navbar-cart-total">
                 <p>Total</p>
-                <p>$46.00</p>
+                <p>$ {totalPrice}</p>
               </div>
               <div className="navbar-cart-btn">
                 <div onClick={() => navigate("cart")} className="viewcart">
@@ -109,4 +143,14 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeFromCart: (id) => dispatch(removeFromCart(id)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

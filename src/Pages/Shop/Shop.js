@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
-import "./Shop.css";
+import "./Shop.scss";
 import data from "../../Data/ProductData";
 import topdata from "../../Data/TopProduct";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Shop = () => {
+const Shop = ({ products }) => {
   let navigate = useNavigate();
-  console.log(data);
+  // console.log(products);
 
   const totalResult = data.length;
   return (
@@ -14,7 +15,6 @@ const Shop = () => {
       {/* <div className="testimg">
         <img className="pb-3" src={gallery1} alt="" />
       </div> */}
-
       <div className="shop-top">
         <label className="shop-label">
           <p>SHOP</p>
@@ -31,26 +31,30 @@ const Shop = () => {
                 </label>
               </div>
               <div className="shop-list">
-                {data.map((item) => (
-                  <div
-                    onClick={() => navigate("shop-detail/" + item.id)}
-                    className="shop-item"
-                    key={item.id}
-                  >
-                    <img src={item.image} alt="" />
-                    <div className="shop-item-name">{item.name}</div>
-                    <div className="wrap-shop-item">
-                      <div className="shop-item-sale">{item.sale}</div>
-                      <div className="shop-item-price">
-                        <div className="shop-item-price">${item.price}.00</div>
+                {products.map((item) => (
+                  <div className="shop-item" key={item.id}>
+                    <Link
+                      className="shop-list-link"
+                      to={{ pathname: "shop-detail/" + item.id, params: item }}
+                    >
+                      <img src={item.image} alt="" />
+                      <div className="shop-item-name">{item.name}</div>
+                      <div className="wrap-shop-item">
+                        <div className="shop-item-sale">{item.sale}</div>
+                        <div className="shop-item-price">
+                          <div className="shop-item-price">
+                            ${item.price}.00
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
+                  // </Link>
                 ))}
               </div>
             </div>
           </div>
-          <div className="col-xl-3">
+          <div className="col-xl-3 ">
             <div className="shop-r">
               <label className="shop-r-label">ABOUT</label>
               <label className="shop-r-label">TOP RATED PRODUCT</label>
@@ -85,5 +89,10 @@ const Shop = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    products: state.shop.products,
+  };
+};
 
-export default Shop;
+export default connect(mapStateToProps)(Shop);
