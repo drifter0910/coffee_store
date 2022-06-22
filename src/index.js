@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
+  // BrowserRouter as Router,
   HashRouter,
 } from "react-router-dom";
 ReactDOM.render(

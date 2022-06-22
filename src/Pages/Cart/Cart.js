@@ -1,27 +1,25 @@
 import React, { useState } from "react";
 import "./Cart.css";
-import cart1 from "../../img/product1.jpg";
 import { connect } from "react-redux";
 import { useEffect } from "react";
-import { removeFromCart } from "../../redux/Shopping/shopping-action";
+import {
+  removeFromCart,
+  adjustQty,
+  plusQty,
+  minusQty,
+} from "../../redux/Shopping/shopping-action";
 
-const Cart = ({ cart, removeFromCart }) => {
-  console.log(cart);
-  const [input, setInput] = useState(cart.qty);
-
+const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   useEffect(() => {
-    let items = 0;
+    // let items = 0;
     let price = 0;
     cart.forEach((item) => {
       price += item.qty * item.price;
     });
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
-  const onChangeHandler = (e) => {
-    console.log(e.target.value);
-  };
 
   return (
     <div className="cart-page">
@@ -57,16 +55,32 @@ const Cart = ({ cart, removeFromCart }) => {
               <td> ${item.price} </td>
               <td>
                 <div className="cart-page-input">
-                  <p>-</p>
+                  <p
+                    onClick={() => {
+                      minusQty(item.id);
+                    }}
+                  >
+                    -
+                  </p>
                   <input
                     className="shop-detail-r-input"
                     type="text"
                     id="qty"
                     name="qty"
                     value={item.qty}
-                    onChange={onChangeHandler}
+                    // onChange={onChangeHandler}
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      adjustQty(item.id, e.target.value);
+                    }}
                   />
-                  <p>+</p>
+                  <p
+                    onClick={() => {
+                      plusQty(item.id);
+                    }}
+                  >
+                    +
+                  </p>
                 </div>
               </td>
               <td>${item.price * item.qty}</td>
@@ -113,6 +127,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeFromCart: (id) => dispatch(removeFromCart(id)),
+    adjustQty: (id, value) => dispatch(adjustQty(id, value)),
+    plusQty: (id) => dispatch(plusQty(id)),
+    minusQty: (id) => dispatch(minusQty(id)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

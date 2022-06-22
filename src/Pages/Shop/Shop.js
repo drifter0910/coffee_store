@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Shop.scss";
 import data from "../../Data/ProductData";
 import topdata from "../../Data/TopProduct";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Shop = ({ products }) => {
-  let navigate = useNavigate();
   // console.log(products);
 
   const totalResult = data.length;
@@ -62,7 +61,11 @@ const Shop = ({ products }) => {
                 <div className="shop-r-item">
                   {topdata.map((item) => (
                     <div key={item.id} className="wrap-r-item">
-                      <img src={item.imageUrl} className="shop-r-item-img" />
+                      <img
+                        src={item.imageUrl}
+                        alt=""
+                        className="shop-r-item-img"
+                      />
                       <div className="shop-r-item-des">
                         <label htmlFor="" className="shop-r-item-name">
                           {item.name}

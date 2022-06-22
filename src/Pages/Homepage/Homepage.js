@@ -10,17 +10,14 @@ import Slider from "../../HomeComponents/Slider/Slider";
 import "./Homepage.css";
 const Homepage = () => {
   return (
-    <div className="home-container no-gutters ">
-      {/* <div className="container"> */}
+    <>
       <Slider />
       <Detail />
       <Gallery />
       <Menu />
       <Guide />
       <Maxim />
-
-      {/* </div> */}
-    </div>
+    </>
   );
 };
 

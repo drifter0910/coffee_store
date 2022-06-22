@@ -5,15 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faSearch, faClose } from "@fortawesome/free-solid-svg-icons";
-import {
-  Switch,
-  Route,
-  Link,
-  useNavigate,
-  Navigate,
-  NavLink,
-} from "react-router-dom";
-import product1 from "../../img/product1.jpg";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
 const Home = ({ cart, removeFromCart }) => {
   let navigate = useNavigate();
@@ -22,7 +14,7 @@ const Home = ({ cart, removeFromCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   useEffect(() => {
-    let items = 0;
+    // let items = 0;
     let price = 0;
     cart.forEach((item) => {
       price += item.qty * item.price;

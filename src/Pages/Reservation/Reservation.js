@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import "./Reservation.css";
-import menudata from "../../Data/MenuData";
 import res from "../../img/reservation.png";
 import emailjs from "@emailjs/browser";
 const Reservation = () => {

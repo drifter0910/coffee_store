@@ -25,6 +25,23 @@ export const adjustQty = (itemID, value) => {
     },
   };
 };
+export const plusQty = (itemID) => {
+  return {
+    type: actionTypes.PLUS_QTY,
+    payload: {
+      id: itemID,
+    },
+  };
+};
+export const minusQty = (itemID) => {
+  return {
+    type: actionTypes.MINUS_QTY,
+    payload: {
+      id: itemID,
+    },
+  };
+};
+
 export const loadCurrentItem = (item) => {
   return {
     type: actionTypes.LOAD_CURRENT_ITEM,

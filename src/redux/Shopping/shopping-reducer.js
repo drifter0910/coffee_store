@@ -1,5 +1,4 @@
 import * as actionTypes from "./shopping-types";
-import data from "../../Data/ProductData";
 const INITIAL_STATE = {
   products: [
     {
@@ -143,8 +142,24 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cart: state.cart.map((item) =>
+          item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item
+        ),
+      };
+    case actionTypes.PLUS_QTY:
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
           item.id === action.payload.id
-            ? { ...item, qty: action.payload.qty }
+            ? { ...item, qty: (item.qty += 1) }
+            : item
+        ),
+      };
+    case actionTypes.MINUS_QTY:
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, qty: (item.qty -= 1) }
             : item
         ),
       };
