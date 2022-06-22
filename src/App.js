@@ -63,6 +63,10 @@ function App() {
                   path="shop/shop-detail/:productId"
                   element={<ShopDetail />}
                 />
+                <Route
+                  path="cart/shop-detail/:productId"
+                  element={<ShopDetail />}
+                />
                 <Route path="navmenu" element={<NavMenu />} />
               </Route>
 

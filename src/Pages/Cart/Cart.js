@@ -8,6 +8,7 @@ import {
   plusQty,
   minusQty,
 } from "../../redux/Shopping/shopping-action";
+import { Link, NavLink } from "react-router-dom";
 
 const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -49,7 +50,9 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
                 X
               </td>
               <td className="table-img-wrapper">
-                <img src={item.image} alt="" />
+                <Link to={"shop-detail/" + item.id}>
+                  <img src={item.image} alt="" />
+                </Link>
                 <div>{item.name}</div>
               </td>
               <td> ${item.price} </td>

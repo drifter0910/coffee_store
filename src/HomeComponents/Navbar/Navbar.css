@@ -65,11 +65,16 @@
   display: block;
 }
 .cart-counter {
+  border-radius: 8px;
   position: absolute;
-  font-size: 30px;
+  font-size: 12px;
+  padding: 0.1px 4px;
   color: white;
-  top: -100%;
+  top: -10%;
   right: -100%;
+  z-index: 20;
+  background-color: white;
+  color: black;
 }
 .navbar-cart {
   position: absolute;

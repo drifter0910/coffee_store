@@ -93,14 +93,17 @@ const Home = ({ cart, removeFromCart }) => {
               className="cart"
               icon={faCartShopping}
             />
-            <div className="cart-counter"> {cartCount} </div>
+            <div className="cart-counter">{cartCount}</div>
             <div className="navbar-cart">
               <div>
                 {cart.map((item) => (
                   <div className="navbar-cart-list">
                     <div className="cart-item-l">
-                      <img src={item.image} alt="" />
+                      <Link to={"shop/shop-detail/" + item.id}>
+                        <img src={item.image} alt="" />
+                      </Link>
                     </div>
+
                     <div className="cart-item-r">
                       <p>{item.name}</p>
                       <p>Quantity: {item.qty}</p>
