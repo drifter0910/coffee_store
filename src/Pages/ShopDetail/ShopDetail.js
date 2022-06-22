@@ -46,7 +46,7 @@ const ShopDetail = ({ products, addToCart }) => {
                     <div
                       className="shop-detail-r-dec"
                       onClick={() => {
-                        if (quan > 1) {
+                        if (quan > 0) {
                           setQuan(quan - 1);
                         }
                       }}
@@ -61,8 +61,10 @@ const ShopDetail = ({ products, addToCart }) => {
                     />
 
                     <div
-                      className="shop-detail-r-in "
-                      onClick={() => setQuan(quan + 1)}
+                      className="shop-detail-r-in"
+                      onClick={() => {
+                        setQuan(quan + 1);
+                      }}
                     >
                       +
                     </div>

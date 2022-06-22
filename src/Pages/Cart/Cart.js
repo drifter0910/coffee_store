@@ -8,7 +8,7 @@ import {
   plusQty,
   minusQty,
 } from "../../redux/Shopping/shopping-action";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   const [totalPrice, setTotalPrice] = useState(0);
