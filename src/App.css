@@ -151,7 +151,11 @@ ul {
     margin-bottom: 2rem !important;
   }
 }
-
+@media (min-width: 992px) and (max-width: 1200px) {
+  .shop-detail-r-category {
+    margin-top: 10% !important;
+  }
+}
 @media (max-width: 900px) {
   .footer-content-item {
     white-space: 1px !important;

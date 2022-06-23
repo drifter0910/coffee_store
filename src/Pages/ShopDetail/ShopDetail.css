@@ -64,10 +64,11 @@
 }
 
 .shop-detail-r-input {
-  width: 3rem;
+  width: 4rem;
   background-color: #eae7de;
   border: none;
   padding: 2px 1rem;
+  text-align: center;
 }
 .shop-detail-r-addcart {
   font-size: 1rem;

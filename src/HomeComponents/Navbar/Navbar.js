@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css";
+import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faL } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faSearch, faClose } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
@@ -13,6 +13,17 @@ const Home = ({ cart, removeFromCart }) => {
   const [showmenu, setShowmenu] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackGround = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else setNavbar(false);
+  };
+
+  window.addEventListener("scroll", changeBackGround);
+
   useEffect(() => {
     // let items = 0;
     let price = 0;
@@ -60,13 +71,14 @@ const Home = ({ cart, removeFromCart }) => {
     );
   }
   return (
-    <div className="navbar" id="Navbar">
+    <div className={navbar ? "navbar active" : "navbar"} id="Navbar">
       {menu}
       {menumask}
       <div className="n-left">
-        <Link to="/">
-          <h1 className="text-light">HANABI</h1>
-        </Link>
+        <h1 className="text-light">
+          {" "}
+          <Link to="/">HANABI </Link>
+        </h1>
 
         <FontAwesomeIcon
           className="faBars"
@@ -76,9 +88,7 @@ const Home = ({ cart, removeFromCart }) => {
       </div>
       <div className="n-right">
         <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
+          <li onClick={() => navigate("/")}>Home</li>
           <li onClick={() => navigate("navmenu")}>Menu</li>
           <li onClick={() => navigate("reservation")}>Reservation</li>
           <li onClick={() => navigate("coffee-croissant")}>Blog</li>

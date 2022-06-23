@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import Homepage from "./Pages/Homepage/Homepage";
 import Blog from "./Pages/Blog/Blog";
-import Error from "./Pages/Error";
 import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";
 import Shop from "./Pages/Shop/Shop";
 import ShopDetail from "./Pages/ShopDetail/ShopDetail";

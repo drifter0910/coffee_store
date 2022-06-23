@@ -1,7 +1,21 @@
 .navbar {
   padding: 0rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+}
+.navbar.active {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--label);
+  z-index: 100;
+
+  li:hover{
+    color: black;
+  }
+
 }
 .navbar a {
   color: white;
@@ -9,6 +23,7 @@
 .menu-nav li {
   color: black;
 }
+
 .navbar h1 {
   cursor: pointer;
 }
@@ -17,9 +32,8 @@
 }
 .n-right {
   color: white;
-  display: flex;
-  gap: 2;
 }
+
 .n-right > ul {
   cursor: pointer;
   gap: 2rem;
