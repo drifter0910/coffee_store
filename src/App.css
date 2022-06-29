@@ -28,7 +28,12 @@
   background-image: url("../src/img/homebackground.jpg");
 
   font-family: "Merriweather", serif;
+  /* font-family: "Roboto", sans-serif; */
+
   /* font-family: "Oswald", sans-serif; */
+}
+.nav-active {
+  color: var(--label);
 }
 a:hover {
   list-style: none;

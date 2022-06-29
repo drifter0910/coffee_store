@@ -14,10 +14,12 @@ const Home = ({ cart, removeFromCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [navbar, setNavbar] = useState(false);
-
+  let activeStyle = {
+    color: "#84878c",
+  };
   const changeBackGround = () => {
     console.log(window.scrollY);
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 40) {
       setNavbar(true);
     } else setNavbar(false);
   };
@@ -76,8 +78,7 @@ const Home = ({ cart, removeFromCart }) => {
       {menumask}
       <div className="n-left">
         <h1 className="text-light">
-          {" "}
-          <Link to="/">HANABI </Link>
+          <Link to="/">Hanabi </Link>
         </h1>
 
         <FontAwesomeIcon
@@ -88,13 +89,46 @@ const Home = ({ cart, removeFromCart }) => {
       </div>
       <div className="n-right">
         <ul>
-          <li onClick={() => navigate("/")}>Home</li>
-          <li onClick={() => navigate("navmenu")}>Menu</li>
-          <li onClick={() => navigate("reservation")}>Reservation</li>
-          <li onClick={() => navigate("coffee-croissant")}>Blog</li>
-          {/* <li to={"/coffee_store/shop/"}> */}
-          <li className="link" onClick={() => navigate("shop")}>
-            Shop
+          <li>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to={"/"}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to={"navmenu"}
+            >
+              Menu
+            </NavLink>{" "}
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to={"reservation"}
+            >
+              Reservation
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to={"coffee-croissant"}
+            >
+              Blog
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to={"shop"}
+            >
+              Shop
+            </NavLink>
           </li>
 
           <div className="wrapper-navbar-cart">

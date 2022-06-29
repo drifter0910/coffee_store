@@ -21,7 +21,7 @@ const Data = [
 
   {
     id: 3,
-    name: "coffee pot",
+    name: "Coffee pot",
     price: 71,
     image: require("../img/product3.jpg"),
     category: "Coffee",
@@ -31,7 +31,7 @@ const Data = [
   },
   {
     id: 4,
-    name: "plastic pouch",
+    name: "Plastic pouch",
     price: 27,
     image: require("../img/product4.jpg"),
     category: "Coffee",
@@ -41,7 +41,7 @@ const Data = [
   },
   {
     id: 5,
-    name: "tea pot",
+    name: "Tea pot",
     price: 54,
     category: "Coffee",
     tag: "Coffee pot",

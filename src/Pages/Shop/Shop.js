@@ -60,21 +60,23 @@ const Shop = ({ products }) => {
               <div className="shop-r-wrap">
                 <div className="shop-r-item">
                   {topdata.map((item) => (
-                    <div key={item.id} className="wrap-r-item">
-                      <img
-                        src={item.imageUrl}
-                        alt=""
-                        className="shop-r-item-img"
-                      />
-                      <div className="shop-r-item-des">
-                        <label htmlFor="" className="shop-r-item-name">
-                          {item.name}
-                        </label>
-                        <label htmlFor="" className="shop-r-item-price">
-                          ${item.price}
-                        </label>
+                    <Link to={"shop-detail/" + item.id}>
+                      <div key={item.id} className="wrap-r-item">
+                        <img
+                          src={item.imageUrl}
+                          alt=""
+                          className="shop-r-item-img"
+                        />
+                        <div className="shop-r-item-des">
+                          <label htmlFor="" className="shop-r-item-name">
+                            {item.name}
+                          </label>
+                          <label htmlFor="" className="shop-r-item-price">
+                            ${item.price}
+                          </label>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

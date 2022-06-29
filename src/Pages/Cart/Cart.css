@@ -59,6 +59,7 @@ table td {
   display: flex;
   align-items: center;
   height: 100%;
+  justify-content: center;
 }
 .cart-page-input p {
   align-items: center;

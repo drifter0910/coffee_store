@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import user from "../../img/user.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
@@ -10,7 +10,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import relateddata from "../../Data/TopProduct";
-import "./ShopDetail.css";
+import "./ShopDetail.scss";
 import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
 import { addToCart } from "../../redux/Shopping/shopping-action";
@@ -68,7 +68,6 @@ const ShopDetail = ({ products, addToCart }) => {
                     >
                       +
                     </div>
-                    {/* <div className="shop-detail-r-addcart">ADD TO CART</div> */}
                     <Button onClick={() => addToCart(item.id)}>
                       <ButtonLabel>ADD TO CART</ButtonLabel>
                     </Button>
@@ -119,7 +118,9 @@ const ShopDetail = ({ products, addToCart }) => {
             {relateddata.map((item) => (
               <div className="col-xl-3 col-md-3 col-sm-6 ">
                 <div className="wrap-related-item">
-                  <img src={item.imageUrl} alt="" />
+                  <Link to={"shop-detail/" + item.id}>
+                    <img src={item.imageUrl} alt="" />
+                  </Link>
                   <label htmlFor="">{item.name}</label>
                   <p>${item.price}</p>
                 </div>

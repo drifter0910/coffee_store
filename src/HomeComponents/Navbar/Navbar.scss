@@ -1,7 +1,7 @@
 .navbar {
   padding: 0rem 2rem;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .navbar.active {
   display: flex;
@@ -11,11 +11,22 @@
   width: 100%;
   background-color: var(--label);
   z-index: 100;
+  transition: 0.5s;
+  animation: navbarAnimation ease-in 0.2s;
 
-  li:hover{
+  li:hover {
     color: black;
   }
-
+}
+@keyframes navbarAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .navbar a {
   color: white;
@@ -32,6 +43,9 @@
 }
 .n-right {
   color: white;
+  a:hover {
+    color: var(--label);
+  }
 }
 
 .n-right > ul {

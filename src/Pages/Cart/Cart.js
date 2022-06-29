@@ -55,7 +55,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
                 </Link>
                 <div>{item.name}</div>
               </td>
-              <td> ${item.price} </td>
+              <td className="text-center"> ${item.price} </td>
               <td>
                 <div className="cart-page-input">
                   <p
@@ -86,7 +86,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
                   </p>
                 </div>
               </td>
-              <td>${item.price * item.qty}</td>
+              <td className="text-center">${item.price * item.qty}</td>
             </tr>
           ))}
         </table>
@@ -107,7 +107,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
               }}
               className="col-xl-4"
             >
-              SHIPPING:<p>Free shipping</p>
+              SHIPPING: Free shipping
             </div>
             <div className="col-xl-4">TOTAL: ${totalPrice}</div>
           </div>
@@ -115,7 +115,9 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
         <div className="cart-shipping-cal">
           <div className="cart-shipping-cal-label">CALCULATE SHIPPING</div>
           <div className="cart-coupon">
-            <button className="cart-tocheckout">PROCEED TO CHECKOUT</button>
+            <Link to={"/checkout"}>
+              <button className="cart-tocheckout">PROCEED TO CHECKOUT</button>
+            </Link>
           </div>
         </div>
       </div>

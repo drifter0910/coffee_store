@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cart1 from "../../img/product1.jpg";
 import "./Checkout.css";
-const Checkout = () => {
+import { connect } from "react-redux";
+const Checkout = ({ cart }) => {
   const [quan, setQuan] = useState(1);
-
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+  useEffect(() => {
+    // let items = 0;
+    let price = 0;
+    cart.forEach((item) => {
+      price += item.qty * item.price;
+    });
+    setTotalPrice(price);
+  }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
   return (
     <div className="checkout-page">
       <div className="cart-page-top">
@@ -59,35 +69,43 @@ const Checkout = () => {
             <label className="checkout-page-label" htmlFor="">
               YOUR ORDER
             </label>
+
             <div className="yourorder-child">
               <div className="yourorder-child-title">
                 <div className="row w-100">
-                  <p className="col-xl-6 child-title ">Product</p>
-                  <p className="col-xl-6 child-title">Subtotal</p>
+                  <p className="col-xl-4 child-title ">Product</p>
+                  <p className="col-xl-4 child-title ">Quantity</p>
+                  <p className="col-xl-4 child-title">Price</p>
+                </div>
+              </div>
+              {cart.map((item) => (
+                <>
+                  <div className="yourorder-child-title">
+                    <div className="row w-100">
+                      <p className="col-xl-4 col-md-4"> {item.name} </p>
+                      <p className="col-xl-4 col-md-4"> {item.qty} </p>
+
+                      <p className="col-xl-4 col-md-4">${item.price}</p>
+                    </div>
+                  </div>
+                </>
+              ))}
+
+              <div className="yourorder-child-title">
+                <div className="row w-100">
+                  <p className="col-xl-4 col-md-4">Shipping</p>
+                  <p className="col-xl-4 col-md-4"></p>
+
+                  <p className="col-xl-4 col-md-4">Free Shipping</p>
                 </div>
               </div>
               <div className="yourorder-child-title">
                 <div className="row w-100">
-                  <p className="col-xl-6 col-md-6">Paper Pouch × 1 </p>
-                  <p className="col-xl-6 col-md-6">$46.00</p>
-                </div>
-              </div>
-              <div className="yourorder-child-title">
-                <div className="row w-100">
-                  <p className="col-xl-6 col-md-6">Subtotal</p>
-                  <p className="col-xl-6 col-md-6">$46.00</p>
-                </div>
-              </div>
-              <div className="yourorder-child-title">
-                <div className="row w-100">
-                  <p className="col-xl-6 col-md-6">Shipping</p>
-                  <p className="col-xl-6 col-md-6">Free Shipping</p>
-                </div>
-              </div>
-              <div className="yourorder-child-title">
-                <div className="row w-100">
-                  <p className="col-xl-6 col-md-6">Total</p>
-                  <p className="col-xl-6 col-md-6">$46.00</p>
+                  <p className="col-xl-4 col-md-4 font-weight-bold">Total</p>
+                  <p className="col-xl-4 col-md-4"></p>
+                  <p className="col-xl-4 col-md-4 font-weight-bold">
+                    ${totalPrice}
+                  </p>
                 </div>
               </div>
             </div>
@@ -141,11 +159,22 @@ const Checkout = () => {
           </div>
         </div>
         <div className="checkout-page-order">
-          <div className="checkout-page-btn">PLACE ORDER</div>
+          <a
+            href="/"
+            onClick={() => {
+              alert("ORDER SUCCESS");
+            }}
+          >
+            <div className="checkout-page-btn">PLACE ORDER</div>
+          </a>
         </div>
       </div>
     </div>
   );
 };
-
-export default Checkout;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+export default connect(mapStateToProps)(Checkout);
