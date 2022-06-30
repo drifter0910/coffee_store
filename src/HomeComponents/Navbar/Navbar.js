@@ -88,9 +88,11 @@ const Home = ({ cart, removeFromCart }) => {
     );
   }
   const changeBackGround = () => {
-    if (window.scrollY >= 40) {
+    if (window.scrollY >= 80) {
       setNavbar(true);
-    } else setNavbar(false);
+    } else {
+      setNavbar(false);
+    }
   };
 
   window.addEventListener("scroll", changeBackGround);
@@ -205,7 +207,7 @@ const Home = ({ cart, removeFromCart }) => {
             />
             <input
               onChange={(e) => setSearch(e.target.value)}
-              className={toggle ? "navbar-input" : "active"}
+              className={toggle ? "navbar-input" : "input-active"}
               type="text"
             />
             <div className={toggle ? "display-none" : "search-result"}>

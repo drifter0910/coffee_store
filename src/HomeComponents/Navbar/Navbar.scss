@@ -228,11 +228,13 @@
   display: none;
 }
 
-.active {
+.input-active {
   display: block !important;
   width: 100%;
   border-radius: 20px;
   padding: 0 8px;
+  border-color: white;
+  border-width: none;
 }
 
 .search-result {
