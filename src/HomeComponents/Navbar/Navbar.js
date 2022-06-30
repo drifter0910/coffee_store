@@ -236,6 +236,7 @@ const Home = ({ cart, removeFromCart }) => {
             />
             <input
               onChange={(e) => setSearch(e.target.value)}
+              value={search}
               className={toggle ? "navbar-input" : "input-active"}
               type="text"
             />
