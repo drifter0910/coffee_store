@@ -118,9 +118,9 @@ const ShopDetail = ({ products, addToCart }) => {
             {relateddata.map((item) => (
               <div className="col-xl-3 col-md-3 col-sm-6 ">
                 <div className="wrap-related-item">
-                  <Link to={"shop-detail/" + item.id}>
-                    <img src={item.imageUrl} alt="" />
-                  </Link>
+                  {/* <Link to={"shop-detail/" + item.id}> */}
+                  <img src={item.imageUrl} alt="" />
+                  {/* </Link> */}
                   <label htmlFor="">{item.name}</label>
                   <p>${item.price}</p>
                 </div>
