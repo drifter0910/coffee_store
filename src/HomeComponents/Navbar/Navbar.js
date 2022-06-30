@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import Data from "../../Data/ProductData";
 import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faL } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faSearch, faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faSearch,
+  faClose,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
 const Home = ({ cart, removeFromCart }) => {
@@ -14,17 +18,12 @@ const Home = ({ cart, removeFromCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [navbar, setNavbar] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  const [search, setSearch] = useState("");
+  const [result, setResult] = useState();
   let activeStyle = {
     color: "#84878c",
   };
-  const changeBackGround = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 40) {
-      setNavbar(true);
-    } else setNavbar(false);
-  };
-
-  window.addEventListener("scroll", changeBackGround);
 
   useEffect(() => {
     // let items = 0;
@@ -34,7 +33,6 @@ const Home = ({ cart, removeFromCart }) => {
     });
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
-
   useEffect(() => {
     let count = 0;
     cart.forEach((item) => {
@@ -42,6 +40,23 @@ const Home = ({ cart, removeFromCart }) => {
     });
     setCartCount(count);
   }, [cart, cartCount]);
+
+  useEffect(() => {
+    const result = Data.filter((value) => {
+      if (search === "") {
+        return null;
+      } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
+        return value;
+      }
+    });
+    setResult(result);
+    console.log(result);
+  }, [search]);
+
+  const handleSearch = () => {
+    setToggle(!toggle);
+  };
+
   if (showmenu) {
     var menumask;
     var menu = (
@@ -72,6 +87,13 @@ const Home = ({ cart, removeFromCart }) => {
       <div className="menu-mask" onClick={() => setShowmenu(false)}></div>
     );
   }
+  const changeBackGround = () => {
+    if (window.scrollY >= 40) {
+      setNavbar(true);
+    } else setNavbar(false);
+  };
+
+  window.addEventListener("scroll", changeBackGround);
   return (
     <div className={navbar ? "navbar active" : "navbar"} id="Navbar">
       {menu}
@@ -175,7 +197,33 @@ const Home = ({ cart, removeFromCart }) => {
               </div>
             </div>
           </div>
-          <FontAwesomeIcon className="search" icon={faSearch} />
+          <div className="search">
+            <FontAwesomeIcon
+              onClick={handleSearch}
+              className="icon"
+              icon={faSearch}
+            />
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              className={toggle ? "navbar-input" : "active"}
+              type="text"
+            />
+            <div className={toggle ? "display-none" : "search-result"}>
+              {result?.map((data) => (
+                <div
+                  onClick={() => {
+                    navigate("shop/shop-detail/" + data.id);
+                    setSearch("");
+                  }}
+                  className="search-item"
+                  key={data.id}
+                >
+                  <img src={data.image} alt="" />
+                  <p>{data.name}</p>
+                </div>
+              ))}{" "}
+            </div>
+          </div>
         </ul>
       </div>
     </div>
