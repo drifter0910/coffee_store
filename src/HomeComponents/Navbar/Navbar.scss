@@ -223,6 +223,13 @@
   gap: 6px;
   position: relative;
 }
+.search-mobile {
+  height: 100%;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
 
 .navbar-input {
   display: none;
@@ -268,4 +275,9 @@
 }
 .display-none {
   display: none;
+}
+
+.n-left-wrapper {
+  display: flex;
+  align-items: center;
 }

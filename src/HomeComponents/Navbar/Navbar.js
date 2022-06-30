@@ -105,11 +105,40 @@ const Home = ({ cart, removeFromCart }) => {
           <Link to="/">Hanabi </Link>
         </h1>
 
-        <FontAwesomeIcon
-          className="faBars"
-          onClick={() => setShowmenu(!showmenu)}
-          icon={faBars}
-        />
+        <div className="n-left-wrapper">
+          <div className="search-mobile">
+            <FontAwesomeIcon
+              onClick={handleSearch}
+              className="icon"
+              icon={faSearch}
+            />
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              className={toggle ? "navbar-input" : "input-active"}
+              type="text"
+            />
+            <div className={toggle ? "display-none" : "search-result"}>
+              {result?.map((data) => (
+                <div
+                  onClick={() => {
+                    navigate("shop/shop-detail/" + data.id);
+                    setSearch("");
+                  }}
+                  className="search-item"
+                  key={data.id}
+                >
+                  <img src={data.image} alt="" />
+                  <p>{data.name}</p>
+                </div>
+              ))}{" "}
+            </div>
+          </div>
+          <FontAwesomeIcon
+            className="faBars"
+            onClick={() => setShowmenu(!showmenu)}
+            icon={faBars}
+          />
+        </div>
       </div>
       <div className="n-right">
         <ul>

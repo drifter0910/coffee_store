@@ -216,6 +216,17 @@ ul {
   .detail-wrap-label h2 {
     text-align: center;
   }
+  .search-mobile {
+    display: flex !important;
+    font-size: 30px;
+    margin-right: 12px;
+  }
+  .search-mobile input {
+    font-size: 20px;
+  }
+  .icon {
+    color: white;
+  }
 }
 
 @media (max-width: 575.98px) {
