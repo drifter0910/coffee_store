@@ -266,11 +266,14 @@
 .search-item {
   display: flex;
   align-items: center;
-  padding: 2px 1rem;
-  border-width: 1rem;
+  padding: 8px 1rem;
+  border-bottom: 0.5px solid black;
   img {
     width: 30%;
     margin-right: 4px;
+  }
+  &:hover {
+    background-color: var(--label);
   }
 }
 .display-none {

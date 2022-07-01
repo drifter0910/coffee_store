@@ -159,6 +159,9 @@ ul {
   .shop-detail-r-category {
     margin-top: 10% !important;
   }
+  .guide-text {
+    padding: 1rem 2rem !important;
+  }
 }
 @media (max-width: 900px) {
   .footer-content-item {

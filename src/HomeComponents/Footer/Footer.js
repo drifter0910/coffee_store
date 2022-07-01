@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="footer-license">
           <div className="row">
             <div className="license-l col-xl-3 col-md-3 col-sm-3">
-              © Qode Interactive
+              © CanhLam
             </div>
             <div className="license-c col-xl-6 col-md-5 col-sm-5">
               <FontAwesomeIcon className="cart" icon={faYoutube} />{" "}
