@@ -1,9 +1,9 @@
 import React from "react";
 import "./Gallery.css";
-import gallery1 from "../../img/gallery1.jpg";
-import gallery2 from "../../img/gallery2.jpg";
-import gallery3 from "../../img/gallery3.jpg";
-import gallery4 from "../../img/gallery4.jpg";
+import gallery1 from "../../../../img/gallery1.jpg";
+import gallery2 from "../../../../img/gallery2.jpg";
+import gallery3 from "../../../../img/gallery3.jpg";
+import gallery4 from "../../../../img/gallery4.jpg";
 import { Link } from "react-router-dom";
 
 const Gallery = () => {

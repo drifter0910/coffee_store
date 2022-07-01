@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Data from "../../Data/ProductData";
+import Data from "../../../../Data/ProductData";
 import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
-import { removeFromCart } from "../../redux/Shopping/shopping-action";
+import { removeFromCart } from "../../../../redux/Shopping/shopping-action";
 const Home = ({ cart, removeFromCart }) => {
   let navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);

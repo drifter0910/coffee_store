@@ -1,12 +1,12 @@
 import React from "react";
 import "./Detail.css";
-import detail1 from "../../img/detail1.png";
-import detail2 from "../../img/detail2.png";
-import detail3 from "../../img/detail3.png";
-import detail4 from "../../img/detail4.png";
-import detail5 from "../../img/detail5.png";
-import detail6 from "../../img/detail6.png";
-import coffee from "../../img/coffee.jpg";
+import detail1 from "../../../../img/detail1.png";
+import detail2 from "../../../../img/detail2.png";
+import detail3 from "../../../../img/detail3.png";
+import detail4 from "../../../../img/detail4.png";
+import detail5 from "../../../../img/detail5.png";
+import detail6 from "../../../../img/detail6.png";
+import coffee from "../../../../img/coffee.jpg";
 
 const Detail = () => {
   return (

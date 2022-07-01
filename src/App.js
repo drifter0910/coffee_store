@@ -1,8 +1,8 @@
-import "./App.css";
-import Navbar from "./HomeComponents/Navbar/Navbar";
-import Footer from "./HomeComponents/Footer/Footer";
 import { Routes, Route, Outlet } from "react-router-dom";
-import Homepage from "./Pages/Homepage/Homepage";
+import "./globalStyles.scss";
+import Navbar from "./Pages/Home/HomeComponents/Navbar/Navbar";
+import Footer from "./Pages/Home/HomeComponents/Footer/Footer";
+import Homepage from "./Pages/Home/Homepage";
 import Blog from "./Pages/Blog/Blog";
 import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";
 import Shop from "./Pages/Shop/Shop";
@@ -12,10 +12,8 @@ import NavMenu from "./Pages/Menu/NavMenu";
 import Reservation from "./Pages/Reservation/Reservation";
 import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Checkout/Checkout";
-
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
 function App() {
   return (
     <Provider store={store}>

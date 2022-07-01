@@ -1,10 +1,10 @@
 import React from "react";
 import "./Guide.scss";
-import guide1 from "../../img/guide1.jpg";
-import guide2 from "../../img/guide2.jpg";
-import guide3 from "../../img/guide3.jpg";
-import guide4 from "../../img/guide4.jpg";
-import guide5 from "../../img/guide5.jpg";
+import guide1 from "../../../../img/guide1.jpg";
+import guide2 from "../../../../img/guide2.jpg";
+import guide3 from "../../../../img/guide3.jpg";
+import guide4 from "../../../../img/guide4.jpg";
+import guide5 from "../../../../img/guide5.jpg";
 
 const Guide = () => {
   return (

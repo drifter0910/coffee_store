@@ -1,10 +1,10 @@
 import React from "react";
 import "./Slider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import slide1 from "../../img/slider1.jpg";
-import slide2 from "../../img/slider2.jpg";
-import slide3 from "../../img/slider3.jpg";
-import slide4 from "../../img/slider4.jpg";
+import slide1 from "../../../../img/slider1.jpg";
+import slide2 from "../../../../img/slider2.jpg";
+import slide3 from "../../../../img/slider3.jpg";
+import slide4 from "../../../../img/slider4.jpg";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
