@@ -77,10 +77,34 @@ ul {
   .sm {
     margin-bottom: 1rem !important;
   }
+  .slider__content {
+    h1 {
+      font-size: 26px !important;
+    }
+    p {
+      display: none;
+    }
+    button {
+      padding: 6px 1rem !important;
+    }
+  }
+  .swiper-button-prev:after,
+  .swiper-rtl,
+  .swiper-button-next:after {
+    font-size: 20px !important;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .gallery {
     padding: 1rem 1rem !important;
+  }
+  .slider__content {
+    h1 {
+      font-size: 42px !important;
+    }
+    button {
+      padding: 10px 1rem !important;
+    }
   }
 }
 @media (max-width: 767.98px) {
