@@ -12,6 +12,22 @@
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    color: white;
+    position: absolute;
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+    }
+    transition: 0.5s;
+    animation: sliderContentAni ease-in 0.5s;
+  }
 }
 
 .swiper-wrapper > img {
@@ -40,4 +56,14 @@
   display: flex;
   z-index: 2;
   overflow: hidden;
+}
+@keyframes sliderContentAni {
+  from {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

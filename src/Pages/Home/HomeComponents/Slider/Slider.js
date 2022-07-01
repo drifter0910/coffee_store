@@ -1,5 +1,5 @@
 import React from "react";
-import "./Slider.css";
+import "./Slider.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import slide1 from "../../../../img/slider1.jpg";
 import slide2 from "../../../../img/slider2.jpg";
@@ -13,6 +13,7 @@ import "swiper/css/autoplay";
 
 // Import Swiper styles
 import "swiper/css";
+import { ButtonTrans } from "../../../../Components/Button.style";
 const Slider = () => {
   return (
     <div className="wrapper-slider">
@@ -30,15 +31,35 @@ const Slider = () => {
       >
         <SwiperSlide>
           <img src={slide1} alt="" />
+          <div className="slider__content">
+            <h1>FRIENDLY ATMOSPHERE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <ButtonTrans>READ MORE</ButtonTrans>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide2} alt="" />
+          <div className="slider__content">
+            <h1>FRIENDLY ATMOSPHERE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <ButtonTrans>READ MORE</ButtonTrans>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide3} alt="" />
+          <div className="slider__content">
+            <h1>SOME TIME FOR YOURSELF</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <ButtonTrans>READ MORE</ButtonTrans>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide4} alt="" />
+          <div className="slider__content">
+            <h1>SPECIAL COFFEE BEANS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <ButtonTrans>READ MORE</ButtonTrans>
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>

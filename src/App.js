@@ -1,7 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 import "./globalStyles.scss";
-import Navbar from "./Pages/Home/HomeComponents/Navbar/Navbar";
-import Footer from "./Pages/Home/HomeComponents/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 import Homepage from "./Pages/Home/Homepage";
 import Blog from "./Pages/Blog/Blog";
 import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";

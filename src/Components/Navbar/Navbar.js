@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Data from "../../../../Data/ProductData";
+import Data from "../../Data/ProductData";
 import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
-import { removeFromCart } from "../../../../redux/Shopping/shopping-action";
+import { removeFromCart } from "../../redux/Shopping/shopping-action";
 const Home = ({ cart, removeFromCart }) => {
   let navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
@@ -34,10 +34,12 @@ const Home = ({ cart, removeFromCart }) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
   useEffect(() => {
-    let count = 0;
-    cart.forEach((item) => {
-      count += item.qty;
-    });
+    // let count = 0;
+    // cart.forEach((item) => {
+    //   count += item.qty;
+    // });
+    // setCartCount(count);
+    let count = cart.length;
     setCartCount(count);
   }, [cart, cartCount]);
 
@@ -141,7 +143,7 @@ const Home = ({ cart, removeFromCart }) => {
         </div>
       </div>
       <div className="n-right">
-        <ul>
+        <ul className="n-right-list">
           <li>
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : undefined)}

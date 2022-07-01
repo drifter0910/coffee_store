@@ -31,8 +31,10 @@
 .navbar a {
   color: white;
 }
-.menu-nav li {
-  color: black;
+.menu-nav {
+  li {
+    color: black;
+  }
 }
 
 .navbar h1 {
@@ -60,6 +62,21 @@
 }
 .n-right > ul > li:hover {
   color: var(--label);
+}
+.n-right-list {
+  position: relative;
+}
+.n-right-list li:nth-child(5) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: -1rem;
+    background-color: var(--text);
+  }
 }
 .link {
   color: white;
