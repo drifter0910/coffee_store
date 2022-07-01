@@ -16,7 +16,6 @@ import { Button, ButtonLabel } from "../../Components/Button.style";
 import { addToCart } from "../../redux/Shopping/shopping-action";
 const ShopDetail = ({ products, addToCart }) => {
   const [quan, setQuan] = useState(1);
-  console.log(products);
   const { productId } = useParams();
   var item = products.find((item) => {
     return item.id == productId;
@@ -68,7 +67,7 @@ const ShopDetail = ({ products, addToCart }) => {
                     >
                       +
                     </div>
-                    <Button onClick={() => addToCart(item.id)}>
+                    <Button onClick={() => addToCart(item.id, quan)}>
                       <ButtonLabel>ADD TO CART</ButtonLabel>
                     </Button>
                   </div>
@@ -116,7 +115,7 @@ const ShopDetail = ({ products, addToCart }) => {
         <div className="shopdetail-related">
           <div className="row">
             {relateddata.map((item) => (
-              <div className="col-xl-3 col-md-3 col-sm-6 ">
+              <div key={item.id} className="col-xl-3 col-md-3 col-sm-6 ">
                 <div className="wrap-related-item">
                   {/* <Link to={"shop-detail/" + item.id}> */}
                   <img src={item.imageUrl} alt="" />
@@ -134,7 +133,7 @@ const ShopDetail = ({ products, addToCart }) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch(addToCart(id)),
+    addToCart: (id, qty) => dispatch(addToCart(id, qty)),
   };
 };
 const mapStateToProps = (state) => {
