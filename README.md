@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-# DEMO : https://drifter0910.github.io/coffee_store/
+# DEMO : https://drifter0910-coffeestore.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
