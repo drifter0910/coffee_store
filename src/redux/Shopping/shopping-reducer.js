@@ -172,7 +172,22 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentItem: action.payload,
       };
-
+    case "SORT_ASCENDING":
+      const prodasc = state.products;
+      const numAscending = [...prodasc].sort((a, b) => a.price - b.price);
+      console.log(numAscending);
+      return {
+        ...state,
+        numAscending,
+      };
+    case "SORT_DESCENDING":
+      const proddes = state.products;
+      const numDescending = [...proddes].sort((a, b) => b.price - a.price);
+      console.log(numDescending);
+      return {
+        ...state,
+        numDescending,
+      };
     default:
       return state;
   }

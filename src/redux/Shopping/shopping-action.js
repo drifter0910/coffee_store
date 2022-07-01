@@ -48,3 +48,14 @@ export const loadCurrentItem = (item) => {
     payload: item,
   };
 };
+
+export const sortDescending = () => {
+  return {
+    type: "SORT_DESCENDING",
+  };
+};
+export const sortAscending = () => {
+  return {
+    type: "SORT_ASCENDING",
+  };
+};

@@ -93,7 +93,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
         <div className="cart-coupon">
           <input className="couponcode" type="text" placeholder="Coupon code" />
           <button className="apply-coupon">APPLY COUPON</button>
-          <button className="update-cart">UPDATE CART</button>
+          {/* <button className="update-cart">UPDATE CART</button> */}
         </div>
         <div className="cart-total">
           <label htmlFor="">CART TOTAL</label>

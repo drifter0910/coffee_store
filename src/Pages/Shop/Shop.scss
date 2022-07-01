@@ -10,7 +10,7 @@
 .shop-list-wrapper {
   padding: 2rem 0 2rem 2rem;
 }
-.shop-list-link{
+.shop-list-link {
   width: 100%;
 }
 .shop-top {
@@ -18,7 +18,6 @@
   height: 30vh;
   background-image: url(../../img/shop.jpg);
   background-size: cover;
-
   z-index: 1;
 }
 .shop-label {
@@ -26,8 +25,8 @@
   color: white;
   display: flex;
   align-items: center;
-  height: 100%;
   justify-content: center;
+  height: 100%;
   width: 100%;
   text-align: center;
   font-size: 3rem;
@@ -77,8 +76,7 @@
 }
 .shop-sort {
   position: relative;
-
-  &:after{
+  &:after {
     content: "";
     position: absolute;
     border: 4px solid;
@@ -99,7 +97,7 @@
   font-weight: bold;
   margin-top: 1rem;
 
-  &:after{
+  &:after {
     position: absolute;
     content: "";
     width: 100%;
@@ -117,7 +115,6 @@
   margin-top: 1rem;
   cursor: pointer;
   width: 100%;
-
 }
 
 .shop-r-item img {
@@ -143,7 +140,7 @@
 }
 .shop-r-tags p {
   width: 100%;
-  &:hover{
+  &:hover {
     color: #c7a17a;
     cursor: pointer;
   }

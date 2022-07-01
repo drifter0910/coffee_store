@@ -4,8 +4,18 @@ import data from "../../Data/ProductData";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import {
+  sortAscending,
+  sortDescending,
+} from "../../redux/Shopping/shopping-action";
 
-const Shop = ({ products }) => {
+const Shop = ({
+  products,
+  sortAscending,
+  ascending,
+  sortDescending,
+  descending,
+}) => {
   // console.log(products);
 
   const totalResult = data.length;
@@ -26,11 +36,68 @@ const Shop = ({ products }) => {
               <div className="wrap-shop-label">
                 <label>Showing all {totalResult} results</label>
                 <label className="shop-sort" htmlFor="">
-                  Sort by latest
+                  {/* Sort by latest */}
+                  <select id="cars">
+                    <option value="default">Choose type</option>
+                    <option value="desc">Decrease price</option>
+                    <option value="incr">Increase price</option>
+                  </select>
+                  {/* <button onClick={() => sortAscending()}>Ascending</button>
+                  <button onClick={() => sortDescending()}>Descending</button> */}
                 </label>
               </div>
               <div className="shop-list">
                 {products.map((item) => (
+                  <div className="shop-item" key={item.id}>
+                    <Link
+                      className="shop-list-link"
+                      to={{ pathname: "shop-detail/" + item.id, params: item }}
+                    >
+                      <img src={item.image} alt="" />
+                      <div className="shop-item-name">{item.name}</div>
+                      <div className="wrap-shop-item">
+                        <div className="shop-item-sale">{item.sale}</div>
+                        <div className="shop-item-price">
+                          <div className="shop-item-price">
+                            ${item.price}.00
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  // </Link>
+                ))}
+              </div>
+              <br />
+              <br />
+              <br />
+              <br />
+              <h1>day la tang gian</h1>
+              <div className="shop-list">
+                {ascending?.map((item) => (
+                  <div className="shop-item" key={item.id}>
+                    <Link
+                      className="shop-list-link"
+                      to={{ pathname: "shop-detail/" + item.id, params: item }}
+                    >
+                      <img src={item.image} alt="" />
+                      <div className="shop-item-name">{item.name}</div>
+                      <div className="wrap-shop-item">
+                        <div className="shop-item-sale">{item.sale}</div>
+                        <div className="shop-item-price">
+                          <div className="shop-item-price">
+                            ${item.price}.00
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  // </Link>
+                ))}
+              </div>
+              <h1>day la giam gian</h1>
+              <div className="shop-list">
+                {descending?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"
@@ -60,8 +127,8 @@ const Shop = ({ products }) => {
               <div className="shop-r-wrap">
                 <div className="shop-r-item">
                   {topdata.map((item) => (
-                    <Link to={"shop-detail/" + item.id}>
-                      <div key={item.id} className="wrap-r-item">
+                    <Link key={item.id} to={"shop-detail/" + item.id}>
+                      <div className="wrap-r-item">
                         <img
                           src={item.imageUrl}
                           alt=""
@@ -97,7 +164,14 @@ const Shop = ({ products }) => {
 const mapStateToProps = (state) => {
   return {
     products: state.shop.products,
+    ascending: state.shop.numAscending,
+    descending: state.shop.numDescending,
   };
 };
-
-export default connect(mapStateToProps)(Shop);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sortAscending: () => dispatch(sortAscending()),
+    sortDescending: () => dispatch(sortDescending()),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);
