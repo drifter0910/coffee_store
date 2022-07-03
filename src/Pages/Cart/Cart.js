@@ -74,7 +74,9 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
                     // onChange={onChangeHandler}
                     onChange={(e) => {
                       console.log(e.target.value);
-                      adjustQty(item.id, e.target.value);
+                      if (e.target.value > 0) {
+                        adjustQty(item.id, e.target.value);
+                      }
                     }}
                   />
                   <p
