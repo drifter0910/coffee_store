@@ -103,7 +103,7 @@ const Home = ({ cart, removeFromCart }) => {
       {menu}
       {menumask}
       <div className="n-left">
-        <h1 className="text-light">
+        <h1 className="logo">
           <Link to="/">Hanabi </Link>
         </h1>
 

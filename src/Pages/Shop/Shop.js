@@ -8,6 +8,9 @@ import {
   sortAscending,
   sortDescending,
 } from "../../redux/Shopping/shopping-action";
+import { useState } from "react";
+import { Select } from "antd";
+import "antd/dist/antd.css";
 
 const Shop = ({
   products,
@@ -16,14 +19,30 @@ const Shop = ({
   sortDescending,
   descending,
 }) => {
-  // console.log(products);
-
+  const { Option } = Select;
+  const [sanpham, setSanpham] = useState(products);
+  const tanggian = () => {
+    const asc = products;
+    const prodAsc = [...asc].sort((a, b) => a.price - b.price);
+    setSanpham(prodAsc);
+  };
+  const giamgian = () => {
+    const desc = products;
+    const prodDesc = [...desc].sort((a, b) => b.price - a.price);
+    setSanpham(prodDesc);
+  };
+  const handleChange = (value) => {
+    if (value === "Asc") {
+      tanggian();
+    } else if (value === "Desc") {
+      giamgian();
+    } else if (value === "Default") {
+      setSanpham(products);
+    }
+  };
   const totalResult = data.length;
   return (
     <div className="shop">
-      {/* <div className="testimg">
-        <img className="pb-3" src={gallery1} alt="" />
-      </div> */}
       <div className="shop-top">
         <label className="shop-label">
           <p>SHOP</p>
@@ -37,67 +56,25 @@ const Shop = ({
                 <label>Showing all {totalResult} results</label>
                 <label className="shop-sort" htmlFor="">
                   {/* Sort by latest */}
-                  <select id="cars">
-                    <option value="default">Choose type</option>
-                    <option value="desc">Decrease price</option>
-                    <option value="incr">Increase price</option>
-                  </select>
-                  {/* <button onClick={() => sortAscending()}>Ascending</button>
-                  <button onClick={() => sortDescending()}>Descending</button> */}
+                  <>
+                    <Select
+                      defaultValue="Default"
+                      style={{
+                        width: 120,
+                      }}
+                      onChange={handleChange}
+                    >
+                      <Option value="Default">Default</Option>
+                      <Option value="Asc">Ascending</Option>
+                      <Option value="Desc">Descending</Option>
+                    </Select>
+                  </>
+                  {/* <button onClick={() => tanggian()}>Ascending</button>
+                  <button onClick={() => giamgian()}>Descending</button> */}
                 </label>
               </div>
               <div className="shop-list">
-                {products.map((item) => (
-                  <div className="shop-item" key={item.id}>
-                    <Link
-                      className="shop-list-link"
-                      to={{ pathname: "shop-detail/" + item.id, params: item }}
-                    >
-                      <img src={item.image} alt="" />
-                      <div className="shop-item-name">{item.name}</div>
-                      <div className="wrap-shop-item">
-                        <div className="shop-item-sale">{item.sale}</div>
-                        <div className="shop-item-price">
-                          <div className="shop-item-price">
-                            ${item.price}.00
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                  // </Link>
-                ))}
-              </div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <h1>day la tang gian</h1>
-              <div className="shop-list">
-                {ascending?.map((item) => (
-                  <div className="shop-item" key={item.id}>
-                    <Link
-                      className="shop-list-link"
-                      to={{ pathname: "shop-detail/" + item.id, params: item }}
-                    >
-                      <img src={item.image} alt="" />
-                      <div className="shop-item-name">{item.name}</div>
-                      <div className="wrap-shop-item">
-                        <div className="shop-item-sale">{item.sale}</div>
-                        <div className="shop-item-price">
-                          <div className="shop-item-price">
-                            ${item.price}.00
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                  // </Link>
-                ))}
-              </div>
-              <h1>day la giam gian</h1>
-              <div className="shop-list">
-                {descending?.map((item) => (
+                {sanpham?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"

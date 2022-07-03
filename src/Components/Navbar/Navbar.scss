@@ -3,6 +3,12 @@
   display: flex;
   justify-content: space-between;
 }
+.logo {
+  color: white;
+  a:hover {
+    color: white !important;
+  }
+}
 .navbar.active {
   display: flex;
   position: fixed;
@@ -13,7 +19,6 @@
   z-index: 100;
   transition: 0.5s;
   animation: navbarAnimation ease-in 0.2s;
-
   li:hover {
     color: black;
   }
@@ -259,6 +264,7 @@
   padding: 0 8px;
   border-color: white;
   border-width: none;
+  color: black;
 }
 
 .search-result {

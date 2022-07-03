@@ -43,13 +43,6 @@ export const minusQty = (itemID) => {
   };
 };
 
-export const loadCurrentItem = (item) => {
-  return {
-    type: "LOAD_CURRENT_ITEM",
-    payload: item,
-  };
-};
-
 export const sortDescending = () => {
   return {
     type: "SORT_DESCENDING",

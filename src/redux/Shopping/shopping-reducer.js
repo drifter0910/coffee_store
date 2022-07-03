@@ -112,7 +112,6 @@ const INITIAL_STATE = {
     },
   ], //{id,tittle,des,price,img},
   cart: [], //{id,tittle,des,price,img, qty},
-  currentItem: null,
 };
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -167,11 +166,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           return item;
         }),
       };
-    case "LOAD_CURRENT_ITEM":
-      return {
-        ...state,
-        currentItem: action.payload,
-      };
+
     case "SORT_ASCENDING":
       const prodasc = state.products;
       const numAscending = [...prodasc].sort((a, b) => a.price - b.price);

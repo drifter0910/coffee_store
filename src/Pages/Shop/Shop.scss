@@ -1,5 +1,11 @@
 .shop {
   width: 100%;
+  a {
+    color: black !important;
+    &:hover {
+      color: var(--label) !important;
+    }
+  }
 }
 .shop .col-xl-9 {
   padding-right: 0;

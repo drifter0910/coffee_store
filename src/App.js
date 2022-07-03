@@ -14,6 +14,7 @@ import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Checkout/Checkout";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+
 function App() {
   return (
     <Provider store={store}>

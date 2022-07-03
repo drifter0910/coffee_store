@@ -34,6 +34,10 @@
 .nav-active {
   color: var(--label);
 }
+h1,
+ul {
+  margin: 0 !important;
+}
 a:hover {
   list-style: none;
   text-decoration: none;
