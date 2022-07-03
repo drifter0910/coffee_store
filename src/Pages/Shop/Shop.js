@@ -10,7 +10,7 @@ import {
 } from "../../redux/Shopping/shopping-action";
 import { useState } from "react";
 import { Select } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 const Shop = ({
   products,
