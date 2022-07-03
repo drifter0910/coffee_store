@@ -27,6 +27,7 @@
 .cart-wrapper img {
   width: 100px;
   margin-right: 1rem;
+  padding: 4px;
 }
 .table-img-wrapper {
   width: 100%;
@@ -52,6 +53,7 @@ table td {
 }
 .bor {
   border: 0.5px solid var(--seperate-darker);
+  text-align: center;
 }
 
 .cart-page-input {

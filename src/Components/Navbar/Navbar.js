@@ -194,7 +194,7 @@ const Home = ({ cart, removeFromCart }) => {
             />
             <div className="cart-counter">{cartCount}</div>
             <div className="navbar-cart">
-              <div>
+              <div className="navbar-cart-item">
                 {cart.map((item) => (
                   <div className="navbar-cart-list">
                     <div className="cart-item-l">
