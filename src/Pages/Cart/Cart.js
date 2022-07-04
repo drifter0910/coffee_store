@@ -16,7 +16,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   useEffect(() => {
     // let items = 0;
     let price = 0;
-    cart.forEach((item) => {
+    cart?.forEach((item) => {
       price += item.qty * item.price;
     });
     setTotalPrice(price);
@@ -41,7 +41,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
             <th>Quantity</th>
             <th>Total</th>
           </tr>
-          {cart.map((item) => (
+          {cart?.map((item) => (
             <tr>
               <td
                 onClick={() => removeFromCart(item.id)}

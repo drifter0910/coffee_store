@@ -1,4 +1,5 @@
 // import * as actionTypes from "./shopping-types";
+// const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 const INITIAL_STATE = {
   products: [
     {
@@ -111,8 +112,9 @@ const INITIAL_STATE = {
       desc: "Vis ei rationibus definiebas, eu qui purto zril laoreet. Ex error omnium interpretaris pro, alia illum ea vim. Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et.",
     },
   ], //{id,tittle,des,price,img},
-  cart: [], //{id,tittle,des,price,img, qty},
+  cart: [],
 };
+
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
