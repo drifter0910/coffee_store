@@ -14,6 +14,9 @@ export const Button = styled.button`
   &:focus {
     outline: none;
   }
+  @media (max-width: 575.98px) {
+    padding: 1rem 1rem !important;
+  }
 `;
 
 export const ButtonLabel = styled.label`

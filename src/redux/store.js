@@ -10,7 +10,6 @@ function saveToLocalStorage(state) {
     console.warn(e);
   }
 }
-
 // load string from localStarage and convert into an Object
 // invalid output must be undefined
 function loadFromLocalStorage() {

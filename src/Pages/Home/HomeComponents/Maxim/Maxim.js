@@ -1,5 +1,5 @@
 import React from "react";
-import "./Maxim.css";
+import "./Maxim.scss";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -15,7 +15,7 @@ const Maxim = () => {
         <Swiper
           pagination={true}
           autoplay={{ delay: 3000 }}
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>

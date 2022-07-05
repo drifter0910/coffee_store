@@ -34,11 +34,6 @@ const Home = ({ cart, removeFromCart }) => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
   useEffect(() => {
-    // let count = 0;
-    // cart.forEach((item) => {
-    //   count += item.qty;
-    // });
-    // setCartCount(count);
     let count = cart.length;
     setCartCount(count);
   }, [cart, cartCount]);
@@ -185,7 +180,6 @@ const Home = ({ cart, removeFromCart }) => {
               Shop
             </NavLink>
           </li>
-
           <div className="wrapper-navbar-cart">
             <FontAwesomeIcon
               onClick={() => navigate("cart")}
