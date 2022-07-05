@@ -15,7 +15,7 @@ const Maxim = () => {
         <Swiper
           pagination={true}
           autoplay={{ delay: 3000 }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
           <SwiperSlide>

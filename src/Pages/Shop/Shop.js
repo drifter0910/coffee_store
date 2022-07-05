@@ -78,7 +78,7 @@ const Shop = ({
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"
-                      to={{ pathname: "shop-detail/" + item.id, params: item }}
+                      to={"shop-detail/" + item.id}
                     >
                       <img src={item.image} alt="" />
                       <div className="shop-item-name">{item.name}</div>

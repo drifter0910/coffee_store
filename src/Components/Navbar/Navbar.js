@@ -47,7 +47,6 @@ const Home = ({ cart, removeFromCart }) => {
       }
     });
     setResult(result);
-    console.log(result);
   }, [search]);
 
   const handleSearch = () => {
