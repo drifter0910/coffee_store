@@ -4,21 +4,11 @@ import data from "../../Data/ProductData";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {
-  sortAscending,
-  sortDescending,
-} from "../../redux/Shopping/shopping-action";
 import { useState } from "react";
 import { Select } from "antd";
 import "antd/dist/antd.min.css";
 
-const Shop = ({
-  products,
-  sortAscending,
-  ascending,
-  sortDescending,
-  descending,
-}) => {
+const Shop = ({ products }) => {
   const { Option } = Select;
   const [sanpham, setSanpham] = useState(products);
   const tanggian = () => {
@@ -69,8 +59,6 @@ const Shop = ({
                       <Option value="Desc">Descending</Option>
                     </Select>
                   </>
-                  {/* <button onClick={() => tanggian()}>Ascending</button>
-                  <button onClick={() => giamgian()}>Descending</button> */}
                 </label>
               </div>
               <div className="shop-list">
@@ -92,7 +80,6 @@ const Shop = ({
                       </div>
                     </Link>
                   </div>
-                  // </Link>
                 ))}
               </div>
             </div>
@@ -141,14 +128,7 @@ const Shop = ({
 const mapStateToProps = (state) => {
   return {
     products: state.shop.products,
-    ascending: state.shop.numAscending,
-    descending: state.shop.numDescending,
   };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    sortAscending: () => dispatch(sortAscending()),
-    sortDescending: () => dispatch(sortDescending()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+
+export default connect(mapStateToProps)(Shop);

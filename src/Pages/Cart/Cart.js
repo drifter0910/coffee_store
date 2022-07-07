@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.scss";
 import { connect } from "react-redux";
-import { useEffect } from "react";
 import {
   removeFromCart,
   adjustQty,
@@ -9,18 +8,27 @@ import {
   minusQty,
 } from "../../redux/Shopping/shopping-action";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [totalItems, setTotalItems] = useState(0);
-  useEffect(() => {
-    // let items = 0;
+  // const [totalPrice, setTotalPrice] = useState(0);
+  // useEffect(() => {
+  //   // let items = 0;
+  //   console.log("tinh lai");
+  //   let price = 0;
+  //   cart?.forEach((item) => {
+  //     price += item.qty * item.price;
+  //   });
+  //   setTotalPrice(price);
+  // }, [cart, totalPrice, setTotalPrice]);
+  const total = useMemo(() => {
+    console.log("tinh lai");
     let price = 0;
     cart?.forEach((item) => {
       price += item.qty * item.price;
     });
-    setTotalPrice(price);
-  }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
+    return price;
+  }, [cart]);
 
   return (
     <div className="cart-page">
@@ -42,7 +50,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
             <th>Total</th>
           </tr>
           {cart?.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td
                 onClick={() => removeFromCart(item.id)}
                 className="table-delete"
@@ -100,7 +108,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
         <div className="cart-total">
           <label htmlFor="">CART TOTAL</label>
           <div className=" row cart-total-table">
-            <div className="col-xl-4">SUBTOTAL: ${totalPrice}</div>
+            <div className="col-xl-4">SUBTOTAL: ${total}</div>
             <div
               style={{
                 display: "flex",
@@ -111,7 +119,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
             >
               SHIPPING: Free shipping
             </div>
-            <div className="col-xl-4">TOTAL: ${totalPrice}</div>
+            <div className="col-xl-4">TOTAL: ${total}</div>
           </div>
         </div>
         <div className="cart-shipping-cal">

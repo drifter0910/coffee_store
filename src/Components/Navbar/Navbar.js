@@ -189,7 +189,7 @@ const Home = ({ cart, removeFromCart }) => {
             <div className="navbar-cart">
               <div className="navbar-cart-item">
                 {cart.map((item) => (
-                  <div className="navbar-cart-list">
+                  <div key={item.id} className="navbar-cart-list">
                     <div className="cart-item-l">
                       <Link to={"shop/shop-detail/" + item.id}>
                         <img src={item.image} alt="" />

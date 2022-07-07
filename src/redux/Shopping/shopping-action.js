@@ -42,14 +42,3 @@ export const minusQty = (itemID) => {
     },
   };
 };
-
-export const sortDescending = () => {
-  return {
-    type: "SORT_DESCENDING",
-  };
-};
-export const sortAscending = () => {
-  return {
-    type: "SORT_ASCENDING",
-  };
-};

@@ -8,7 +8,6 @@ const Reservation = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_h4iojru",

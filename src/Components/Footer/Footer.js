@@ -65,15 +65,13 @@ const Footer = () => {
               <div className="space-footer w-100"></div>
             </div>
             <div className="footer-content2">
-              <div className="footer-content-item1">
-                EXPAND YOUR MIND, CHANGE EVERYTHING
-              </div>
+              <div className="footer-content-item1">PLACE TO GET LOST</div>
               <div className="footer-content-time2">5.06.2022</div>
               <div className="space-footer w-100"></div>
             </div>
             <div className="footer-content2">
               <div className="footer-content-item1">
-                EXPAND YOUR MIND, CHANGE EVERYTHING
+                ELEVATE YOUR EXPECTATIONS
               </div>
               <div className="footer-content-time2">5.06.2022</div>
               <div className="space-footer w-100"></div>
