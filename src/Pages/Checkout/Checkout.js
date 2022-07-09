@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import cart1 from "../../img/product1.jpg";
 import "./Checkout.css";
 import { connect } from "react-redux";
 const Checkout = ({ cart }) => {

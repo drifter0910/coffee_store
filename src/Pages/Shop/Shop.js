@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Shop.scss";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { useState } from "react";
 import { Select } from "antd";
 import "antd/dist/antd.min.css";
 

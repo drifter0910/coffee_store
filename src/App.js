@@ -12,7 +12,7 @@ import NavMenu from "./Pages/Menu/NavMenu";
 import Reservation from "./Pages/Reservation/Reservation";
 import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Checkout/Checkout";
-import { connect, Provider } from "react-redux";
+import { connect } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
 import { fetchData } from "./redux/Shopping/shopping-action";

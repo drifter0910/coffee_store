@@ -33,7 +33,6 @@ const Home = ({ cart, removeFromCart }) => {
       });
   };
   useEffect(() => {
-    // let items = 0;
     let price = 0;
     cart.forEach((item) => {
       price += item.qty * item.price;

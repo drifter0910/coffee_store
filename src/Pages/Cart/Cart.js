@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Cart.scss";
 import { connect } from "react-redux";
 import {
@@ -22,14 +22,13 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   //   setTotalPrice(price);`
   // }, [cart, totalPrice, setTotalPrice]);
   const total = useMemo(() => {
-    console.log("tinh lai");
     let price = 0;
     cart?.forEach((item) => {
       price += item.qty * item.price;
     });
     return price;
   }, [cart]);
-
+  console.log(cart);
   return (
     <div className="cart-page">
       <div className="cart-page-top">
