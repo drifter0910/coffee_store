@@ -19,7 +19,7 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
   //   cart?.forEach((item) => {
   //     price += item.qty * item.price;
   //   });
-  //   setTotalPrice(price);
+  //   setTotalPrice(price);`
   // }, [cart, totalPrice, setTotalPrice]);
   const total = useMemo(() => {
     console.log("tinh lai");
@@ -79,7 +79,6 @@ const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
                     id="qty"
                     name="qty"
                     value={item.qty}
-                    // onChange={onChangeHandler}
                     onChange={(e) => {
                       console.log(e.target.value);
                       if (e.target.value > 0) {

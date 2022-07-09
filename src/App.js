@@ -12,50 +12,64 @@ import NavMenu from "./Pages/Menu/NavMenu";
 import Reservation from "./Pages/Reservation/Reservation";
 import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Checkout/Checkout";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-
-function App() {
+import { connect, Provider } from "react-redux";
+import axios from "axios";
+import { useEffect } from "react";
+import { fetchData } from "./redux/Shopping/shopping-action";
+function App({ fetchData }) {
+  const getDataFromApi = async () => {
+    await axios
+      .get("https://62c8f047d9ead251e8b5bcfb.mockapi.io/products")
+      .then((response) => {
+        fetchData(response.data);
+        console.log("chayne");
+      });
+  };
+  useEffect(() => {
+    getDataFromApi();
+  }, []);
   return (
-    <Provider store={store}>
-      <div className="App">
-        <div className="grid wide">
-          <ScrollToTop>
-            <Routes>
+    <div className="App">
+      <div className="grid wide">
+        <ScrollToTop>
+          <Routes>
+            <Route
+              element={
+                <>
+                  <Navbar />
+                  <Outlet />
+                </>
+              }
+            >
+              <Route path="/" element={<Homepage />} />
+              <Route path="coffee-croissant" element={<CoffeeCroissant />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="shop" element={<Shop />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route path="reservation" element={<Reservation />} />
+              <Route path="shop-detail" element={<ShopDetail />} />
               <Route
-                element={
-                  <>
-                    <Navbar />
-                    <Outlet />
-                  </>
-                }
-              >
-                <Route path="/" element={<Homepage />} />
-                <Route path="coffee-croissant" element={<CoffeeCroissant />} />
-                <Route path="blog" element={<Blog />} />
-                <Route path="shop" element={<Shop />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="checkout" element={<Checkout />} />
-                <Route path="reservation" element={<Reservation />} />
-                <Route path="shop-detail" element={<ShopDetail />} />
-                <Route
-                  path="shop/shop-detail/:productId"
-                  element={<ShopDetail />}
-                />
-                <Route
-                  path="cart/shop-detail/:productId"
-                  element={<ShopDetail />}
-                />
-                <Route path="navmenu" element={<NavMenu />} />
-              </Route>
-              {/* No navbar section */}
-            </Routes>
-            <Footer />
-          </ScrollToTop>
-        </div>
+                path="shop/shop-detail/:productId"
+                element={<ShopDetail />}
+              />
+              <Route
+                path="cart/shop-detail/:productId"
+                element={<ShopDetail />}
+              />
+              <Route path="navmenu" element={<NavMenu />} />
+            </Route>
+            {/* No navbar section */}
+          </Routes>
+          <Footer />
+        </ScrollToTop>
       </div>
-    </Provider>
+    </div>
   );
 }
-
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchData: (payload) => dispatch(fetchData(payload)),
+  };
+};
+export default connect(null, mapDispatchToProps)(App);

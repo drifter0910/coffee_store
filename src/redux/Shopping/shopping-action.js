@@ -1,4 +1,10 @@
 // import * as actionTypes from "./shopping-types";
+export const fetchData = (payload) => {
+  return {
+    type: "FETCH_DATA",
+    payload,
+  };
+};
 
 export const addToCart = (itemID, value) => {
   return {

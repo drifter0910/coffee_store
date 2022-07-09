@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Shop.scss";
-import data from "../../Data/ProductData";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -10,16 +9,15 @@ import "antd/dist/antd.min.css";
 
 const Shop = ({ products }) => {
   const { Option } = Select;
-  const [sanpham, setSanpham] = useState(products);
+
+  const name = () => {
+    fetch("?orderBy=name");
+  };
   const tanggian = () => {
-    const asc = products;
-    const prodAsc = [...asc].sort((a, b) => a.price - b.price);
-    setSanpham(prodAsc);
+    fetch("?sortBy=price&order=asc");
   };
   const giamgian = () => {
-    const desc = products;
-    const prodDesc = [...desc].sort((a, b) => b.price - a.price);
-    setSanpham(prodDesc);
+    fetch("?sortBy=price&order=desc");
   };
   const handleChange = (value) => {
     if (value === "Asc") {
@@ -27,10 +25,10 @@ const Shop = ({ products }) => {
     } else if (value === "Desc") {
       giamgian();
     } else if (value === "Default") {
-      setSanpham(products);
+      name();
     }
   };
-  const totalResult = data.length;
+  const totalResult = products.length;
   return (
     <div className="shop">
       <div className="shop-top">
@@ -62,7 +60,7 @@ const Shop = ({ products }) => {
                 </label>
               </div>
               <div className="shop-list">
-                {sanpham?.map((item) => (
+                {products?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"

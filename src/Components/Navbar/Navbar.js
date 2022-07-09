@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Data from "../../Data/ProductData";
 import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,8 +10,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
+import axios from "axios";
 const Home = ({ cart, removeFromCart }) => {
   let navigate = useNavigate();
+  const [data, setData] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [showmenu, setShowmenu] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -24,7 +25,13 @@ const Home = ({ cart, removeFromCart }) => {
   let activeStyle = {
     color: "#84878c",
   };
-
+  const fetch = async (params) => {
+    await axios
+      .get(`https://62c8f047d9ead251e8b5bcfb.mockapi.io/products`)
+      .then((response) => {
+        setData(response.data);
+      });
+  };
   useEffect(() => {
     // let items = 0;
     let price = 0;
@@ -39,7 +46,8 @@ const Home = ({ cart, removeFromCart }) => {
   }, [cart, cartCount]);
 
   useEffect(() => {
-    const result = Data.filter((value) => {
+    fetch();
+    const result = data.filter((value) => {
       if (search === "") {
         return null;
       } else if (value.name.toLowerCase().includes(search.toLowerCase())) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Detail.css";
 import detail1 from "../../../../img/detail1.png";
 import detail2 from "../../../../img/detail2.png";

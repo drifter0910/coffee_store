@@ -14,12 +14,11 @@ import "./ShopDetail.scss";
 import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
 import { addToCart } from "../../redux/Shopping/shopping-action";
+
 const ShopDetail = ({ products, addToCart }) => {
   const [quan, setQuan] = useState(1);
   const { productId } = useParams();
-  var item = products.find((item) => {
-    return item.id == productId;
-  });
+  const itemID = productId - 1;
   return (
     <div className="wrapper-shopdetail">
       <div className="shop-top">
@@ -33,14 +32,20 @@ const ShopDetail = ({ products, addToCart }) => {
             <div className="wrap-col">
               <div className="col-xl-5 col-lg-6">
                 <div className="shopdetail-l-img">
-                  <img src={item.image} alt="" />
+                  <img src={products[itemID].image} alt="" />
                 </div>
               </div>
               <div className="col-xl-7 col-lg-6">
                 <div className="shopdetail-r-wrapper">
-                  <div className="shopdetail-r-name">{item.name}</div>
-                  <div className="shopdetail-r-price">${item.price}</div>
-                  <div className="shopdetail-r-desc">{item.desc}</div>
+                  <div className="shopdetail-r-name">
+                    {products[itemID].name}
+                  </div>
+                  <div className="shopdetail-r-price">
+                    ${products[itemID].price}
+                  </div>
+                  <div className="shopdetail-r-desc">
+                    {products[itemID].desc}
+                  </div>
                   <div className="shop-detail-r-quan">
                     <div
                       className="shop-detail-r-dec"
@@ -67,18 +72,18 @@ const ShopDetail = ({ products, addToCart }) => {
                     >
                       +
                     </div>
-                    <Button onClick={() => addToCart(item.id, quan)}>
+                    <Button onClick={() => addToCart(itemID, quan)}>
                       <ButtonLabel>ADD TO CART</ButtonLabel>
                     </Button>
                   </div>
                 </div>
                 <div className="shop-detail-r-category">
                   <p>CATEGORY: </p>
-                  {item.category}
+                  {products[itemID].category}
                 </div>
                 <div className="shop-detail-r-tag">
                   <p>TAG: </p>
-                  {item.tag}
+                  {products[itemID].tag}
                 </div>
                 <div className="shop-detail-r-social">
                   <p>SHARE: </p>
