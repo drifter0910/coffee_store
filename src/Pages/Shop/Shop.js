@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Shop.scss";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
@@ -9,14 +9,34 @@ import "antd/dist/antd.min.css";
 const Shop = ({ products }) => {
   const { Option } = Select;
 
-  const name = () => {
-    fetch("?orderBy=name");
-  };
+  // const name = () => {
+  //   fetch("?orderBy=name");
+  // };
+  // const tanggian = () => {
+  //   fetch("?sortBy=price&order=asc");
+  // };
+  // const giamgian = () => {
+  //   fetch("?sortBy=price&order=desc");
+  // };
+  // const handleChange = (value) => {
+  //   if (value === "Asc") {
+  //     tanggian();
+  //   } else if (value === "Desc") {
+  //     giamgian();
+  //   } else if (value === "Default") {
+  //     name();
+  //   }
+  // };
+  const [sanpham, setSanpham] = useState(products);
   const tanggian = () => {
-    fetch("?sortBy=price&order=asc");
+    const asc = products;
+    const prodAsc = [...asc].sort((a, b) => a.price - b.price);
+    setSanpham(prodAsc);
   };
   const giamgian = () => {
-    fetch("?sortBy=price&order=desc");
+    const desc = products;
+    const prodDesc = [...desc].sort((a, b) => b.price - a.price);
+    setSanpham(prodDesc);
   };
   const handleChange = (value) => {
     if (value === "Asc") {
@@ -24,7 +44,7 @@ const Shop = ({ products }) => {
     } else if (value === "Desc") {
       giamgian();
     } else if (value === "Default") {
-      name();
+      setSanpham(products);
     }
   };
   const totalResult = products.length;
@@ -59,7 +79,7 @@ const Shop = ({ products }) => {
                 </label>
               </div>
               <div className="shop-list">
-                {products?.map((item) => (
+                {sanpham?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"
