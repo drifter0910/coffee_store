@@ -11,9 +11,9 @@ import {
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
 import axios from "axios";
-const Home = ({ cart, removeFromCart }) => {
+const Home = ({ products, cart, removeFromCart }) => {
   let navigate = useNavigate();
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [showmenu, setShowmenu] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -25,13 +25,13 @@ const Home = ({ cart, removeFromCart }) => {
   let activeStyle = {
     color: "#84878c",
   };
-  const fetch = async (params) => {
-    await axios
-      .get(`https://62c8f047d9ead251e8b5bcfb.mockapi.io/products`)
-      .then((response) => {
-        setData(response.data);
-      });
-  };
+  // const fetch = async (params) => {
+  //   await axios
+  //     .get(`https://62c8f047d9ead251e8b5bcfb.mockapi.io/products`)
+  //     .then((response) => {
+  //       setData(response.data);
+  //     });
+  // };
   useEffect(() => {
     let price = 0;
     cart.forEach((item) => {
@@ -45,8 +45,7 @@ const Home = ({ cart, removeFromCart }) => {
   }, [cart, cartCount]);
 
   useEffect(() => {
-    fetch();
-    const result = data.filter((value) => {
+    const result = products.filter((value) => {
       if (search === "") {
         return null;
       } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
@@ -117,6 +116,8 @@ const Home = ({ cart, removeFromCart }) => {
             />
             <input
               onChange={(e) => setSearch(e.target.value)}
+              value={search}
+              // onChange={handleSearchChange}
               className={toggle ? "navbar-input" : "input-active"}
               type="text"
             />
@@ -267,6 +268,7 @@ const Home = ({ cart, removeFromCart }) => {
 const mapStateToProps = (state) => {
   return {
     cart: state.shop.cart,
+    products: state.shop.products,
   };
 };
 const mapDispatchToProps = (dispatch) => {

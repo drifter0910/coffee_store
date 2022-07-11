@@ -1,53 +1,104 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Shop.scss";
 import topdata from "../../Data/TopProduct";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Select } from "antd";
 import "antd/dist/antd.min.css";
+import ReactPaginate from "react-paginate";
+import axios from "axios";
 
 const Shop = ({ products }) => {
+  const [pageState, setPageState] = useState({
+    p: 1,
+    l: 12,
+    order: "",
+  });
+  const totalResult = products.length;
+  const [item, setItem] = useState([]);
+  const [totalPage, setTotalPage] = useState();
   const { Option } = Select;
-
-  // const name = () => {
-  //   fetch("?orderBy=name");
-  // };
-  // const tanggian = () => {
-  //   fetch("?sortBy=price&order=asc");
-  // };
-  // const giamgian = () => {
-  //   fetch("?sortBy=price&order=desc");
-  // };
-  // const handleChange = (value) => {
-  //   if (value === "Asc") {
-  //     tanggian();
-  //   } else if (value === "Desc") {
-  //     giamgian();
-  //   } else if (value === "Default") {
-  //     name();
-  //   }
-  // };
-  const [sanpham, setSanpham] = useState(products);
-  const tanggian = () => {
-    const asc = products;
-    const prodAsc = [...asc].sort((a, b) => a.price - b.price);
-    setSanpham(prodAsc);
-  };
-  const giamgian = () => {
-    const desc = products;
-    const prodDesc = [...desc].sort((a, b) => b.price - a.price);
-    setSanpham(prodDesc);
-  };
   const handleChange = (value) => {
     if (value === "Asc") {
-      tanggian();
+      setPageState((prevState) => {
+        return {
+          ...prevState,
+          order: "asc",
+          l: 12,
+        };
+      });
+      fetchDataFilter("asc");
+      const thuxem = Math.ceil(products.length / 12);
+
+      setTotalPage(Math.ceil(thuxem));
     } else if (value === "Desc") {
-      giamgian();
+      setPageState((prevState) => {
+        return {
+          ...prevState,
+          order: "asc",
+          l: 12,
+        };
+      });
+      fetchDataFilter("desc");
+      const thuxem = Math.ceil(products.length / 12);
+      setTotalPage(Math.ceil(thuxem));
     } else if (value === "Default") {
-      setSanpham(products);
+      fetchData(1);
+    } else if (value === "All") {
+      setPageState((prevState) => {
+        return {
+          ...prevState,
+          l: products.length,
+          p: 1,
+        };
+      });
+      setItem(products);
+      setTotalPage(Math.floor(products.length / pageState.l));
+      console.log(Math.floor(products.length / pageState.l));
     }
   };
-  const totalResult = products.length;
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(
+        `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=1&l=${pageState.l}`
+      );
+      const data = await res.data;
+      let totalPageCurrent = Math.ceil(products.length / pageState.l);
+      setTotalPage(totalPageCurrent);
+      setItem(data);
+    };
+    fetchData();
+  }, []);
+  const fetchDataFilter = async (params) => {
+    await axios
+      .get(
+        `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=${pageState.p}&l=12&sortBy=price&order=${params}`
+      )
+      .then((response) => {
+        setItem(response.data);
+      });
+  };
+  const fetchData = async (params) => {
+    const res = await axios.get(
+      `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=${params}&l=12`
+    );
+    const data = await res.data;
+    setItem(data);
+  };
+
+  const handlePageClick = async (data) => {
+    let currentPage = data.selected + 1;
+    console.log("day la current page", currentPage);
+    await fetchData(currentPage);
+    setPageState((prevState) => {
+      return {
+        ...prevState,
+        p: currentPage,
+      };
+    });
+  };
+  console.log(pageState);
+
   return (
     <div className="shop">
       <div className="shop-top">
@@ -74,12 +125,13 @@ const Shop = ({ products }) => {
                       <Option value="Default">Default</Option>
                       <Option value="Asc">Ascending</Option>
                       <Option value="Desc">Descending</Option>
+                      <Option value="All">All Product</Option>
                     </Select>
                   </>
                 </label>
               </div>
               <div className="shop-list">
-                {sanpham?.map((item) => (
+                {item?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"
@@ -99,6 +151,23 @@ const Shop = ({ products }) => {
                   </div>
                 ))}
               </div>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel="Next"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={totalPage}
+                previousLabel="Previous"
+                renderOnZeroPageCount={null}
+                containerClassName={"pagination"}
+                pageClassName={"page-item"}
+                pageLinkClassName={"page-link"}
+                previousClassName={"page-item"}
+                previousLinkClassName={"page-link"}
+                nextClassName={"page-item"}
+                nextLinkClassName={"page-link"}
+                activeClassName={"active"}
+              />
             </div>
           </div>
           <div className="col-xl-3 ">

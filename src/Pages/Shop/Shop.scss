@@ -6,6 +6,16 @@
       color: var(--label) !important;
     }
   }
+  .pagination {
+    justify-content: flex-end;
+    margin-right: 3rem !important;
+  }
+  .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: var(--label);
+    border-color: var(--label);
+  }
 }
 .shop .col-xl-9 {
   padding-right: 0;

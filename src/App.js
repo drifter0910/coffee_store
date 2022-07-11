@@ -22,7 +22,7 @@ function App({ fetchData }) {
       .get("https://62c8f047d9ead251e8b5bcfb.mockapi.io/products")
       .then((response) => {
         fetchData(response.data);
-        console.log("chayne");
+        console.log("Fetch data success!");
       });
   };
   useEffect(() => {
