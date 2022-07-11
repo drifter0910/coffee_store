@@ -54,7 +54,6 @@ const Shop = ({ products }) => {
       });
       setItem(products);
       setTotalPage(Math.floor(products.length / pageState.l));
-      console.log(Math.floor(products.length / pageState.l));
     }
   };
   useEffect(() => {
@@ -88,7 +87,6 @@ const Shop = ({ products }) => {
 
   const handlePageClick = async (data) => {
     let currentPage = data.selected + 1;
-    console.log("day la current page", currentPage);
     await fetchData(currentPage);
     setPageState((prevState) => {
       return {
@@ -97,7 +95,6 @@ const Shop = ({ products }) => {
       };
     });
   };
-  console.log(pageState);
 
   return (
     <div className="shop">
@@ -140,7 +137,9 @@ const Shop = ({ products }) => {
                       <img src={item.image} alt="" />
                       <div className="shop-item-name">{item.name}</div>
                       <div className="wrap-shop-item">
-                        <div className="shop-item-sale">{item.sale}</div>
+                        <div className="shop-item-sale">
+                          {item.sale !== 0 ? item.sale : null}
+                        </div>
                         <div className="shop-item-price">
                           <div className="shop-item-price">
                             ${item.price}.00
