@@ -7,45 +7,50 @@ import { Select } from "antd";
 import "antd/dist/antd.min.css";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
-
+import queryString from "query-string";
 const Shop = ({ products }) => {
   const [pageState, setPageState] = useState({
     p: 1,
     l: 12,
+    sortBy: "",
     order: "",
   });
+  const stringified = queryString.stringify(pageState);
   const totalResult = products.length;
   const [item, setItem] = useState([]);
   const [totalPage, setTotalPage] = useState();
   const { Option } = Select;
   const handleChange = (value) => {
+    // ASCENDING
     if (value === "Asc") {
       setPageState((prevState) => {
         return {
           ...prevState,
           order: "asc",
+          sortBy: "price",
           l: 12,
         };
       });
-      fetchDataFilter("asc");
-      const thuxem = Math.ceil(products.length / 12);
-
-      setTotalPage(Math.ceil(thuxem));
-    } else if (value === "Desc") {
+    }
+    // DESCENDING
+    else if (value === "Desc") {
       setPageState((prevState) => {
         return {
           ...prevState,
-          order: "asc",
+          order: "desc",
+          sortBy: "price",
           l: 12,
         };
       });
-      fetchDataFilter("desc");
-      const thuxem = Math.ceil(products.length / 12);
-      setTotalPage(Math.ceil(thuxem));
-    } else if (value === "Default") {
-      fetchData(1);
-      const thuxem = Math.ceil(products.length / 12);
-      setTotalPage(Math.ceil(thuxem));
+    }
+    // DEFAULT
+    else if (value === "Default") {
+      setPageState({
+        p: 1,
+        l: 12,
+        sortBy: "",
+        order: "",
+      });
     } else if (value === "All") {
       setPageState((prevState) => {
         return {
@@ -54,14 +59,12 @@ const Shop = ({ products }) => {
           p: 1,
         };
       });
-      setItem(products);
-      setTotalPage(Math.floor(products.length / pageState.l));
     }
   };
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=1&l=${pageState.l}`
+        `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?${stringified}`
       );
       const data = await res.data;
       let totalPageCurrent = Math.ceil(products.length / pageState.l);
@@ -69,27 +72,10 @@ const Shop = ({ products }) => {
       setItem(data);
     };
     fetchData();
-  }, []);
-  const fetchDataFilter = async (params) => {
-    await axios
-      .get(
-        `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=${pageState.p}&l=12&sortBy=price&order=${params}`
-      )
-      .then((response) => {
-        setItem(response.data);
-      });
-  };
-  const fetchData = async (params) => {
-    const res = await axios.get(
-      `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?p=${params}&l=12`
-    );
-    const data = await res.data;
-    setItem(data);
-  };
+  }, [pageState]);
 
   const handlePageClick = async (data) => {
     let currentPage = data.selected + 1;
-    await fetchData(currentPage);
     setPageState((prevState) => {
       return {
         ...prevState,
@@ -97,7 +83,6 @@ const Shop = ({ products }) => {
       };
     });
   };
-
   return (
     <div className="shop">
       <div className="shop-top">
