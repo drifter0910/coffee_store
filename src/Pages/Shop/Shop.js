@@ -44,6 +44,8 @@ const Shop = ({ products }) => {
       setTotalPage(Math.ceil(thuxem));
     } else if (value === "Default") {
       fetchData(1);
+      const thuxem = Math.ceil(products.length / 12);
+      setTotalPage(Math.ceil(thuxem));
     } else if (value === "All") {
       setPageState((prevState) => {
         return {
