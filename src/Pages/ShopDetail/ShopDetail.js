@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import user from "../../img/user.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
@@ -21,6 +21,7 @@ const ShopDetail = ({ products, addToCart }) => {
   var item = products.find((item) => {
     return item.id === productId;
   });
+  const navigate = useNavigate();
   return (
     <div className="wrapper-shopdetail">
       <div className="shop-top">
@@ -113,10 +114,11 @@ const ShopDetail = ({ products, addToCart }) => {
           <div className="row">
             {relateddata.map((item) => (
               <div key={item.id} className="col-xl-3 col-md-3 col-sm-6 ">
-                <div className="wrap-related-item">
-                  {/* <Link to={"shop-detail/" + item.id}> */}
+                <div
+                  className="wrap-related-item"
+                  onClick={() => navigate("/shop/shop-detail/" + item.id)}
+                >
                   <img src={item.imageUrl} alt="" />
-                  {/* </Link> */}
                   <label htmlFor="">{item.name}</label>
                   <p>${item.price}</p>
                 </div>

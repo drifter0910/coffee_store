@@ -154,7 +154,11 @@
 }
 .shop-r-tags {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 3rem;
 }
+
 .shop-r-tags p {
   width: 100%;
   &:hover {

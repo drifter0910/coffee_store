@@ -9,7 +9,7 @@ import ReactPaginate from "react-paginate";
 import axios from "axios";
 import queryString from "query-string";
 import { Navigate } from "react-router-dom";
-const Category = ({ products, category }) => {
+const Category = ({ products }) => {
   const { categoryType } = useParams();
   const [pageState, setPageState] = useState({
     p: 1,
@@ -94,6 +94,7 @@ const Category = ({ products, category }) => {
   ];
 
   const handleCategory = (item) => {
+    console.log(item);
     setPageState((prevState) => {
       return {
         p: 1,
@@ -132,13 +133,13 @@ const Category = ({ products, category }) => {
                   </Select>
                 </label>
               </div>
-              <h1>day la shop category</h1>
-              <div className="shop-list">
+              <h1 style={{ textAlign: "center" }}>Category: {categoryType}</h1>
+              <div className="shop-list mt-4">
                 {item?.map((item) => (
                   <div className="shop-item" key={item.id}>
                     <Link
                       className="shop-list-link"
-                      to={"shop-detail/" + item.id}
+                      to={`/shop/shop-detail/${item.id}`}
                     >
                       <img src={item.image} alt="" />
                       <div className="shop-item-name">{item.name}</div>
@@ -182,9 +183,8 @@ const Category = ({ products, category }) => {
               <div className="shop-r-wrap">
                 <div className="shop-r-item">
                   {topdata.map((item) => (
-                    // <Navigate to={"shop/shop-detail/" + item.id}>
                     <div
-                      onClick={() => navigate("shop/shop-detail/" + item.id)}
+                      onClick={() => navigate("/shop/shop-detail/" + item.id)}
                       className="wrap-r-item"
                     >
                       <img
@@ -201,19 +201,17 @@ const Category = ({ products, category }) => {
                         </label>
                       </div>
                     </div>
-                    // </Navigate>
                   ))}
                 </div>
               </div>
               <label className="shop-r-label">CATEGORY</label>
               <div className="shop-r-tags">
-                {uniqueCategory.map((item, index) => (
-                  <p
-                    key={index}
-                    onClick={() => navigate("/shop/category/" + item)}
-                  >
-                    {item}
-                  </p>
+                {uniqueCategory.map((category, index) => (
+                  <Link to={"/shop/category/" + item}>
+                    <p key={index} onClick={() => handleCategory(item)}>
+                      {category}
+                    </p>
+                  </Link>
                 ))}
               </div>
             </div>

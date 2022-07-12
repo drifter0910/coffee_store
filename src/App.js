@@ -18,6 +18,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { fetchData } from "./redux/Shopping/shopping-action";
 import Category from "./Pages/Category/Category";
+import Error from "./Pages/Error";
 function App({ fetchData }) {
   const getDataFromApi = async () => {
     await axios
@@ -40,6 +41,7 @@ function App({ fetchData }) {
                 <>
                   <Navbar />
                   <Outlet />
+                  <Footer />
                 </>
               }
             >
@@ -67,8 +69,8 @@ function App({ fetchData }) {
             </Route>
             {/* No navbar section */}
           </Routes>
-          <Footer />
         </ScrollToTop>
+        <Error path="*" />
       </div>
     </div>
   );
