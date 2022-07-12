@@ -77,10 +77,6 @@ const ShopDetail = ({ products, addToCart }) => {
                   <p>CATEGORY: </p>
                   {item.category}
                 </div>
-                <div className="shop-detail-r-tag">
-                  <p>TAG: </p>
-                  {item.tag}
-                </div>
                 <div className="shop-detail-r-social">
                   <p>SHARE: </p>
                   <div className="shop-detail-r-social-list">

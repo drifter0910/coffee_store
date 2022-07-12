@@ -1,6 +1,5 @@
 // import * as actionTypes from "./shopping-types";
 const INITIAL_STATE = {
-  // products: [...data], //{id,tittle,des,price,img},
   products: [],
   cart: [],
 };

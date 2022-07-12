@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
-import "./Shop.scss";
+import "../Shop/Shop.scss";
 import topdata from "../../Data/TopProduct";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { Select } from "antd";
 import "antd/dist/antd.min.css";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
 import queryString from "query-string";
-const Shop = ({ products }) => {
+import { Navigate } from "react-router-dom";
+const Category = ({ products, category }) => {
+  const { categoryType } = useParams();
   const [pageState, setPageState] = useState({
     p: 1,
     l: 12,
     sortBy: "",
     order: "",
-    category: "",
+    category: categoryType,
   });
   const stringified = queryString.stringify(pageState);
   const [item, setItem] = useState([]);
   const totalResult = item.length;
   const [totalPage, setTotalPage] = useState();
   const { Option } = Select;
+  let navigate = useNavigate();
   useEffect(() => {
+    console.log(categoryType);
+
     const fetchData = async () => {
       const res = await axios.get(
         `https://62c8f047d9ead251e8b5bcfb.mockapi.io/products?${stringified}`
       );
       const data = await res.data;
-      let totalPageCurrent = Math.ceil(products.length / pageState.l);
+      let totalPageCurrent = Math.floor(products.length / pageState.l);
       setTotalPage(totalPageCurrent);
       setItem(data);
     };
@@ -67,14 +72,6 @@ const Shop = ({ products }) => {
           order: "",
         };
       });
-    } else if (value === "All") {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          l: products.length,
-          p: 1,
-        };
-      });
     }
   };
 
@@ -100,7 +97,7 @@ const Shop = ({ products }) => {
     setPageState((prevState) => {
       return {
         p: 1,
-        l: products.length + 1,
+        l: 12,
         sortBy: "",
         order: "",
         category: item,
@@ -122,22 +119,20 @@ const Shop = ({ products }) => {
                 <label>Showing {totalResult} results</label>
                 <label className="shop-sort" htmlFor="">
                   {/* Sort by latest */}
-                  <>
-                    <Select
-                      defaultValue="Default"
-                      style={{
-                        width: 120,
-                      }}
-                      onChange={handleChange}
-                    >
-                      <Option value="Default">Default</Option>
-                      <Option value="Asc">Ascending</Option>
-                      <Option value="Desc">Descending</Option>
-                      <Option value="All">All Product</Option>
-                    </Select>
-                  </>
+                  <Select
+                    defaultValue="Default"
+                    style={{
+                      width: 120,
+                    }}
+                    onChange={handleChange}
+                  >
+                    <Option value="Default">Default</Option>
+                    <Option value="Asc">Ascending</Option>
+                    <Option value="Desc">Descending</Option>
+                  </Select>
                 </label>
               </div>
+              <h1>day la shop category</h1>
               <div className="shop-list">
                 {item?.map((item) => (
                   <div className="shop-item" key={item.id}>
@@ -187,35 +182,38 @@ const Shop = ({ products }) => {
               <div className="shop-r-wrap">
                 <div className="shop-r-item">
                   {topdata.map((item) => (
-                    <Link key={item.id} to={"shop-detail/" + item.id}>
-                      <div className="wrap-r-item">
-                        <img
-                          src={item.imageUrl}
-                          alt=""
-                          className="shop-r-item-img"
-                        />
-                        <div className="shop-r-item-des">
-                          <label htmlFor="" className="shop-r-item-name">
-                            {item.name}
-                          </label>
-                          <label htmlFor="" className="shop-r-item-price">
-                            ${item.price}
-                          </label>
-                        </div>
+                    // <Navigate to={"shop/shop-detail/" + item.id}>
+                    <div
+                      onClick={() => navigate("shop/shop-detail/" + item.id)}
+                      className="wrap-r-item"
+                    >
+                      <img
+                        src={item.imageUrl}
+                        alt=""
+                        className="shop-r-item-img"
+                      />
+                      <div className="shop-r-item-des">
+                        <label htmlFor="" className="shop-r-item-name">
+                          {item.name}
+                        </label>
+                        <label htmlFor="" className="shop-r-item-price">
+                          ${item.price}
+                        </label>
                       </div>
-                    </Link>
+                    </div>
+                    // </Navigate>
                   ))}
                 </div>
               </div>
               <label className="shop-r-label">CATEGORY</label>
               <div className="shop-r-tags">
                 {uniqueCategory.map((item, index) => (
-                  // <p key={index} onClick={() => handleCategory(item)}>
-                  //   {item}
-                  // </p>
-                  <Link key={index} to={"category/" + item} category={item}>
-                    <p>{item}</p>
-                  </Link>
+                  <p
+                    key={index}
+                    onClick={() => navigate("/shop/category/" + item)}
+                  >
+                    {item}
+                  </p>
                 ))}
               </div>
             </div>
@@ -231,4 +229,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Shop);
+export default connect(mapStateToProps)(Category);

@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet } from "react-router-dom";
+import { Breadcrumb } from "antd";
 import "./globalStyles.scss";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -16,6 +17,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
 import { fetchData } from "./redux/Shopping/shopping-action";
+import Category from "./Pages/Category/Category";
 function App({ fetchData }) {
   const getDataFromApi = async () => {
     await axios
@@ -45,6 +47,10 @@ function App({ fetchData }) {
               <Route path="coffee-croissant" element={<CoffeeCroissant />} />
               <Route path="blog" element={<Blog />} />
               <Route path="shop" element={<Shop />} />
+              <Route
+                path="shop/category/:categoryType"
+                element={<Category />}
+              />
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
               <Route path="reservation" element={<Reservation />} />
