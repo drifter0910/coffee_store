@@ -8,7 +8,6 @@ import "antd/dist/antd.min.css";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
 import queryString from "query-string";
-import { Navigate } from "react-router-dom";
 const Category = ({ products }) => {
   const { categoryType } = useParams();
   const [pageState, setPageState] = useState({
