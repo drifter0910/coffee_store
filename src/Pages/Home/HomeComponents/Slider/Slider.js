@@ -1,5 +1,5 @@
 import React from "react";
-import "./Slider.scss";
+import "./Slider.scoped.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import slide1 from "../../../../img/slider1.jpg";
 import slide2 from "../../../../img/slider2.jpg";

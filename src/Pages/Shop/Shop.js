@@ -95,18 +95,6 @@ const Shop = ({ products }) => {
       })
     ),
   ];
-
-  const handleCategory = (item) => {
-    setPageState((prevState) => {
-      return {
-        p: 1,
-        l: products.length + 1,
-        sortBy: "",
-        order: "",
-        category: item,
-      };
-    });
-  };
   return (
     <div className="shop">
       <div className="shop-top">

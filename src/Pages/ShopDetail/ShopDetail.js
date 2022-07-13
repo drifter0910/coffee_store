@@ -14,7 +14,7 @@ import "./ShopDetail.scss";
 import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
 import { addToCart } from "../../redux/Shopping/shopping-action";
-
+import ShopDetailSwiper from "./ShopDetailSwiper";
 const ShopDetail = ({ products, addToCart }) => {
   const [quan, setQuan] = useState(1);
   const { productId } = useParams();
@@ -22,6 +22,7 @@ const ShopDetail = ({ products, addToCart }) => {
     return item.id === productId;
   });
   const navigate = useNavigate();
+  const slideLength = item.imageslide.length;
   return (
     <div className="wrapper-shopdetail">
       <div className="shop-top">
@@ -35,7 +36,13 @@ const ShopDetail = ({ products, addToCart }) => {
             <div className="wrap-col">
               <div className="col-xl-5 col-lg-6">
                 <div className="shopdetail-l-img">
-                  <img src={item.image} alt="" />
+                  {slideLength !== 0 ? (
+                    <div className="slider-wrapper-detail">
+                      <ShopDetailSwiper images={item.imageslide} />
+                    </div>
+                  ) : (
+                    <img src={item.image} alt="" />
+                  )}
                 </div>
               </div>
               <div className="col-xl-7 col-lg-6">
@@ -141,4 +148,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopDetail);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShopDetail);
