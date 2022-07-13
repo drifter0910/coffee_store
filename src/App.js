@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import { fetchData } from "./redux/Shopping/shopping-action";
 import Category from "./Pages/Category/Category";
 import Error from "./Pages/Error";
+import SearchResult from "./Pages/SearchResult/SearchResult";
 function App({ fetchData }) {
   const getDataFromApi = async () => {
     await axios
@@ -66,6 +67,7 @@ function App({ fetchData }) {
                 element={<ShopDetail />}
               />
               <Route path="navmenu" element={<NavMenu />} />
+              <Route path="search-result" element={<SearchResult />} />
             </Route>
 
             {/* No navbar section */}

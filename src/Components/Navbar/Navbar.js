@@ -98,6 +98,15 @@ const Home = ({ products, cart, removeFromCart }) => {
   };
 
   window.addEventListener("scroll", changeBackGround);
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      navigate({
+        pathname: "search-result",
+        search: `?name=${search}`,
+      });
+      setSearch("");
+    }
+  };
   return (
     <div className={navbar ? "navbar active" : "navbar"} id="Navbar">
       {menu}
@@ -117,7 +126,7 @@ const Home = ({ products, cart, removeFromCart }) => {
             <input
               onChange={(e) => setSearch(e.target.value)}
               value={search}
-              // onChange={handleSearchChange}
+              onKeyPress={handleKeyPress}
               className={toggle ? "navbar-input" : "input-active"}
               type="text"
             />
@@ -239,6 +248,7 @@ const Home = ({ products, cart, removeFromCart }) => {
             />
             <input
               onChange={(e) => setSearch(e.target.value)}
+              onKeyPress={handleKeyPress}
               value={search}
               className={toggle ? "navbar-input" : "input-active"}
               type="text"
