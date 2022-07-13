@@ -59,3 +59,14 @@
 .swiper-pagination {
   bottom: 0px !important;
 }
+
+.ant-carousel .slick-dots {
+  li {
+    background-color: black !important;
+  }
+}
+.ant-carousel .slick-dots li.slick-active {
+  * {
+    background-color: var(--label) !important;
+  }
+}
