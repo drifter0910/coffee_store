@@ -10,8 +10,6 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
-// Import Swiper styles
 import "swiper/css";
 import { ButtonTrans } from "../../../../Components/Button.style";
 const Slider = () => {
@@ -28,7 +26,9 @@ const Slider = () => {
           clickable: true,
         }}
         loop={true}
-        autoplay={{ delay: 3000 }}
+        autoplay={{
+          delay: 3000,
+        }}
       >
         <SwiperSlide>
           <img src={slide1} alt="" />

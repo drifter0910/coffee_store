@@ -26,7 +26,6 @@
 }
 .footer-content-item {
   display: table-cell;
-  /* white-space: nowrap; */
   padding-right: 1px;
   font-family: "Merriweather", serif;
   font-weight: 700;
