@@ -93,7 +93,6 @@ const Category = ({ products }) => {
   ];
 
   const handleCategory = (item) => {
-    console.log(item);
     setPageState((prevState) => {
       return {
         p: 1,
@@ -132,7 +131,6 @@ const Category = ({ products }) => {
                   </Select>
                 </label>
               </div>
-              <h1 style={{ textAlign: "center" }}>Category: {categoryType}</h1>
               <div className="shop-list mt-4">
                 {item?.map((item) => (
                   <div className="shop-item" key={item.id}>
@@ -206,8 +204,8 @@ const Category = ({ products }) => {
               <label className="shop-r-label">CATEGORY</label>
               <div className="shop-r-tags">
                 {uniqueCategory.map((category, index) => (
-                  <Link to={"/shop/category/" + item}>
-                    <p key={index} onClick={() => handleCategory(item)}>
+                  <Link to={"/shop/category/" + category}>
+                    <p key={index} onClick={() => handleCategory(category)}>
                       {category}
                     </p>
                   </Link>

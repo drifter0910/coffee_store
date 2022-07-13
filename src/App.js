@@ -67,7 +67,9 @@ function App({ fetchData }) {
               />
               <Route path="navmenu" element={<NavMenu />} />
             </Route>
+
             {/* No navbar section */}
+            <Route path="*" element={<Error />} />
           </Routes>
         </ScrollToTop>
       </div>
