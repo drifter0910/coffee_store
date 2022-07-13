@@ -25,13 +25,6 @@ const Home = ({ products, cart, removeFromCart }) => {
   let activeStyle = {
     color: "#84878c",
   };
-  // const fetch = async (params) => {
-  //   await axios
-  //     .get(`https://62c8f047d9ead251e8b5bcfb.mockapi.io/products`)
-  //     .then((response) => {
-  //       setData(response.data);
-  //     });
-  // };
   useEffect(() => {
     let price = 0;
     cart.forEach((item) => {

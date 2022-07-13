@@ -268,8 +268,16 @@
   border-color: white;
   border-width: none;
   color: black;
+  animation: navbar linear 0.3s;
 }
-
+@keyframes navbar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .search-result {
   display: block;
   position: absolute;

@@ -22,17 +22,18 @@ const Slider = () => {
         slidesPerView={1}
         className="slider"
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
-        effect={"fade"}
+        effect="cards"
         navigation={true}
         pagination={{
           clickable: true,
         }}
+        loop={true}
         autoplay={{ delay: 3000 }}
       >
         <SwiperSlide>
           <img src={slide1} alt="" />
           <div className="slider__content">
-            <h1>FRIENDLY ATMOSPHERE</h1>
+            <h2>FRIENDLY ATMOSPHERE</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ButtonTrans>READ MORE</ButtonTrans>
           </div>
@@ -40,7 +41,7 @@ const Slider = () => {
         <SwiperSlide>
           <img src={slide2} alt="" />
           <div className="slider__content">
-            <h1>FRIENDLY ATMOSPHERE</h1>
+            <h2>FRIENDLY ATMOSPHERE</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ButtonTrans>READ MORE</ButtonTrans>
           </div>
@@ -48,7 +49,7 @@ const Slider = () => {
         <SwiperSlide>
           <img src={slide3} alt="" />
           <div className="slider__content">
-            <h1>SOME TIME FOR YOURSELF</h1>
+            <h2>SOME TIME FOR YOURSELF</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ButtonTrans>READ MORE</ButtonTrans>
           </div>
@@ -56,7 +57,7 @@ const Slider = () => {
         <SwiperSlide>
           <img src={slide4} alt="" />
           <div className="slider__content">
-            <h1>SPECIAL COFFEE BEANS</h1>
+            <h2>SPECIAL COFFEE BEANS</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ButtonTrans>READ MORE</ButtonTrans>
           </div>
