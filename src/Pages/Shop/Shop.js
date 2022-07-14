@@ -167,7 +167,6 @@ const Shop = ({ products }) => {
                 activeClassName={"active"}
                 onClick={window.scrollTo({
                   top: 0,
-                  behavior: "smooth",
                 })}
               />
             </div>
