@@ -18,37 +18,37 @@ const Footer = () => {
               <h1>OPENING HOURS</h1>
               <div className="footer-content">
                 <div className="footer-content-item">MONDAY</div>
-                <div className="space-footer"></div>
-                <div className="footer-content-time1">CLOSED</div>
+                <div className="space-footer" />
+                <div className="footer-content-time">9:00 - 22:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">TUESDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">9:00 - 22:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">WEDNESDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">9:00 - 22:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">THURSDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">9:00 - 22:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">FRIDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">9:00 - 1:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">SARTUDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">12:00 - 01:00</div>
               </div>
               <div className="footer-content">
                 <div className="footer-content-item">SUNDAY</div>
-                <div className="space-footer"></div>
+                <div className="space-footer" />
                 <div className="footer-content-time">9:00 - 22:00</div>
               </div>
             </div>
@@ -62,19 +62,19 @@ const Footer = () => {
                 EXPAND YOUR MIND, CHANGE EVERYTHING
               </div>
               <div className="footer-content-time2">5.06.2022</div>
-              <div className="space-footer w-100"></div>
+              <div className="space-footer w-100" />
             </div>
             <div className="footer-content2">
               <div className="footer-content-item1">PLACE TO GET LOST</div>
               <div className="footer-content-time2">5.06.2022</div>
-              <div className="space-footer w-100"></div>
+              <div className="space-footer w-100" />
             </div>
             <div className="footer-content2">
               <div className="footer-content-item1">
                 ELEVATE YOUR EXPECTATIONS
               </div>
               <div className="footer-content-time2">5.06.2022</div>
-              <div className="space-footer w-100"></div>
+              <div className="space-footer w-100" />
             </div>
           </div>
           <div className="col-xl-3 lg-3 col-md-6">
@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="col-xl-3 lg-3 col-md-6">
             <div className="wrapper-footer p-4">
               <h1>OTHER LOCATION</h1>
-              <div className="footer-cotent2">HANABI COFFEE SHOP</div>
+              <div className="footer-cotent2">BARISTA COFFEE SHOP</div>
               <div className="footer-address">Loc Son Phu Loc</div>
               <div className="footer-address">Thua Thien Hue</div>
             </div>

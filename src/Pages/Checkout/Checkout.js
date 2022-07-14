@@ -93,7 +93,7 @@ const Checkout = ({ cart }) => {
               <div className="yourorder-child-title">
                 <div className="row w-100">
                   <p className="col-xl-4 col-md-4">Shipping</p>
-                  <p className="col-xl-4 col-md-4"></p>
+                  <p className="col-xl-4 col-md-4" />
 
                   <p className="col-xl-4 col-md-4">Free Shipping</p>
                 </div>
@@ -101,7 +101,7 @@ const Checkout = ({ cart }) => {
               <div className="yourorder-child-title">
                 <div className="row w-100">
                   <p className="col-xl-4 col-md-4 font-weight-bold">Total</p>
-                  <p className="col-xl-4 col-md-4"></p>
+                  <p className="col-xl-4 col-md-4" />
                   <p className="col-xl-4 col-md-4 font-weight-bold">
                     ${totalPrice}
                   </p>
@@ -153,7 +153,6 @@ const Checkout = ({ cart }) => {
               </select>
             </div>
             <label htmlFor="">CARD VERIFICATION NUMBER *</label>
-
             <input type="text" />
           </div>
         </div>

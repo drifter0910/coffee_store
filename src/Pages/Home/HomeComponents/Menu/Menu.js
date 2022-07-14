@@ -5,7 +5,7 @@ const Menu = () => {
     <div className="menu" id="Menu">
       <div className="wrapper-menu-label">
         <label>What Happens Here</label>
-        <h2>explore our menu.</h2>
+        <h2>explore our menu</h2>
         <div className="seperate-detail" />
       </div>
       <div className="menu-price">

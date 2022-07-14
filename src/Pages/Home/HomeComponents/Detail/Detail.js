@@ -13,8 +13,8 @@ const Detail = () => {
     <div className="detail">
       <div className="detail-wrap-label">
         <label>What Happens Here</label>
-        <h2>coffee build your base.</h2>
-        <div className="seperate-detail"></div>
+        <h2>coffee build your base</h2>
+        <div className="seperate-detail" />
       </div>
       <div className="detail-body row">
         <div className="wrap-l">
