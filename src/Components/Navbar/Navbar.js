@@ -112,7 +112,6 @@ const Home = ({ products, cart, removeFromCart }) => {
             alt=""
           />{" "}
         </Link>
-
         <div className="n-left-wrapper">
           <div className="search-mobile">
             <FontAwesomeIcon
