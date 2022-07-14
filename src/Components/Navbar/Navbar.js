@@ -11,6 +11,8 @@ import {
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
 import barista from "../../img/barista.png";
+import baristadark from "../../img/baristadark.png";
+
 const Home = ({ products, cart, removeFromCart }) => {
   let navigate = useNavigate();
   // const [data, setData] = useState([]);
@@ -23,7 +25,7 @@ const Home = ({ products, cart, removeFromCart }) => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState();
   let activeStyle = {
-    color: "#84878c",
+    color: "#c7a17a",
   };
   useEffect(() => {
     let price = 0;
@@ -99,14 +101,14 @@ const Home = ({ products, cart, removeFromCart }) => {
     }
   };
   return (
-    <div className={navbar ? "navbar active" : "navbar"} id="Navbar">
+    <div className={navbar ? "navbar active" : "navbar "} id="Navbar">
       {menu}
       {menumask}
       <div className="n-left">
         <Link to="/">
           <img
             style={{ width: "120px", padding: "8px 0" }}
-            src={barista}
+            src={navbar ? baristadark : barista}
             alt=""
           />{" "}
         </Link>

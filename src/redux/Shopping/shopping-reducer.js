@@ -23,10 +23,13 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         cart: inCart
           ? state.cart.map((cartItem) =>
               item.id === action.payload.id
-                ? { ...cartItem, qty: cartItem.qty + action.payload.qty }
+                ? {
+                    ...cartItem,
+                    qty: cartItem.qty + parseInt(action.payload.qty),
+                  }
                 : cartItem
             )
-          : [...state.cart, { ...item, qty: action.payload.qty }],
+          : [...state.cart, { ...item, qty: parseInt(action.payload.qty) }],
       };
 
     case "REMOVE_FROM_CART":

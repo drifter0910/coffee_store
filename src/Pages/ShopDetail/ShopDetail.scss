@@ -67,11 +67,13 @@
 }
 
 .shop-detail-r-input {
-  width: 4rem;
+  width: 20%;
+  min-width: 4rem;
   background-color: #eae7de;
   border: none;
   padding: 2px 1rem;
   text-align: center;
+  -webkit-appearance: none;
 }
 .shop-detail-r-addcart {
   font-size: 1rem;

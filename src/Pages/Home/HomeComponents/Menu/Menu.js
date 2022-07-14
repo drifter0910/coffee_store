@@ -6,7 +6,7 @@ const Menu = () => {
       <div className="wrapper-menu-label">
         <label>What Happens Here</label>
         <h2>explore our menu.</h2>
-        <div className="seperate-detail"></div>
+        <div className="seperate-detail" />
       </div>
       <div className="menu-price">
         <div className="row">
@@ -14,7 +14,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">caffe latte</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$3.50</h3>
                 </div>
@@ -28,7 +28,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">CAFFE MOCHA</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$2.95</h3>
                 </div>
@@ -42,7 +42,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">WHITE CHOCO MOCHA</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$3.00</h3>
                 </div>
@@ -56,7 +56,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">CAFFE AMERICANO</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$5.25</h3>
                 </div>
@@ -70,7 +70,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">CAPPUCCINO</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$4.25</h3>
                 </div>
@@ -86,7 +86,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">ICED CARAMEL LATTE</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$2.25</h3>
                 </div>
@@ -100,7 +100,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">CAFFE MOCHA</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$6.95</h3>
                 </div>
@@ -114,7 +114,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">ESPRESSO MACCHIATO</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$2.95</h3>
                 </div>
@@ -128,7 +128,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">ICED CAFFE MOCHA</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$2.65</h3>
                 </div>
@@ -142,7 +142,7 @@ const Menu = () => {
             <div className="wrap-item">
               <div className="wrap-item-top">
                 <div className="menu-name">ICED SMOKED LATTE</div>
-                <div className="space"></div>
+                <div className="space" />
                 <div className="menu-price">
                   <h3>$4.95</h3>
                 </div>

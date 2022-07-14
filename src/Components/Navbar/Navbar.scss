@@ -10,19 +10,34 @@
   }
 }
 .navbar.active {
+  max-width: 1200px;
   display: flex;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: var(--label);
+  background-color: white;
   z-index: 100;
+  box-shadow: 0 1px #888888;
+
   transition: 0.5s;
   animation: navbarAnimation ease-in 0.2s;
   li:hover {
     color: black;
   }
+  a {
+    color: black;
+  }
+  img {
+    color: black;
+  }
+  svg {
+    color: black;
+  }
+  input {
+    border: 1px solid black;
+  }
 }
+
 @keyframes navbarAnimation {
   from {
     opacity: 0;

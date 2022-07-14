@@ -23,6 +23,13 @@ const ShopDetail = ({ products, addToCart }) => {
   });
   const navigate = useNavigate();
   const slideLength = item.imageslide.length;
+  const handleAddCart = () => {
+    if (quan > 0) {
+      addToCart(productId, quan);
+    } else {
+      alert("Please input at least 1 quantity");
+    }
+  };
   return (
     <div className="wrapper-shopdetail">
       <div className="shop-top">
@@ -55,7 +62,7 @@ const ShopDetail = ({ products, addToCart }) => {
                       className="shop-detail-r-dec"
                       onClick={() => {
                         if (quan > 1) {
-                          setQuan(quan - 1);
+                          setQuan(parseInt(quan) - 1);
                         }
                       }}
                     >
@@ -63,7 +70,7 @@ const ShopDetail = ({ products, addToCart }) => {
                     </div>
                     <input
                       className="shop-detail-r-input"
-                      type="text"
+                      type="number"
                       value={quan}
                       onChange={(e) => setQuan(e.target.value)}
                     />
@@ -71,12 +78,12 @@ const ShopDetail = ({ products, addToCart }) => {
                     <div
                       className="shop-detail-r-in"
                       onClick={() => {
-                        setQuan(quan + 1);
+                        setQuan(parseInt(quan) + 1);
                       }}
                     >
                       +
                     </div>
-                    <Button onClick={() => addToCart(productId, quan)}>
+                    <Button onClick={handleAddCart}>
                       <ButtonLabel>ADD TO CART</ButtonLabel>
                     </Button>
                   </div>

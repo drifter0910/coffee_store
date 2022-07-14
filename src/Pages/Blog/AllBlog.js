@@ -107,34 +107,22 @@ const AllBlog = () => {
             <div className="r-wrapper-category">
               <div className="r-category">CATEGORIES</div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Competition(3)</p>
-                </a>
+                <p>Competition(3)</p>
               </div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Delicious(2)</p>
-                </a>
+                <p>Delicious(2)</p>
               </div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Enjoyment(12)</p>
-                </a>
+                <p>Enjoyment(12)</p>
               </div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Life(4)</p>
-                </a>
+                <p>Life(4)</p>
               </div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Lifestyle(7)</p>
-                </a>
+                <p>Lifestyle(7)</p>
               </div>
               <div className="r-category-item">
-                <a href="">
-                  <p>Media(5)</p>
-                </a>
+                <p>Media(5)</p>
               </div>
             </div>
             <div className="r-wrapper-followus">
