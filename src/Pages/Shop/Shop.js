@@ -165,6 +165,10 @@ const Shop = ({ products }) => {
                 nextClassName={"page-item"}
                 nextLinkClassName={"page-link"}
                 activeClassName={"active"}
+                onClick={window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })}
               />
             </div>
           </div>
@@ -198,9 +202,6 @@ const Shop = ({ products }) => {
               <label className="shop-r-label">CATEGORY</label>
               <div className="shop-r-tags">
                 {uniqueCategory.map((item, index) => (
-                  // <p key={index} onClick={() => handleCategory(item)}>
-                  //   {item}
-                  // </p>
                   <Link key={index} to={"category/" + item} category={item}>
                     <p>{item}</p>
                   </Link>

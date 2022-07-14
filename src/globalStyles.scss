@@ -4,6 +4,7 @@
   --seperate: #f4f4f4;
   --seperate-darker: #eae7de;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -336,11 +337,13 @@ ul {
     }
   }
   .product1-author {
-    display: block !important;
+    margin-top: 3rem !important;
   }
-  .author-r {
-    margin-top: 1rem;
+  .author-l {
+    text-align: center;
+    margin: 0 !important;
   }
+
   .wrapper-slider svg {
     bottom: 0px !important;
     height: 20px !important;
@@ -363,6 +366,12 @@ ul {
     padding-right: 0 !important;
     padding-left: 1rem !important;
   }
+  .shopdetail-reviews::after {
+    top: 100% !important;
+  }
+  .shop-r-tags {
+    gap: 0 4rem !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -371,5 +380,8 @@ ul {
   }
   .shop-list-wrapper {
     padding: 1rem -4px 1rem 1rem !important;
+  }
+  .shop-r-item img {
+    width: 50% !important;
   }
 }

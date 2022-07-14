@@ -10,6 +10,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import relateddata from "../../Data/TopProduct";
+import { Row, Col } from "antd";
 import "./ShopDetail.scss";
 // import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
@@ -125,9 +126,9 @@ const ShopDetail = ({ products, addToCart }) => {
           </div>
         </div>
         <div className="shopdetail-related">
-          <div className="row">
+          <Row gutter={[16, 16]}>
             {relateddata.map((item) => (
-              <div key={item.id} className="col-xl-3 col-md-3 col-sm-6 ">
+              <Col xl={6} md={6} sm={6} xs={12}>
                 <div
                   className="wrap-related-item"
                   onClick={() => navigate("/shop/shop-detail/" + item.id)}
@@ -136,9 +137,9 @@ const ShopDetail = ({ products, addToCart }) => {
                   <label htmlFor="">{item.name}</label>
                   <p>${item.price}</p>
                 </div>
-              </div>
+              </Col>
             ))}
-          </div>
+          </Row>
         </div>
       </div>
     </div>
