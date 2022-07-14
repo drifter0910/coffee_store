@@ -247,8 +247,8 @@ ul {
     top: 0;
     right: 0;
     width: 60%;
-    height: 100%;
-    z-index: 4;
+    height: 100vh;
+    z-index: 1000;
   }
   .detail-wrap-label h2 {
     text-align: center;
@@ -340,6 +340,14 @@ ul {
   }
   .author-r {
     margin-top: 1rem;
+  }
+  .wrapper-slider svg {
+    bottom: 0px !important;
+    height: 20px !important;
+  }
+  .detail-body.row {
+    padding: 0;
+    margin-left: 0;
   }
 }
 

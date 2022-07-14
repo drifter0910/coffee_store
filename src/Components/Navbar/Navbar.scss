@@ -14,6 +14,8 @@
   display: flex;
   position: fixed;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   background-color: white;
   z-index: 100;
@@ -55,6 +57,8 @@
   li {
     color: black;
   }
+  z-index: 1000 !important;
+  height: 100vh !important;
 }
 
 .navbar h1 {
