@@ -11,16 +11,22 @@ const Gallery = () => {
     <div className="gallery">
       <div className="row">
         <div className="col-lg-6 col-md-6 col-sm-6 sm">
-          <Link to={"coffee-croissant"}>
+          <Link to={"blog/coffee-croissant"}>
             <img src={gallery1} alt="" />
           </Link>
         </div>
         <div className="col-lg-3 col-md-3 col-sm-3 sm ">
-          <img src={gallery2} alt="" />
+          <Link to={"blog/bakery"}>
+            <img src={gallery2} alt="" />
+          </Link>
         </div>
         <div className="col-lg-3 col-md-3 col-sm-3 sm keke">
-          <img className="pb-3" src={gallery3} alt="" />
-          <img className="pt-2" src={gallery4} alt="" />
+          <Link to={"blog/chilling"}>
+            <img className="pb-3" src={gallery3} alt="" />
+          </Link>
+          <Link to={"blog/barista"}>
+            <img className="pt-2" src={gallery4} alt="" />
+          </Link>
         </div>
       </div>
     </div>

@@ -7,8 +7,6 @@ import "swiper/css/thumbs";
 import "./swiperproduct.scoped.css";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 export default function App(props) {
-  //   const { images } = props;
-  //   console.log(images);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>

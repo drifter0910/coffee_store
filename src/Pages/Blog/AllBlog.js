@@ -1,8 +1,5 @@
 import React from "react";
 import "./Blog.scss";
-import blog1 from "../../img/blog1.jpg";
-import blog2 from "../../img/blog2.jpg";
-import author1 from "../../img/author1.png";
 import about1 from "../../img/about1.png";
 import recent1 from "../../img/recent1.jpg";
 import recent2 from "../../img/recent2.jpg";
@@ -14,10 +11,10 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
-
-const Blog = (props) => {
-  const { data } = props;
+import { Link, useNavigate } from "react-router-dom";
+import blogData from "../../Data/BlogData";
+const AllBlog = () => {
+  const navigate = useNavigate();
   return (
     <div className="wrapper">
       <div className="product1-blog">
@@ -28,52 +25,38 @@ const Blog = (props) => {
       <div className="product1">
         <div className="row">
           <div className="product1 col-xl-9">
-            <img
-              className="product1-img "
-              src={require(`../../img/${data.image}`)}
-              alt=""
-            />
-            <div className="product-detail">
-              <h2>{data.author}</h2>
-              <p>{data.post}</p>
-              <p>{data.desc}</p>
-
-              <br />
-              <div className="quote">
-                <p>{data.quote}</p>
-              </div>
-              <p>{data.desc}</p>
-
-              <div className="wrapper-blog-img">
-                <img className="blog-img" src={blog1} alt="" />
-                <img className="blog-img" src={blog2} alt="" />
-              </div>
-              <p>{data.desc}</p>
-
-              <div className="product1-social">
-                <p>Share: </p>
-                <FontAwesomeIcon className="cart" icon={faYoutube} />{" "}
-                <FontAwesomeIcon className="cart" icon={faFacebook} />{" "}
-                <FontAwesomeIcon className="cart" icon={faTwitter} />{" "}
-                <FontAwesomeIcon className="cart" icon={faInstagram} />{" "}
-              </div>
-            </div>
-            <div className="product1-author">
-              <div className="author-l">
-                <img src={author1} alt="" />
-              </div>
-              <div className="author-r">
-                <div className="author-name">{data.author}</div>
-                <div className="autour-cmt">
-                  <p>
-                    Lorem ipsum dolor sit amet, te ridens gloriatur temporibus
-                    qui, per enim veritus probatus ad. Quo eu etiam exerci
-                    dolore, usu ne omnes referrentur. Ex eam diceret denique, ut
-                    legimus similique vix detraxit
-                  </p>
+            {blogData.map((data) => (
+              <div key={data.title} style={{ marginBottom: "2rem" }}>
+                <img
+                  className="product1-img hoverScale"
+                  src={require(`../../img/${data.image}`)}
+                  alt=""
+                  onClick={() => navigate(`/blog/${data.slug}`)}
+                />
+                <div className="product-detail">
+                  <h2
+                    className="hoverPointer"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "30px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => navigate(`/blog/${data.slug}`)}
+                  >
+                    {data.title}
+                  </h2>
+                  <p>{data.post}</p>
+                  <p>{data.desc}</p>
+                  <div className="product1-social">
+                    <p>Share: </p>
+                    <FontAwesomeIcon className="cart" icon={faYoutube} />{" "}
+                    <FontAwesomeIcon className="cart" icon={faFacebook} />{" "}
+                    <FontAwesomeIcon className="cart" icon={faTwitter} />{" "}
+                    <FontAwesomeIcon className="cart" icon={faInstagram} />{" "}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
           <div className="col-xl-3">
             <div className="r-about">ABOUT</div>
@@ -124,22 +107,34 @@ const Blog = (props) => {
             <div className="r-wrapper-category">
               <div className="r-category">CATEGORIES</div>
               <div className="r-category-item">
-                <p>Competition(3)</p>
+                <a href="">
+                  <p>Competition(3)</p>
+                </a>
               </div>
               <div className="r-category-item">
-                <p>Delicious(2)</p>
+                <a href="">
+                  <p>Delicious(2)</p>
+                </a>
               </div>
               <div className="r-category-item">
-                <p>Enjoyment(12)</p>
+                <a href="">
+                  <p>Enjoyment(12)</p>
+                </a>
               </div>
               <div className="r-category-item">
-                <p>Life(4)</p>
+                <a href="">
+                  <p>Life(4)</p>
+                </a>
               </div>
               <div className="r-category-item">
-                <p>Lifestyle(7)</p>
+                <a href="">
+                  <p>Lifestyle(7)</p>
+                </a>
               </div>
               <div className="r-category-item">
-                <p>Media(5)</p>
+                <a href="">
+                  <p>Media(5)</p>
+                </a>
               </div>
             </div>
             <div className="r-wrapper-followus">
@@ -158,4 +153,4 @@ const Blog = (props) => {
   );
 };
 
-export default Blog;
+export default AllBlog;

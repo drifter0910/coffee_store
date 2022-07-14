@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import relateddata from "../../Data/TopProduct";
 import "./ShopDetail.scss";
-import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
+// import "../../Pages/DetailPage/DetailProduct/CoffeeCroissant.css";
 import { Button, ButtonLabel } from "../../Components/Button.style";
 import { addToCart } from "../../redux/Shopping/shopping-action";
 import ShopDetailSwiper from "./ShopDetailSwiper";

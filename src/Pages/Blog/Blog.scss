@@ -7,7 +7,7 @@
 .product1-blog {
   position: relative;
   height: 30vh;
-  background-image: url(../../../img/blog.jpg);
+  background-image: url(../../img/blog.jpg);
   background-size: cover;
 
   z-index: 1;
@@ -209,6 +209,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 1rem;
+  cursor: pointer;
 }
 .r-category-item::before {
   content: "";
@@ -229,4 +230,17 @@
 }
 .r-social {
   color: var(--label);
+}
+
+.hoverScale {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.hoverPointer {
+  &:hover {
+    cursor: pointer;
+    color: var(--label);
+  }
 }

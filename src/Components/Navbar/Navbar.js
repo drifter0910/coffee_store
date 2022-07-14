@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { removeFromCart } from "../../redux/Shopping/shopping-action";
-import axios from "axios";
+import barista from "../../img/barista.png";
 const Home = ({ products, cart, removeFromCart }) => {
   let navigate = useNavigate();
   // const [data, setData] = useState([]);
@@ -66,7 +66,7 @@ const Home = ({ products, cart, removeFromCart }) => {
           <Link to="reservation">
             <li>Reservation</li>
           </Link>
-          <Link to="coffee-croissant">
+          <Link to="blog">
             <li>Blog</li>
           </Link>
           <Link to="shop">
@@ -78,9 +78,7 @@ const Home = ({ products, cart, removeFromCart }) => {
         </ul>
       </div>
     );
-    menumask = (
-      <div className="menu-mask" onClick={() => setShowmenu(false)}></div>
-    );
+    menumask = <div className="menu-mask" onClick={() => setShowmenu(false)} />;
   }
   const changeBackGround = () => {
     if (window.scrollY >= 80) {
@@ -105,9 +103,13 @@ const Home = ({ products, cart, removeFromCart }) => {
       {menu}
       {menumask}
       <div className="n-left">
-        <h1 className="logo">
-          <Link to="/">Hanabi </Link>
-        </h1>
+        <Link to="/">
+          <img
+            style={{ width: "120px", padding: "8px 0" }}
+            src={barista}
+            alt=""
+          />{" "}
+        </Link>
 
         <div className="n-left-wrapper">
           <div className="search-mobile">
@@ -175,7 +177,7 @@ const Home = ({ products, cart, removeFromCart }) => {
           <li>
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              to={"coffee-croissant"}
+              to={"blog"}
             >
               Blog
             </NavLink>
@@ -279,4 +281,7 @@ const mapDispatchToProps = (dispatch) => {
     removeFromCart: (id) => dispatch(removeFromCart(id)),
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

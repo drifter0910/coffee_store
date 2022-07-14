@@ -1,11 +1,9 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import { Breadcrumb } from "antd";
 import "./globalStyles.scss";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Homepage from "./Pages/Home/Homepage";
 import Blog from "./Pages/Blog/Blog";
-import CoffeeCroissant from "./Pages/DetailPage/DetailProduct/CoffeeCroissant";
 import Shop from "./Pages/Shop/Shop";
 import ShopDetail from "./Pages/ShopDetail/ShopDetail";
 import ScrollToTop from "./ScrollToTop";
@@ -20,6 +18,8 @@ import { fetchData } from "./redux/Shopping/shopping-action";
 import Category from "./Pages/Category/Category";
 import Error from "./Pages/Error";
 import SearchResult from "./Pages/SearchResult/SearchResult";
+import blogData from "./Data/BlogData";
+import AllBlog from "./Pages/Blog/AllBlog";
 function App({ fetchData }) {
   const getDataFromApi = async () => {
     await axios
@@ -47,8 +47,21 @@ function App({ fetchData }) {
               }
             >
               <Route path="/" element={<Homepage />} />
-              <Route path="coffee-croissant" element={<CoffeeCroissant />} />
-              <Route path="blog" element={<Blog />} />
+              <Route path="blog" element={<AllBlog />} />
+              <Route
+                path="blog/coffee-croissant"
+                element={<Blog data={blogData[0]} />}
+              />
+              <Route path="blog/bakery" element={<Blog data={blogData[1]} />} />
+              <Route
+                path="blog/chilling"
+                element={<Blog data={blogData[2]} />}
+              />
+              <Route
+                path="blog/barista"
+                element={<Blog data={blogData[3]} />}
+              />
+
               <Route path="shop" element={<Shop />} />
               <Route
                 path="shop/category/:categoryType"
@@ -83,4 +96,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchData: (payload) => dispatch(fetchData(payload)),
   };
 };
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
