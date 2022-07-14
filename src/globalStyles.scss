@@ -349,6 +349,9 @@ ul {
     padding: 0;
     margin-left: 0;
   }
+  .gallery img:hover {
+    transform: none !important;
+  }
 }
 
 @media (max-width: 1199.98px) {

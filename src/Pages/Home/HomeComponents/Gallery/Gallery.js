@@ -1,5 +1,5 @@
 import React from "react";
-import "./Gallery.css";
+import "./Gallery.scss";
 import gallery1 from "../../../../img/gallery1.jpg";
 import gallery2 from "../../../../img/gallery2.jpg";
 import gallery3 from "../../../../img/gallery3.jpg";

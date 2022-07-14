@@ -22,3 +22,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.read-more {
+  margin-top: 6px;
+  a {
+    text-decoration: underline;
+    &:hover {
+      opacity: 0.8 !important;
+      color: black !important;
+    }
+  }
+}
