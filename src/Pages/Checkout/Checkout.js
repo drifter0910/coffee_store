@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo } from "react";
 import "./Checkout.css";
 import { connect } from "react-redux";
 const Checkout = ({ cart }) => {
-  const [quan, setQuan] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [totalItems, setTotalItems] = useState(0);
-  useEffect(() => {
-    // let items = 0;
+  const total = useMemo(() => {
     let price = 0;
     cart.forEach((item) => {
-      price += item.qty * item.price;
+      price += item.price * item.qty;
     });
-    setTotalPrice(price);
-  }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
+    return price;
+  }, [cart]);
+
   return (
     <div className="checkout-page">
       <div className="cart-page-top">
@@ -102,9 +99,7 @@ const Checkout = ({ cart }) => {
                 <div className="row w-100">
                   <p className="col-xl-4 col-md-4 font-weight-bold">Total</p>
                   <p className="col-xl-4 col-md-4" />
-                  <p className="col-xl-4 col-md-4 font-weight-bold">
-                    ${totalPrice}
-                  </p>
+                  <p className="col-xl-4 col-md-4 font-weight-bold">${total}</p>
                 </div>
               </div>
             </div>

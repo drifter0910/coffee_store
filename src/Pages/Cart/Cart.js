@@ -11,16 +11,6 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 const Cart = ({ cart, removeFromCart, adjustQty, plusQty, minusQty }) => {
-  // const [totalPrice, setTotalPrice] = useState(0);
-  // useEffect(() => {
-  //   // let items = 0;
-  //   console.log("tinh lai");
-  //   let price = 0;
-  //   cart?.forEach((item) => {
-  //     price += item.qty * item.price;
-  //   });
-  //   setTotalPrice(price);`
-  // }, [cart, totalPrice, setTotalPrice]);
   const total = useMemo(() => {
     let price = 0;
     cart?.forEach((item) => {
@@ -145,4 +135,7 @@ const mapDispatchToProps = (dispatch) => {
     minusQty: (id) => dispatch(minusQty(id)),
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

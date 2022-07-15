@@ -191,6 +191,9 @@ ul {
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
+  .checkout-page-order {
+    width: 35% !important;
+  }
   .shop-detail-r-category {
     margin-top: 10% !important;
   }
@@ -372,6 +375,12 @@ ul {
   .shop-r-tags {
     gap: 0 4rem !important;
   }
+  .cart-page-top {
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 576px) {
@@ -383,5 +392,8 @@ ul {
   }
   .shop-r-item img {
     width: 50% !important;
+  }
+  .checkout-page-order {
+    width: 100% !important;
   }
 }

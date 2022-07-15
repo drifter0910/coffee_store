@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./Navbar.scss";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,11 +15,8 @@ import baristadark from "../../img/baristadark.png";
 
 const Home = ({ products, cart, removeFromCart }) => {
   let navigate = useNavigate();
-  // const [data, setData] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [showmenu, setShowmenu] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [totalItems, setTotalItems] = useState(0);
   const [navbar, setNavbar] = useState(false);
   const [toggle, setToggle] = useState(true);
   const [search, setSearch] = useState("");
@@ -27,13 +24,13 @@ const Home = ({ products, cart, removeFromCart }) => {
   let activeStyle = {
     color: "#c7a17a",
   };
-  useEffect(() => {
+  const total = useMemo(() => {
     let price = 0;
     cart.forEach((item) => {
-      price += item.qty * item.price;
+      price += item.price * item.qty;
     });
-    setTotalPrice(price);
-  }, [cart, totalPrice, totalItems, setTotalItems, setTotalPrice]);
+    return price;
+  }, [cart]);
   useEffect(() => {
     let count = cart.length;
     setCartCount(count);
@@ -53,7 +50,6 @@ const Home = ({ products, cart, removeFromCart }) => {
   const handleSearch = () => {
     setToggle(!toggle);
   };
-
   if (showmenu) {
     var menumask;
     var menu = (
@@ -224,7 +220,7 @@ const Home = ({ products, cart, removeFromCart }) => {
               </div>
               <div className="navbar-cart-total">
                 <p>Total</p>
-                <p>$ {totalPrice}</p>
+                <p>$ {total}</p>
               </div>
               <div className="navbar-cart-btn">
                 <div onClick={() => navigate("cart")} className="viewcart">
@@ -249,6 +245,8 @@ const Home = ({ products, cart, removeFromCart }) => {
               className={toggle ? "navbar-input" : "input-active"}
               type="text"
             />
+
+            {/* search resuslt */}
             <div className={toggle ? "display-none" : "search-result"}>
               {result?.map((data) => (
                 <div
