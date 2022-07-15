@@ -119,8 +119,8 @@ const Shop = ({ products }) => {
                       onChange={handleChange}
                     >
                       <Option value="Default">Default</Option>
-                      <Option value="Asc">Ascending</Option>
-                      <Option value="Desc">Descending</Option>
+                      <Option value="Asc">Asc price</Option>
+                      <Option value="Desc">Desc price</Option>
                       <Option value="All">All Product</Option>
                     </Select>
                   </>

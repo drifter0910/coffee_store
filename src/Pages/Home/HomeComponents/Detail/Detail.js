@@ -101,7 +101,7 @@ const Detail = () => {
             </div>
             <div className="detail-body-r ">
               <div className="detail-body-name-r">
-                <p>mornign coffee</p>
+                <p>morning coffee</p>
               </div>
               <div className="hihi">
                 Alienum phaedrum torquatos nec eu, vis detraxit periculis ex,
