@@ -1,0 +1,133 @@
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  padding-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  flex-direction: column;
+}
+.footer h1 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.wrapper-footer {
+  width: 100%;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.footer-content-item {
+  display: table-cell;
+  padding-right: 1px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+}
+.footer-content-item1 {
+  display: table-cell;
+  /* white-space: nowrap; */
+  padding-right: 1px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+}
+
+.footer-content-time {
+  display: table-cell;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: 2px;
+  color: #acacac;
+}
+
+.space-footer {
+  height: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  display: table-cell;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.wrapper-footer2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  gap: 2px;
+  text-align: left;
+}
+
+.footer-content-time2 {
+  width: 100%;
+  display: table-cell;
+  color: var(--label);
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: 2px;
+  text-align: left;
+  gap: 2px;
+}
+.footer-phone {
+  margin-bottom: 6px;
+  color: #acacac;
+}
+.footer-address {
+  margin-bottom: 6px;
+  color: #acacac;
+  font-size: 14px;
+}
+.nopadbttm {
+  padding-bottom: 0 !important;
+}
+.footer-cotent2 {
+  font-size: 14px;
+}
+
+.footer-content3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  gap: 2px;
+  text-align: left;
+}
+
+.footer-license {
+  background-color: black;
+  width: 100%;
+  height: 60px;
+}
+
+.license-c,
+.license-l,
+.license-r {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.license-c {
+  gap: 1rem;
+}

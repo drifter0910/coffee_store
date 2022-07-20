@@ -1,0 +1,81 @@
+.reservation {
+  background-color: #f1f0eb;
+}
+
+.reservation-img img {
+  width: 100%;
+  padding: 0 3rem 3rem 0;
+}
+
+.reservation-l {
+  padding: 3rem 0 3rem 3rem;
+}
+.reservation-label {
+  position: relative;
+  font-size: 32px;
+  font-weight: bold;
+}
+.reservation-label::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  top: 100%;
+  left: 0;
+  cursor: default;
+  background-color: #bea386;
+}
+
+.reservation-des {
+  margin-top: 4%;
+  color: var(--text);
+  letter-spacing: 0.4px;
+}
+.reservation-form {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reservation-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reservation-form-input {
+  height: 180px;
+}
+.book-button {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #c7a17a 26.71%, #c7a17a 99.36%);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 20px 24px 3px rgb(251 161 40 / 42%);
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 4px;
+  width: 50%;
+}
+.user,
+.email,
+.reservation-form-input {
+  border-radius: 8px;
+  border: 2px solid var(--label);
+  padding-left: 2px;
+  width: 80%;
+}
+
+.user-label,
+.user-email,
+.user-message {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.reservation-form > form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
