@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Spin } from 'antd';
 import './Shop.scss';
 import topdata from '../../Data/TopProduct';
@@ -9,10 +9,11 @@ import 'antd/dist/antd.min.css';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import queryString from 'query-string';
+import Sort from '../../components/Sort';
 interface props {
   products: Array<any>;
 }
-interface PageState {
+export interface PageState {
   p: Number;
   l: Number;
   sortBy: String;
@@ -32,7 +33,6 @@ const Shop: FC<props> = ({ products }) => {
   const [totalPage, setTotalPage] = useState<any>();
   const stringified = queryString.stringify(pageState);
   const totalResult = item.length;
-  const { Option } = Select;
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
@@ -46,50 +46,6 @@ const Shop: FC<props> = ({ products }) => {
     };
     fetchData();
   }, [pageState]);
-
-  const handleChange = (value: string) => {
-    // ASCENDING
-    if (value === 'Asc') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          order: 'asc',
-          sortBy: 'price',
-          l: 12,
-        };
-      });
-    }
-    // DESCENDING
-    else if (value === 'Desc') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          order: 'desc',
-          sortBy: 'price',
-          l: 12,
-        };
-      });
-    }
-    // DEFAULT
-    else if (value === 'Default') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          l: 12,
-          sortBy: '',
-          order: '',
-        };
-      });
-    } else if (value === 'All') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          l: products.length,
-          p: 1,
-        };
-      });
-    }
-  };
 
   const handlePageClick = async (data: { selected: number }) => {
     let currentPage = data.selected + 1;
@@ -107,7 +63,6 @@ const Shop: FC<props> = ({ products }) => {
       top: 0,
     });
   };
-
   let uniqueCategory = [
     ...new Set(
       products.map((item) => {
@@ -131,20 +86,7 @@ const Shop: FC<props> = ({ products }) => {
                 <label>Showing {totalResult} results</label>
                 <label className="shop-sort" htmlFor="">
                   {/* Sort by latest */}
-                  <Fragment>
-                    <Select
-                      defaultValue="Default"
-                      style={{
-                        width: 120,
-                      }}
-                      onChange={handleChange}
-                    >
-                      <Option value="Default">Default</Option>
-                      <Option value="Asc">Asc price</Option>
-                      <Option value="Desc">Desc price</Option>
-                      <Option value="All">All Product</Option>
-                    </Select>
-                  </Fragment>
+                  <Sort setPageState={setPageState} products={products} />
                 </label>
               </div>
               <div className="text-center">

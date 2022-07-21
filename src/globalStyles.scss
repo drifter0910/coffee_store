@@ -12,7 +12,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 .no-gutters {
@@ -35,8 +35,8 @@ input[type="number"] {
   overflow: hidden;
   padding: 0 2rem;
   overflow-y: auto;
-  background-image: url("../src/img/homebackground.jpg");
-  font-family: "Merriweather", serif;
+  background-image: url('../src/img/homebackground.jpg');
+  font-family: 'Merriweather', serif;
 }
 .nav-active {
   color: var(--label);
@@ -59,9 +59,7 @@ input:focus {
 textarea:focus {
   outline: none;
 }
-.menu-nav {
-  display: none;
-}
+
 .menu-mask {
   display: none;
 }
@@ -214,9 +212,6 @@ ul {
     justify-content: space-between;
   }
 
-  .menu-nav li {
-    text-decoration: none !important;
-  }
   .faBars {
     display: block;
     color: white;
@@ -225,28 +220,12 @@ ul {
   .text-light {
     margin: 0;
   }
-  .menu-nav {
-    display: block;
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
-    padding: 1rem 3rem;
-    text-decoration: none !important;
-  }
-  .menu-nav li {
-    margin-bottom: 1rem;
-    font-size: 20px;
-  }
-  .menu-nav li:hover {
-    color: var(--label);
-  }
+
   .menu-mask {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.4);
+    // background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+
     position: fixed;
     top: 0;
     right: 0;
@@ -284,6 +263,9 @@ ul {
       font-size: 4rem;
     }
   }
+  .menu-nav.active {
+    display: block;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -301,10 +283,7 @@ ul {
   .wrapper-slider {
     padding: 0 !important;
   }
-  .menu-nav {
-    width: 50%;
-    padding: 1rem 1.5rem;
-  }
+
   .menu-mask {
     width: 50%;
   }

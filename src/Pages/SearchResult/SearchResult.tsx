@@ -3,21 +3,17 @@ import '../Shop/Shop.scss';
 import topdata from '../../Data/TopProduct';
 import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Select, Spin } from 'antd';
+import { Spin } from 'antd';
 import 'antd/dist/antd.min.css';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import queryString from 'query-string';
+import { PageState } from '../Shop/Shop';
+import Sort from '../../components/Sort';
 interface props {
   products: Array<any>;
 }
-interface PageState {
-  p: Number;
-  l: Number;
-  sortBy: String;
-  order: String;
-  category: String;
-}
+
 const ShopResult: FC<props> = ({ products }) => {
   let location = useLocation();
   let query = location.search;
@@ -33,7 +29,6 @@ const ShopResult: FC<props> = ({ products }) => {
   const [item, setItem] = useState([]);
   const totalResult = item.length;
   const [totalPage, setTotalPage] = useState<any>();
-  const { Option } = Select;
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
@@ -48,41 +43,6 @@ const ShopResult: FC<props> = ({ products }) => {
     fetchData();
   }, [query, pageState]);
 
-  const handleChange = (value: string) => {
-    // ASCENDING
-    if (value === 'Asc') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          order: 'asc',
-          sortBy: 'price',
-          l: 12,
-        };
-      });
-    }
-    // DESCENDING
-    else if (value === 'Desc') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          order: 'desc',
-          sortBy: 'price',
-          l: 12,
-        };
-      });
-    }
-    // DEFAULT
-    else if (value === 'Default') {
-      setPageState((prevState) => {
-        return {
-          ...prevState,
-          l: 12,
-          sortBy: '',
-          order: '',
-        };
-      });
-    }
-  };
   const handlePageClick = async (data: { selected: number }) => {
     let currentPage = data.selected + 1;
     setPageState((prevState) => {
@@ -115,19 +75,7 @@ const ShopResult: FC<props> = ({ products }) => {
                 <label>Showing {totalResult} results</label>
                 <label className="shop-sort" htmlFor="">
                   {/* Sort by latest */}
-                  <>
-                    <Select
-                      defaultValue="Default"
-                      style={{
-                        width: 120,
-                      }}
-                      onChange={handleChange}
-                    >
-                      <Option value="Default">Default</Option>
-                      <Option value="Asc">Asc Price</Option>
-                      <Option value="Desc">Desc Price</Option>
-                    </Select>
-                  </>
+                  <Sort setPageState={setPageState} products={products} />
                 </label>
               </div>
               <div className="text-center">

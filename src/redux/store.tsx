@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import rootReducer from './rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // convert object to string and store in localStorage
-function saveToLocalStorage(state: any) {
+function saveToLocalStorage(state: any): void {
   try {
     const serialisedState = JSON.stringify(state);
     localStorage.setItem('persistantState', serialisedState);
